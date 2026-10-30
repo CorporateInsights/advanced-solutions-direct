@@ -10,7 +10,7 @@
 	<title>FAQ | {site.name}</title>
 	<meta
 		name="description"
-		content="Answers to common questions about Modern Advantage Direct, our free consultation, and how we connect you with consumer rights attorneys."
+		content="Answers to common questions about Advanced Solutions Direct, our free consultation, and how we connect you with consumer rights attorneys."
 	/>
 </svelte:head>
 

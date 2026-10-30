@@ -12,7 +12,7 @@ export const coreFaqs: Faq[] = [
 	{
 		question: 'Are you a law firm?',
 		answer:
-			'No. Modern Advantage Direct is not a law firm and doesn’t give legal advice. We connect you with independent consumer rights law firms, and their attorneys handle your legal matter directly.'
+			'No. Advanced Solutions Direct is not a law firm and doesn’t give legal advice. We connect you with independent consumer rights law firms, and their attorneys handle your legal matter directly.'
 	},
 	{
 		question: 'Will the collection calls stop?',

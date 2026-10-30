@@ -98,7 +98,7 @@
 	<title>{site.name} | Debt Collectors Have to Prove It.</title>
 	<meta
 		name="description"
-		content="Being contacted by debt collectors? Modern Advantage Direct connects you with independent consumer rights attorneys. Free, no-obligation consultation."
+		content="Being contacted by debt collectors? Advanced Solutions Direct connects you with independent consumer rights attorneys. Free, no-obligation consultation."
 	/>
 </svelte:head>
 

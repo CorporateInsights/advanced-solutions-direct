@@ -56,7 +56,7 @@
 
 		<div class="pt-8 mt-10 space-y-3 border-t border-slate-100">
 			<!-- TODO: have compliance/counsel review this disclaimer, and add a disclosure of any
-			     compensation Modern Advantage Direct receives from partner law firms if applicable. -->
+			     compensation Advanced Solutions Direct receives from partner law firms if applicable. -->
 			<p class="text-xs leading-relaxed text-slate-400">
 				{site.name} is not a law firm, does not provide legal advice, and is not a substitute for an
 				attorney. We connect consumers with independent law firms. Legal services are provided solely

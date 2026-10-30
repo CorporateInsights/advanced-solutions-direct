@@ -64,7 +64,7 @@
 	<title>Who We Help | {site.name}</title>
 	<meta
 		name="description"
-		content="Dealing with nonstop collection calls, a debt you don’t recognize, or threats of a lawsuit? Modern Advantage Direct can connect you with consumer rights attorneys."
+		content="Dealing with nonstop collection calls, a debt you don’t recognize, or threats of a lawsuit? Advanced Solutions Direct can connect you with consumer rights attorneys."
 	/>
 </svelte:head>
 

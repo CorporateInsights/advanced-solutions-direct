@@ -25,7 +25,7 @@
 	<title>Free Consultation | {site.name}</title>
 	<meta
 		name="description"
-		content="Request a free, no-obligation consultation with Modern Advantage Direct. Find out your options for dealing with debt collectors."
+		content="Request a free, no-obligation consultation with Advanced Solutions Direct. Find out your options for dealing with debt collectors."
 	/>
 </svelte:head>
 

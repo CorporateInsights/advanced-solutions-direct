@@ -35,7 +35,7 @@
 	<title>About Us | {site.name}</title>
 	<meta
 		name="description"
-		content="Modern Advantage Direct helps people dealing with debt collectors connect with independent consumer rights law firms."
+		content="Advanced Solutions Direct helps people dealing with debt collectors connect with independent consumer rights law firms."
 	/>
 </svelte:head>
 
