@@ -26,7 +26,7 @@
 			icon: Handshake,
 			title: 'No Pressure',
 			description:
-				'The consultation is free, and the decision is always yours. We’re here to help, not to push.'
+				'The call is free, and the decision is always yours. We’re here to help, not to push.'
 		}
 	];
 </script>
@@ -35,15 +35,15 @@
 	<title>About Us | {site.name}</title>
 	<meta
 		name="description"
-		content="Advanced Solutions Direct connects people dealing with overwhelming debt with independent partners, including consumer rights law firms."
+		content="Advanced Solutions Direct is the first call when debt gets overwhelming. We listen, explain how the process works, and connect you with an independent consumer rights law firm if it's a fit."
 	/>
 </svelte:head>
 
 <PageHeader
 	eyebrow="About Us"
-	title="Straight Answers When"
-	highlight=" Debt Gets Overwhelming."
-	description="We’re the first call: we listen, explain how the process works, and connect you with an independent law firm if it’s a fit."
+	title="We’re the"
+	highlight=" First Call."
+	description="When debt gets overwhelming, it’s hard to know who to trust or where to start. That’s where we come in."
 />
 
 <section class="pb-16 sm:pb-20">
@@ -52,13 +52,14 @@
 			<h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Who We Are</h2>
 			<div class="mt-4 space-y-4 text-lg leading-relaxed text-slate-600">
 				<p>
-					{site.name} helps people dealing with overwhelming debt find out where they stand
-					and where to turn next.
+					{site.name} is where people start when debt feels like too much. We listen to what
+					you’re facing, explain how the process works, and, if it’s a fit, connect you with
+					{partners.legal} that may be able to help.
 				</p>
 				<p>
-					Debt problems often involve legal rights, and legal questions deserve lawyers. That’s why we work
-					with {partners.general}, including consumer rights law firms. Our job is to listen and
-					connect you. The legal work is handled by the law firm, under its own agreement with you.
+					We’re not a law firm, and we don’t pretend to be. Debt problems often involve legal
+					rights, and legal questions deserve lawyers. Our job is to make that first step easier,
+					and to be honest with you along the way.
 				</p>
 			</div>
 		</div>

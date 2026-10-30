@@ -14,30 +14,30 @@
 	const steps = [
 		{
 			icon: MessageSquare,
-			title: 'Tell Us What’s Going On',
+			title: 'Talk to Us',
 			description:
-				'Call us or fill out a quick form. We’ll ask about your debts and what’s been going on, and explain how the process works in plain English.',
-			points: ['No cost', 'No obligation', 'No pressure']
+				'Call us or fill out the short form. A real person on our team will ask about your debts and what’s been going on, then explain how the process works in plain English.',
+			points: ['Free', 'No obligation', 'No pressure']
 		},
 		{
 			icon: Handshake,
-			title: 'Get Matched',
-			description: `If it’s a fit, we connect you with ${partners.legal}. The firm sends you its agreement, including any fees, in writing to review before you sign anything.`,
-			points: ['Consumer rights attorneys', 'Everything explained up front']
+			title: 'Get Connected',
+			description: `If it’s a fit, we introduce you to ${partners.legal}. The firm reviews your situation and sends you its agreement, including any fees, in writing.`,
+			points: ['Consumer rights attorneys', 'Everything in writing']
 		},
 		{
 			icon: Scale,
-			title: 'The Firm Explains, You Decide',
+			title: 'You Decide',
 			description:
-				'The law firm explains what it can do for your specific accounts. If you choose to sign with the firm, it handles that work under its own agreement with you. Our part ends once you’re connected.',
-			points: ['You decide whether to sign', 'The law firm handles the legal work']
+				'Take your time. If you choose to sign with the firm, it handles the legal work under its own agreement with you. Our part ends once you’re connected.',
+			points: ['Nothing happens without your say', 'The law firm handles the legal work']
 		}
 	];
 
 	const bringToCall = [
 		{ icon: FileText, text: 'Recent statements or letters from creditors or collectors' },
 		{ icon: Users, text: 'A rough list of who you owe and how much' },
-		{ icon: Clock, text: 'A few minutes to talk about what’s been happening' }
+		{ icon: Clock, text: 'A few quiet minutes to talk' }
 	];
 </script>
 
@@ -45,15 +45,15 @@
 	<title>How It Works | {site.name}</title>
 	<meta
 		name="description"
-		content="Getting help with overwhelming debt starts with one free call. Tell us what's going on, and if it's a fit, we'll connect you with an independent consumer rights law firm."
+		content="Three simple steps, starting with one free call with a real person. If it's a fit, we'll connect you with an independent consumer rights law firm. You decide what happens next."
 	/>
 </svelte:head>
 
 <PageHeader
 	eyebrow="How It Works"
-	title="Getting Help Is"
-	highlight=" Simple."
-	description="Three steps, starting with one free phone call. No pressure, and no obligation."
+	title="Getting Help Starts"
+	highlight=" With One Call."
+	description="It starts with one free call, and every decision along the way is yours."
 />
 
 <section class="pb-16 sm:pb-20">
@@ -96,7 +96,7 @@
 				What to Have <span class="text-brand-gradient">Handy</span>
 			</h2>
 			<p class="mt-4 text-lg text-slate-600">
-				Don’t have everything? That’s okay. Call anyway and we’ll figure it out together.
+				Don’t have everything? Call anyway. We’ll work through it together.
 			</p>
 		</div>
 		<div class="grid gap-4 mt-10 sm:grid-cols-3">
@@ -112,4 +112,4 @@
 	</div>
 </section>
 
-<CtaSection title="Ready to Take the First Step?" />
+<CtaSection />

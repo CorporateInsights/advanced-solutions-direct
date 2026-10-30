@@ -6,8 +6,8 @@
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	let {
-		title = 'Ready to Talk It Through?',
-		description = 'One free, no-pressure conversation can help you understand how this works. There’s no cost and no obligation.',
+		title = 'Ready When You Are.',
+		description = 'One free call with a real person. Straight answers, a clear next step, and no pressure.',
 		href = consultationHref
 	}: { title?: string; description?: string; href?: string } = $props();
 </script>

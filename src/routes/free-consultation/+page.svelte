@@ -45,12 +45,12 @@
 				<h1
 					class="text-4xl font-extrabold tracking-tight leading-tight text-balance sm:text-5xl text-slate-900"
 				>
-					Your Free
-					<span class="text-brand-gradient">Consultation</span>
+					Talk to a
+					<span class="text-brand-gradient">Real Person.</span>
 				</h1>
 				<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed lg:mx-0 text-slate-600">
-					Fill out the form and we’ll reach out, or call us now. There’s no cost and no
-					obligation.
+					Fill out the short form and we’ll call you during business hours, or call us now. It’s free,
+					and there’s no obligation.
 				</p>
 
 				<a

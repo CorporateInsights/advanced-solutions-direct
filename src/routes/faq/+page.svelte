@@ -18,7 +18,7 @@
 	eyebrow="FAQ"
 	title="Straight Answers to"
 	highlight=" Common Questions."
-	description="Here are the questions we hear most. For anything specific to your situation, the free consultation is the best place to start."
+	description="Here are the questions we hear most. For anything specific to your situation, the free call is the best place to start."
 />
 
 <section class="pb-8">
@@ -29,5 +29,5 @@
 
 <CtaSection
 	title="Still Have Questions?"
-	description="We’re happy to answer them. Call us or request a free consultation. There’s no cost and no obligation."
+	description="We’re happy to answer them. Call us or fill out the short form. It’s free, with no obligation."
 />
