@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @import "tw-animate-css";
 @import "shadcn-svelte/tailwind.css";
-@import "@fontsource-variable/geist";
+@import "@fontsource-variable/montserrat";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -23,21 +23,23 @@
 	--destructive: oklch(0.577 0.245 27.325);
 	--border: oklch(0.922 0 0);
 	--input: oklch(0.922 0 0);
-	--ring: #db2777;
+	--ring: #d100bb;
 	--chart-1: oklch(0.87 0 0);
 	--chart-2: oklch(0.556 0 0);
 	--chart-3: oklch(0.439 0 0);
 	--chart-4: oklch(0.371 0 0);
 	--chart-5: oklch(0.269 0 0);
 	--radius: 0.625rem;
-	/* Advanced Solutions Direct brand gradient (orange → magenta → purple) */
-	--brand-orange: #ea580c;
-	--brand-pink: #db2777;
-	--brand-purple: #7e22ce;
+	/* Advanced Solutions Direct brand palette (from the ASD brand kit) */
+	--brand-orange: #ff8a00; /* Sunset Orange */
+	--brand-red: #ff2d55; /* Vivid Red */
+	--brand-pink: #d100bb; /* Magenta: also used for small accent text, passes contrast on white */
+	--brand-purple: #7a00ff; /* Electric Purple */
 	--brand-gradient: linear-gradient(
 		90deg,
 		var(--brand-orange),
-		var(--brand-pink) 55%,
+		var(--brand-red),
+		var(--brand-pink),
 		var(--brand-purple)
 	);
 	--sidebar: oklch(0.985 0 0);
@@ -85,8 +87,9 @@
 }
 
 @theme inline {
-	--font-sans: 'Geist Variable', sans-serif;
+	--font-sans: 'Montserrat Variable', Arial, sans-serif;
 	--color-brand-orange: var(--brand-orange);
+	--color-brand-red: var(--brand-red);
 	--color-brand-pink: var(--brand-pink);
 	--color-brand-purple: var(--brand-purple);
 	--color-sidebar-ring: var(--sidebar-ring);

@@ -8,7 +8,7 @@
 	<div class="py-12 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
 		<div class="grid gap-10 md:grid-cols-4">
 			<div class="md:col-span-2">
-				<img src={site.logo} alt={site.name} class="w-auto h-9" />
+				<img src={site.logoPrimary} alt={site.name} width="384" height="216" class="-ml-3 w-auto h-24" />
 				<p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">
 					Connecting people dealing with debt collectors to independent consumer rights law firms.
 				</p>

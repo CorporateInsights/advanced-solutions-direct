@@ -15,6 +15,7 @@
 
 <svelte:head>
 	<link rel="icon" href={site.icon} />
+	<link rel="apple-touch-icon" sizes="180x180" href={site.appleIcon} />
 	<!-- TODO: remove at launch. Keeps the temporary preview site out of search results -->
 	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>

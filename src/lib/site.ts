@@ -6,9 +6,10 @@ export const link = (path: string) => `${base}${path}`;
 // Central place for brand + contact details. Swap placeholders here once they're final.
 export const site = {
 	name: 'Advanced Solutions Direct',
-	// TODO: replace with the real logo files (see static/). Keep the same paths to avoid code changes.
-	logo: link('/asd-logo-placeholder.svg'),
-	icon: link('/asd-icon-placeholder.svg'),
+	logo: link('/brand/asd-logo-horizontal.svg'),
+	logoPrimary: link('/brand/asd-logo-primary.svg'),
+	icon: link('/favicon.ico'),
+	appleIcon: link('/brand/apple-touch-icon.png'),
 	// TODO: placeholder phone number; replace with the real line.
 	phoneDisplay: '(800) 555-0123',
 	phoneHref: 'tel:18005550123',
