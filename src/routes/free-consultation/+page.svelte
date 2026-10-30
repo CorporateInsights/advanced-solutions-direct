@@ -83,7 +83,7 @@
 						{#each expect as item, i}
 							<li class="flex gap-3">
 								<span
-									class="flex justify-center items-center w-7 h-7 text-xs font-bold text-white rounded-full bg-brand-gradient shrink-0"
+									class="flex justify-center items-center w-7 h-7 text-xs font-bold text-white rounded-full bg-brand-gradient-ui shrink-0"
 								>
 									{i + 1}
 								</span>

@@ -183,7 +183,7 @@
 </section>
 
 <!-- Teaser band -->
-<section class="py-10 px-4 bg-brand-gradient sm:px-6 lg:px-8">
+<section class="py-10 px-4 bg-brand-gradient-ui sm:px-6 lg:px-8">
 	<div
 		class="flex flex-col gap-6 justify-between items-center mx-auto max-w-5xl text-center md:flex-row md:text-left"
 	>

@@ -35,10 +35,22 @@
 	--brand-red: #ff2d55; /* Vivid Red */
 	--brand-pink: #d100bb; /* Magenta: also used for small accent text, passes contrast on white */
 	--brand-purple: #7a00ff; /* Electric Purple */
+	/* Decorative gradient: always the true brand colors */
 	--brand-gradient: linear-gradient(
 		90deg,
 		var(--brand-orange),
 		var(--brand-red),
+		var(--brand-pink),
+		var(--brand-purple)
+	);
+	/* UI gradient: for text and for backgrounds behind white text. Same as the brand gradient
+	   unless the high-contrast palette is on (see [data-palette='accessible'] below). */
+	--brand-orange-ui: var(--brand-orange);
+	--brand-red-ui: var(--brand-red);
+	--brand-gradient-ui: linear-gradient(
+		90deg,
+		var(--brand-orange-ui),
+		var(--brand-red-ui),
 		var(--brand-pink),
 		var(--brand-purple)
 	);
@@ -132,12 +144,23 @@
 	--radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* High-contrast palette: deeper orange and red on text and buttons only, so white text and
+   gradient headlines meet WCAG AA (4.5:1). The logo and decorative graphics are unaffected. */
+:root[data-palette='accessible'] {
+	--brand-orange-ui: #c25400;
+	--brand-red-ui: #e0193f;
+}
+
 @utility bg-brand-gradient {
 	background-image: var(--brand-gradient);
 }
 
+@utility bg-brand-gradient-ui {
+	background-image: var(--brand-gradient-ui);
+}
+
 @utility text-brand-gradient {
-	background-image: var(--brand-gradient);
+	background-image: var(--brand-gradient-ui);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;

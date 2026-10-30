@@ -14,7 +14,9 @@ export const site = {
 	phoneDisplay: '(800) 555-0123',
 	phoneHref: 'tel:18005550123',
 	// TODO: placeholder hours; confirm.
-	hours: 'Mon–Fri 6am–6pm PT'
+	hours: 'Mon–Fri 6am–6pm PT',
+	// TODO: set to false at launch. Shows the brand / high-contrast palette switch for reviewers.
+	showPaletteToggle: true
 };
 
 // How the site refers to the companies clients are matched with. We're a broker, so the copy
@@ -53,4 +55,4 @@ export const consultationHref = link('/free-consultation');
 
 // Shared style for primary (gradient) buttons
 export const ctaClass =
-	'bg-brand-gradient font-bold text-white shadow-md shadow-pink-500/20 transition hover:brightness-110 hover:shadow-lg hover:shadow-pink-500/30';
+	'bg-brand-gradient-ui font-bold text-white shadow-md shadow-pink-500/20 transition hover:brightness-110 hover:shadow-lg hover:shadow-pink-500/30';

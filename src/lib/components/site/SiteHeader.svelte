@@ -12,7 +12,7 @@
 </script>
 
 <!-- Top Bar -->
-<div class="py-2 px-4 text-sm font-medium text-center text-white bg-brand-gradient">
+<div class="py-2 px-4 text-sm font-medium text-center text-white bg-brand-gradient-ui">
 	Being contacted by a debt collector? You may have more options than you think.
 </div>
 

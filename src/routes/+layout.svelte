@@ -5,6 +5,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import SiteHeader from '$lib/components/site/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/site/SiteFooter.svelte';
+	import PaletteToggle from '$lib/components/site/PaletteToggle.svelte';
 	import Phone from '@lucide/svelte/icons/phone';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
@@ -26,6 +27,10 @@
 		{@render children()}
 	</main>
 	<SiteFooter />
+
+	{#if site.showPaletteToggle}
+		<PaletteToggle />
+	{/if}
 
 	{#if showStickyCta}
 		<!-- Mobile Sticky CTA -->
