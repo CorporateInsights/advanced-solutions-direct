@@ -5,8 +5,8 @@
 
 	let {
 		id,
-		title = 'Get Your Free Consultation',
-		description = 'Takes about a minute. A real person will call you back.'
+		title = 'Request Your Free Call',
+		description = 'Takes about a minute. A real person will call you.'
 	}: { id: string; title?: string; description?: string } = $props();
 </script>
 

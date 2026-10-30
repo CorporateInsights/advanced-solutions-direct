@@ -70,7 +70,7 @@ Always pair a call to action with the low-risk reminder: free, no pressure, no o
 
 | Instead of | Write |
 | --- | --- |
-| We'll eliminate your debt. | Find out where you stand. |
+| We'll eliminate your debt. | Talk to a real person first. |
 | Our attorneys will stop the calls. | If you hire an attorney, collectors generally have to contact the attorney instead of you. |
 | Save up to 50%! | (Don't. No savings claims.) |
 | Act now before it's too late! | Ready when you are. |

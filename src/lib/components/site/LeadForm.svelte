@@ -41,9 +41,13 @@
 		<div class="flex justify-center items-center mb-4 w-16 h-16 rounded-full bg-brand-gradient">
 			<CheckCircle2 class="w-8 h-8 text-white" />
 		</div>
-		<h3 class="mb-2 text-xl font-bold text-slate-900">Thanks, We Got It!</h3>
+		<h3 class="mb-2 text-xl font-bold text-slate-900">Thanks. You’re all set.</h3>
 		<p class="text-sm text-slate-600">
-			A member of our team will reach out during business hours ({site.hours}).
+			A real person from our team will call you during business hours ({site.hours}).
+		</p>
+		<p class="mt-3 text-sm text-slate-600">
+			Want to talk sooner?
+			<a href={site.phoneHref} class="font-bold underline text-slate-900">Call {site.phoneDisplay}</a>
 		</p>
 	</div>
 {:else}
@@ -52,6 +56,7 @@
 		<fieldset class="space-y-1.5">
 			<legend class="mb-1.5 text-sm font-semibold text-slate-700">
 				Roughly how much debt are you dealing with?
+				<span class="font-normal text-slate-500">(optional)</span>
 			</legend>
 			<div class="grid grid-cols-2 gap-2">
 				{#each debtOptions as option}
@@ -117,8 +122,15 @@
 					class="pl-9 h-11 border-slate-200"
 				/>
 			</div>
+			<p class="text-xs text-slate-500">So we can send you a confirmation.</p>
 		</div>
-		<!-- TODO: add TCPA consent language (calls/texts) reviewed by compliance before going live. -->
+		<!-- DRAFT consent language. MUST be replaced with counsel-approved TCPA wording before launch,
+		     including whether partners are named and whether automated calls/texts are used. -->
+		<p class="text-xs leading-relaxed text-slate-500">
+			<span class="font-semibold">Draft, pending legal review:</span> By submitting, you agree that
+			{site.name} and its partners may contact you at the number and email you provided, including by
+			phone call or text message. Consent isn’t required to get help. Message and data rates may apply.
+		</p>
 		<Button
 			type="submit"
 			disabled={submitting}

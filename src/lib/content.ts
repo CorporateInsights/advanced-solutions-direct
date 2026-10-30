@@ -67,7 +67,7 @@ export const coreFaqs: Faq[] = [
 		answer: `No. ${site.name} is not a law firm and doesn’t give legal advice. We listen, explain how the process works, and, if it’s a fit, connect you with ${partners.legal} that handles the legal work directly.`
 	},
 	{
-		question: 'What kinds of debt can you help with?',
+		question: 'What kinds of debt do people call you about?',
 		answer: `Most types of personal debt, including credit cards, medical bills, and personal loans. ${debtExclusions} Not sure about yours? Ask us on the call.`
 	},
 	{
@@ -91,7 +91,7 @@ export const moreFaqs: Faq[] = [
 	{
 		question: 'What if debt collectors are already calling me?',
 		answer:
-			'You may have more rights than you realize. Collectors have rules they must follow, and they have to be able to back up what they say you owe. If you hire an attorney, collectors are generally required to contact the attorney instead of you. Original creditors may follow different rules. The law firm can tell you what to expect for your accounts.'
+			'You may have more rights than you realize. Collectors have rules they must follow, and if you dispute a debt, they generally have to verify it. If you hire an attorney, collectors are generally required to contact the attorney instead of you. Original creditors may follow different rules. The law firm can tell you what to expect for your accounts.'
 	},
 	{
 		question: 'Do I have to sign anything on the call?',
@@ -106,11 +106,11 @@ export const moreFaqs: Faq[] = [
 	{
 		question: 'What if I’m being sued over a debt?',
 		answer:
-			'Don’t ignore it. Court deadlines are strict, so speak with an attorney right away. You can call us too, and if our partner firm handles situations like yours, we’ll connect you quickly.'
+			'Don’t ignore it. Court deadlines are strict, so speak with an attorney right away. You can call us too, and if our partner firm handles situations like yours, we can connect you. But don’t wait on us to respond to the court.'
 	},
 	{
 		question: 'How do you get paid?',
 		answer:
-			'Talking with us is free. We may be paid by our partners when we refer someone to them. That never changes what we tell you on the call.'
+			'Talking with us is free. We may be paid by our partners when we refer someone to them. You’ll always know who you’re working with, and what they charge, before you sign anything.'
 	}
 ];

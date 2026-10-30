@@ -12,7 +12,7 @@
 	const values = [
 		{
 			icon: Heart,
-			title: 'On Your Side',
+			title: 'Respect, Always',
 			description:
 				'Dealing with debt is stressful. We treat every person with respect. No judgment, ever.'
 		},
@@ -20,7 +20,7 @@
 			icon: Eye,
 			title: 'Honest & Upfront',
 			description:
-				'We tell you who we are, what we do, and what we don’t. No fine-print surprises.'
+				'We tell you who we are, what we do, and what we don’t, and we point you to our full disclosures.'
 		},
 		{
 			icon: Handshake,
@@ -43,7 +43,7 @@
 	eyebrow="About Us"
 	title="We’re the"
 	highlight=" First Call."
-	description="When debt gets overwhelming, it’s hard to know who to trust or where to start. That’s where we come in."
+	description="When debt gets overwhelming, it’s hard to know who to trust or where to start. We’re the calm, honest place to begin."
 />
 
 <section class="pb-16 sm:pb-20">

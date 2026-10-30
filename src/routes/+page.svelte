@@ -19,11 +19,7 @@
 	import UserRound from '@lucide/svelte/icons/user-round';
 	import XCircle from '@lucide/svelte/icons/circle-x';
 
-	const heroPoints = [
-		'Free, no-obligation call',
-		'Most types of personal debt considered',
-		'No pressure. You decide what happens next.'
-	];
+	const heroPoints = ['Most types of personal debt considered', 'You decide what happens next'];
 
 	const steps = [
 		{
@@ -47,12 +43,12 @@
 	const benefits = [
 		{
 			icon: UserRound,
-			title: 'A Real Person',
-			description: 'Someone on our team who listens first and never judges.'
+			title: 'Honest About Our Role',
+			description: 'We tell you upfront that we’re not a law firm, and how we get paid.'
 		},
 		{
 			icon: Scale,
-			title: 'Independent Attorneys',
+			title: 'Legal Work Stays With a Law Firm',
 			description: 'Any legal work is done by an independent consumer rights law firm, not by us.'
 		},
 		{
@@ -62,8 +58,8 @@
 		},
 		{
 			icon: Handshake,
-			title: 'Your Call, Always',
-			description: 'Free to talk, free to walk away. Nothing happens without your say.'
+			title: 'Most Debts Considered',
+			description: 'Credit cards, medical bills, personal loans, and more. Ask us about yours.'
 		}
 	];
 
@@ -77,7 +73,7 @@
 		'Give legal advice',
 		'Contact your creditors or collectors',
 		'Promise results',
-		'Pressure you to sign up'
+		'Pressure you into anything'
 	];
 
 	// Buttons on the home page scroll to the form already on this page
@@ -85,7 +81,7 @@
 </script>
 
 <svelte:head>
-	<title>{site.name} | Overwhelmed by Debt? Find Out Where You Stand.</title>
+	<title>{site.name} | Overwhelmed by Debt? Talk to a Real Person First.</title>
 	<meta
 		name="description"
 		content="Overwhelmed by credit cards, medical bills, or collection calls? Talk to a real person for free. If it's a fit, we'll connect you with an independent consumer rights law firm. No pressure, no obligation."
@@ -120,15 +116,14 @@
 					class="text-4xl font-extrabold tracking-tight leading-[1.1] text-balance sm:text-5xl lg:text-[3.25rem] xl:text-6xl text-slate-900"
 				>
 					Overwhelmed by Debt?
-					<span class="block mt-1 text-brand-gradient">Find Out Where You Stand.</span>
+					<span class="block mt-1 text-brand-gradient">Talk to a Real Person First.</span>
 				</h1>
 
 				<p
 					class="mx-auto mt-6 max-w-xl text-lg leading-relaxed sm:text-xl lg:mx-0 text-slate-600"
 				>
-					You don’t have to figure this out alone. Talk with a real person, for free, about what
-					you’re facing. If it’s a fit, we’ll connect you with {partners.legal} that may be able
-					to help.
+					Free, no pressure, and no judgment. We’ll explain how the process works in plain English
+					and, if it’s a fit, connect you with {partners.legal} that may be able to help.
 				</p>
 
 				<ul class="mx-auto mt-8 space-y-3 max-w-md text-left lg:mx-0">
@@ -140,7 +135,8 @@
 					{/each}
 				</ul>
 
-				<p class="mt-8 text-slate-600">
+				<!-- Desktop only: on phones the sticky bottom bar already has Call Now -->
+				<p class="hidden mt-8 lg:block text-slate-600">
 					Prefer to talk now?
 					<a
 						href={site.phoneHref}
@@ -149,6 +145,9 @@
 						<Phone class="w-4 h-4 text-brand-pink" />
 						Call {site.phoneDisplay}
 					</a>
+					<span class="block mt-1 text-sm text-slate-500">
+						{site.hours}. The form works anytime, and we’ll call during business hours.
+					</span>
 				</p>
 			</div>
 
@@ -166,7 +165,7 @@
 	>
 		<div>
 			<p class="text-2xl font-extrabold text-white sm:text-3xl">The hardest part is the first call.</p>
-			<p class="mt-1 text-lg text-white/90">We make it easy. Free, friendly, and no pressure.</p>
+			<p class="mt-1 text-lg text-white/90">We’ll make it easy. A real person, free, no pressure.</p>
 		</div>
 		<Button
 			size="lg"
@@ -212,7 +211,7 @@
 				<ArrowRight class="ml-2 w-4 h-4" />
 			</Button>
 			<a href={link('/who-we-help')} class="text-sm font-semibold text-slate-600 hover:text-brand-pink">
-				See the types of debt we see →
+				Not sure your debt fits? See what we commonly hear about →
 			</a>
 		</div>
 	</div>
@@ -276,7 +275,7 @@
 				Because getting help with debt shouldn’t feel like another fight.
 			</p>
 			<Button size="lg" href={formAnchor} class="mt-8 {ctaClass}">
-				Talk to Us Free
+				Talk to a Real Person
 				<ArrowRight class="ml-2 w-4 h-4" />
 			</Button>
 		</div>
@@ -351,7 +350,7 @@
 	<div class="px-4 mx-auto max-w-3xl sm:px-6 lg:px-8">
 		<div class="text-center">
 			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
-				Questions People <span class="text-brand-gradient">Ask Us</span>
+				Straight Answers to <span class="text-brand-gradient">Common Questions</span>
 			</h2>
 		</div>
 		<div class="mt-10">

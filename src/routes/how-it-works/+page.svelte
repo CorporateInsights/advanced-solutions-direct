@@ -22,7 +22,7 @@
 		{
 			icon: Handshake,
 			title: 'Get Connected',
-			description: `If it’s a fit, we introduce you to ${partners.legal}. The firm reviews your situation and sends you its agreement, including any fees, in writing.`,
+			description: `If it’s a fit, we introduce you to ${partners.legal}. The firm reviews your situation and, if it can help, sends you its agreement, including any fees, in writing.`,
 			points: ['Consumer rights attorneys', 'Everything in writing']
 		},
 		{
@@ -53,7 +53,7 @@
 	eyebrow="How It Works"
 	title="Getting Help Starts"
 	highlight=" With One Call."
-	description="It starts with one free call, and every decision along the way is yours."
+	description="Here’s exactly what happens, step by step, and where our part ends."
 />
 
 <section class="pb-16 sm:pb-20">
