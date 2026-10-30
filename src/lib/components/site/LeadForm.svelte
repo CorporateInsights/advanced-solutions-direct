@@ -104,7 +104,7 @@
 			</div>
 		</div>
 		<div class="space-y-1.5">
-			<Label for="{id}-email" class="text-sm font-semibold text-slate-700">Email <span class="font-normal text-slate-500">(optional)</span></Label>
+			<Label for="{id}-email" class="text-sm font-semibold text-slate-700">Email Address</Label>
 			<div class="relative">
 				<Mail class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-500" />
 				<Input
@@ -112,6 +112,7 @@
 					type="email"
 					placeholder="jane@email.com"
 					autocomplete="email"
+					required
 					bind:value={formData.email}
 					class="pl-9 h-11 border-slate-200"
 				/>
