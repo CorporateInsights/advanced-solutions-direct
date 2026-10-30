@@ -14,7 +14,7 @@
 			icon: Heart,
 			title: 'On Your Side',
 			description:
-				'Dealing with collectors is stressful. We treat every person with respect. No judgment, ever.'
+				'Dealing with debt is stressful. We treat every person with respect. No judgment, ever.'
 		},
 		{
 			icon: Eye,
@@ -35,14 +35,14 @@
 	<title>About Us | {site.name}</title>
 	<meta
 		name="description"
-		content="Advanced Solutions Direct connects people dealing with debt collectors with independent licensed partners, including consumer rights law firms."
+		content="Advanced Solutions Direct connects people dealing with overwhelming debt with independent licensed partners, including consumer rights law firms."
 	/>
 </svelte:head>
 
 <PageHeader
 	eyebrow="About Us"
 	title="Straight Answers When"
-	highlight=" Debt Collectors Call."
+	highlight=" Debt Gets Overwhelming."
 	description="We believe everyone deserves to understand their options, and to know where to turn for help."
 />
 
@@ -52,7 +52,7 @@
 			<h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Who We Are</h2>
 			<div class="mt-4 space-y-4 text-lg leading-relaxed text-slate-600">
 				<p>
-					{site.name} helps people who are being pursued by debt collectors find out where they stand
+					{site.name} helps people dealing with overwhelming debt find out where they stand
 					and where to turn next.
 				</p>
 				<p>

@@ -10,8 +10,30 @@
 	import Gavel from '@lucide/svelte/icons/gavel';
 	import Briefcase from '@lucide/svelte/icons/briefcase';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import TrendingUp from '@lucide/svelte/icons/trending-up';
+	import Stethoscope from '@lucide/svelte/icons/stethoscope';
+	import CalendarX from '@lucide/svelte/icons/calendar-x';
 
+	// Broad situations first, then collections-specific ones
 	const situations = [
+		{
+			icon: TrendingUp,
+			title: 'Your balances keep growing',
+			description:
+				'You make payments every month, but interest and fees keep the balance from going anywhere.'
+		},
+		{
+			icon: CalendarX,
+			title: 'You’re falling behind',
+			description:
+				'Juggling due dates has gotten hard, and you’re not sure how to catch up on everything you owe.'
+		},
+		{
+			icon: Stethoscope,
+			title: 'Medical bills are piling up',
+			description:
+				'An illness, injury, or hospital stay left you with bills you weren’t prepared for.'
+		},
 		{
 			icon: PhoneCall,
 			title: 'The calls won’t stop',
@@ -56,7 +78,7 @@
 		'Personal loans',
 		'Store cards',
 		'Utility bills',
-		'Other consumer debts in collections'
+		'Other unsecured consumer debt'
 	];
 </script>
 
@@ -70,9 +92,9 @@
 
 <PageHeader
 	eyebrow="Who We Help"
-	title="If a Debt Collector Is Making Your Life Hard,"
+	title="If Debt Is Making Your Life Hard,"
 	highlight=" Let’s Talk."
-	description="We hear from people every day who are dealing with debt collectors. If any of these sound like you, give us a call."
+	description="We hear from people every day who are dealing with debt, from growing balances to collection calls. If any of these sound like you, give us a call."
 />
 
 <section class="pb-16 sm:pb-20">

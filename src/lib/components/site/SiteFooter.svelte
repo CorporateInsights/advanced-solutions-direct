@@ -10,7 +10,7 @@
 			<div class="md:col-span-2">
 				<img src={site.logoPrimary} alt={site.name} width="384" height="216" class="-ml-3 w-auto h-24" />
 				<p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">
-					Connecting people dealing with debt collectors to independent licensed partners.
+					Connecting people dealing with debt to independent licensed partners.
 				</p>
 				<a
 					href={site.phoneHref}

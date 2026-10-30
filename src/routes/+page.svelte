@@ -15,7 +15,6 @@
 	import Scale from '@lucide/svelte/icons/scale';
 	import Lock from '@lucide/svelte/icons/lock';
 	import PhoneCall from '@lucide/svelte/icons/phone-call';
-	import Eye from '@lucide/svelte/icons/eye';
 	import Handshake from '@lucide/svelte/icons/handshake';
 	import CreditCard from '@lucide/svelte/icons/credit-card';
 	import Gavel from '@lucide/svelte/icons/gavel';
@@ -23,17 +22,31 @@
 	import FileCheck from '@lucide/svelte/icons/file-check';
 	import Users from '@lucide/svelte/icons/users';
 	import XCircle from '@lucide/svelte/icons/circle-x';
+	import TrendingUp from '@lucide/svelte/icons/trending-up';
+	import Stethoscope from '@lucide/svelte/icons/stethoscope';
+	import CalendarX from '@lucide/svelte/icons/calendar-x';
 
+	// Broad on purpose: general debt stress first, collections as one situation among several
 	const painPoints = [
 		{
-			icon: PhoneCall,
-			title: 'Calls That Won’t Stop',
-			description: 'Collectors calling your cell, your home, even your job.'
+			icon: TrendingUp,
+			title: 'Balances That Keep Growing',
+			description: 'Interest and fees pile up faster than you can pay them down.'
 		},
 		{
-			icon: Eye,
-			title: 'A Debt You Don’t Recognize',
-			description: 'A collector you’ve never heard of says you owe them money.'
+			icon: Stethoscope,
+			title: 'Medical Bills Piling Up',
+			description: 'Bills from a hospital stay or treatment you weren’t ready for.'
+		},
+		{
+			icon: CalendarX,
+			title: 'Falling Behind',
+			description: 'Juggling due dates and struggling to keep up with what you owe.'
+		},
+		{
+			icon: PhoneCall,
+			title: 'Collectors Calling',
+			description: 'Calls and letters about debts, sometimes ones you don’t recognize.'
 		},
 		{
 			icon: CreditCard,
@@ -42,7 +55,7 @@
 		},
 		{
 			icon: Gavel,
-			title: 'Threats of a Lawsuit',
+			title: 'Worried About a Lawsuit',
 			description: 'Letters or calls saying they’ll take you to court.'
 		}
 	];
@@ -51,7 +64,7 @@
 		{
 			icon: MessageSquare,
 			title: 'Tell Us What’s Going On',
-			description: 'One free, no-pressure call. Who’s contacting you, and what are they saying?'
+			description: 'One free, no-pressure call about your debts and what you’re dealing with.'
 		},
 		{
 			icon: Handshake,
@@ -111,10 +124,10 @@
 </script>
 
 <svelte:head>
-	<title>{site.name} | Debt Collectors Have to Prove It.</title>
+	<title>{site.name} | Overwhelmed by Debt? Find Out Where You Stand.</title>
 	<meta
 		name="description"
-		content="Being contacted by debt collectors? Advanced Solutions Direct connects you with independent licensed partners, including consumer rights law firms. Free, no-obligation consultation."
+		content="Overwhelmed by credit card bills, medical debt, or collection calls? Advanced Solutions Direct connects you with independent licensed partners, including consumer rights law firms. Free, no-obligation consultation."
 	/>
 </svelte:head>
 
@@ -139,21 +152,21 @@
 			<div class="text-center lg:text-left">
 				<Badge variant="outline" class="mb-6 bg-white border-pink-200 text-brand-pink">
 					<Shield class="mr-1.5 w-3 h-3" />
-					You Have Rights
+					You Have Options
 				</Badge>
 
 				<h1
 					class="text-4xl font-extrabold tracking-tight leading-[1.1] text-balance sm:text-5xl lg:text-[3.25rem] xl:text-6xl text-slate-900"
 				>
-					Debt Collectors Have to Prove It.
+					Overwhelmed by Debt?
 					<span class="block mt-1 text-brand-gradient">Find Out Where You Stand.</span>
 				</h1>
 
 				<p
 					class="mx-auto mt-6 max-w-xl text-lg leading-relaxed sm:text-xl lg:mx-0 text-slate-600"
 				>
-					If a debt collector is coming after you, you may have more options than you think. Tell
-					us what’s going on, and we’ll connect you with {partners.general} who can help.
+					Whether balances keep growing or collectors are already calling, you may have more options
+					than you think. Tell us what’s going on, and we’ll connect you with {partners.general} who can help.
 				</p>
 
 				<div class="mx-auto mt-8 space-y-3 max-w-md text-left lg:mx-0">
@@ -195,9 +208,9 @@
 	>
 		<div>
 			<p class="text-2xl font-extrabold text-white sm:text-3xl">
-				Collectors have rules they must follow.
+				You don’t have to figure this out alone.
 			</p>
-			<p class="mt-1 text-lg text-white/90">Not all of them do. Find out if yours did.</p>
+			<p class="mt-1 text-lg text-white/90">One free call can help you understand your options.</p>
 		</div>
 		<Button
 			size="lg"
@@ -217,10 +230,10 @@
 			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
 				Does Any of This <span class="text-brand-gradient">Sound Familiar?</span>
 			</h2>
-			<p class="mt-4 text-lg text-slate-600">You’re not alone, and you don’t have to handle it alone.</p>
+			<p class="mt-4 text-lg text-slate-600">Debt shows up in a lot of ways. If any of these sound like you, let’s talk.</p>
 		</div>
 
-		<div class="grid gap-4 mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+		<div class="grid gap-4 mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
 			{#each painPoints as point}
 				<Card
 					class="bg-white transition-all duration-300 hover:border-pink-200 hover:shadow-lg border-slate-100 hover:shadow-pink-50"
@@ -234,6 +247,20 @@
 					</CardContent>
 				</Card>
 			{/each}
+		</div>
+
+		<!-- The rights angle, kept as a supporting point for people already in collections -->
+		<div
+			class="flex flex-col gap-4 items-start p-5 mx-auto mt-10 max-w-3xl rounded-2xl border border-pink-100 sm:flex-row sm:items-center sm:p-6 bg-pink-50/40"
+		>
+			<div class="flex justify-center items-center w-11 h-11 rounded-xl bg-brand-gradient shrink-0">
+				<Shield class="w-5 h-5 text-white" />
+			</div>
+			<p class="text-sm leading-relaxed sm:text-base text-slate-700">
+				<span class="font-bold text-slate-900">Already hearing from collectors?</span> They have
+				rules they must follow, and they have to be able to back up what they say you owe. You may
+				have more rights than you realize.
+			</p>
 		</div>
 
 		<div class="flex flex-col gap-4 justify-center items-center mt-10 sm:flex-row">

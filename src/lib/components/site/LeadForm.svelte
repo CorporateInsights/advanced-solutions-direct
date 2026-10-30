@@ -12,10 +12,11 @@
 
 	let { id }: { id: string } = $props();
 
-	const collectorOptions = ['Yes', 'No', 'Not sure'];
+	// Broad, easy first question. Ranges are for routing only; no eligibility promise implied.
+	const debtOptions = ['Under $10K', '$10K–$25K', 'Over $25K', 'Not sure'];
 
 	let formData = $state({
-		contacted: '',
+		debtAmount: '',
 		name: '',
 		phone: '',
 		email: ''
@@ -50,21 +51,21 @@
 		<!-- Easy first question to start the form; optional -->
 		<fieldset class="space-y-1.5">
 			<legend class="mb-1.5 text-xs font-semibold text-slate-600">
-				Is a debt collector contacting you?
+				Roughly how much debt are you dealing with?
 			</legend>
-			<div class="grid grid-cols-3 gap-2">
-				{#each collectorOptions as option}
+			<div class="grid grid-cols-2 gap-2">
+				{#each debtOptions as option}
 					<label
-						class="flex justify-center items-center h-10 text-sm font-semibold rounded-lg border cursor-pointer transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-pink {formData.contacted ===
+						class="flex justify-center items-center h-10 text-sm font-semibold rounded-lg border cursor-pointer transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-pink {formData.debtAmount ===
 						option
 							? 'border-brand-pink bg-pink-50 text-slate-900'
 							: 'border-slate-200 text-slate-600 hover:border-pink-200'}"
 					>
 						<input
 							type="radio"
-							name="{id}-contacted"
+							name="{id}-debt-amount"
 							value={option}
-							bind:group={formData.contacted}
+							bind:group={formData.debtAmount}
 							class="sr-only"
 						/>
 						{option}

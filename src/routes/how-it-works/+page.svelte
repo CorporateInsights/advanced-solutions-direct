@@ -16,7 +16,7 @@
 			icon: MessageSquare,
 			title: 'Tell Us What’s Going On',
 			description:
-				'Call us or fill out a quick form. We’ll ask who’s contacting you and what’s been going on, and explain your options in plain English.',
+				'Call us or fill out a quick form. We’ll ask about your debts and what’s been going on, and explain your options in plain English.',
 			points: ['No cost', 'No obligation', 'No pressure']
 		},
 		{
@@ -29,14 +29,14 @@
 			icon: Scale,
 			title: 'The Law Firm Takes It From There',
 			description:
-				'If you decide to move forward, the law firm represents you and works directly with the collectors, so you’re not facing them alone. Our part is done once you’re connected.',
+				'If you decide to move forward, the law firm represents you and works directly with your creditors and collectors, so you’re not facing them alone. Our part is done once you’re connected.',
 			points: ['You decide whether to sign', 'The law firm handles the legal work']
 		}
 	];
 
 	const bringToCall = [
-		{ icon: FileText, text: 'Any letters or notices you’ve received from collectors' },
-		{ icon: Users, text: 'The names of the companies contacting you' },
+		{ icon: FileText, text: 'Recent statements or letters from creditors or collectors' },
+		{ icon: Users, text: 'A rough list of who you owe and how much' },
 		{ icon: Clock, text: 'A few minutes to talk about what’s been happening' }
 	];
 </script>
@@ -45,7 +45,7 @@
 	<title>How It Works | {site.name}</title>
 	<meta
 		name="description"
-		content="Getting help with debt collectors starts with one free call. Tell us what's going on, and if it's a fit, we'll connect you with an independent consumer rights law firm."
+		content="Getting help with overwhelming debt starts with one free call. Tell us what's going on, and if it's a fit, we'll connect you with an independent consumer rights law firm."
 	/>
 </svelte:head>
 

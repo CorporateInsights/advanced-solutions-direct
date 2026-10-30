@@ -13,7 +13,7 @@
 
 <!-- Top Bar -->
 <div class="py-2 px-4 text-sm font-medium text-center text-white bg-brand-gradient-ui">
-	Being contacted by a debt collector? You may have more options than you think.
+	Overwhelmed by debt? You may have more options than you think.
 </div>
 
 <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur-md">

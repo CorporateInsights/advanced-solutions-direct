@@ -26,7 +26,7 @@ export const coreFaqs: Faq[] = [
 	{
 		question: 'What happens on the call?',
 		answer:
-			'It’s a quick, no-pressure conversation with a member of our team. We’re not lawyers and we’re not debt collectors. We’ll ask who’s contacting you and what’s been going on, walk you through your options, and, if it’s a fit, connect you with a partner that can help.'
+			'It’s a quick, no-pressure conversation with a member of our team. We’re not lawyers and we’re not debt collectors. We’ll ask about your debts and what’s been going on, walk you through your options, and, if it’s a fit, connect you with a partner that can help.'
 	}
 ];
 

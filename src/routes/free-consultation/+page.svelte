@@ -8,7 +8,7 @@
 	const expect = [
 		{
 			title: 'We listen',
-			description: 'Tell us who’s contacting you and what’s been going on.'
+			description: 'Tell us about your debts and what’s been going on.'
 		},
 		{
 			title: 'We explain your options',
@@ -25,7 +25,7 @@
 	<title>Free Consultation | {site.name}</title>
 	<meta
 		name="description"
-		content="Request a free, no-obligation consultation with Advanced Solutions Direct. Find out your options for dealing with debt collectors."
+		content="Request a free, no-obligation consultation with Advanced Solutions Direct. Find out your options for dealing with overwhelming debt."
 	/>
 </svelte:head>
 
