@@ -35,7 +35,7 @@
 	<title>About Us | {site.name}</title>
 	<meta
 		name="description"
-		content="Advanced Solutions Direct connects people dealing with overwhelming debt with independent licensed partners, including consumer rights law firms."
+		content="Advanced Solutions Direct connects people dealing with overwhelming debt with independent partners, including consumer rights law firms."
 	/>
 </svelte:head>
 
@@ -43,7 +43,7 @@
 	eyebrow="About Us"
 	title="Straight Answers When"
 	highlight=" Debt Gets Overwhelming."
-	description="We believe everyone deserves to understand their options, and to know where to turn for help."
+	description="We’re the first call: we listen, explain how the process works, and connect you with an independent law firm if it’s a fit."
 />
 
 <section class="pb-16 sm:pb-20">
@@ -56,7 +56,7 @@
 					and where to turn next.
 				</p>
 				<p>
-					Debt collection can be a legal issue, and legal issues deserve lawyers. That’s why we work
+					Debt problems often involve legal rights, and legal questions deserve lawyers. That’s why we work
 					with {partners.general}, including consumer rights law firms. Our job is to listen and
 					connect you. The legal work is handled by the law firm, under its own agreement with you.
 				</p>

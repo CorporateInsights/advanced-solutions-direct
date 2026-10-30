@@ -16,20 +16,20 @@
 			icon: MessageSquare,
 			title: 'Tell Us What’s Going On',
 			description:
-				'Call us or fill out a quick form. We’ll ask about your debts and what’s been going on, and explain your options in plain English.',
+				'Call us or fill out a quick form. We’ll ask about your debts and what’s been going on, and explain how the process works in plain English.',
 			points: ['No cost', 'No obligation', 'No pressure']
 		},
 		{
 			icon: Handshake,
 			title: 'Get Matched',
 			description: `If it’s a fit, we connect you with ${partners.legal}. The firm sends you its agreement, including any fees, in writing to review before you sign anything.`,
-			points: ['Licensed consumer rights attorneys', 'Everything explained up front']
+			points: ['Consumer rights attorneys', 'Everything explained up front']
 		},
 		{
 			icon: Scale,
-			title: 'The Law Firm Takes It From There',
+			title: 'The Firm Explains, You Decide',
 			description:
-				'If you decide to move forward, the law firm represents you and works directly with your creditors and collectors, so you’re not facing them alone. Our part is done once you’re connected.',
+				'The law firm explains what it can do for your specific accounts. If you choose to sign with the firm, it handles that work under its own agreement with you. Our part ends once you’re connected.',
 			points: ['You decide whether to sign', 'The law firm handles the legal work']
 		}
 	];

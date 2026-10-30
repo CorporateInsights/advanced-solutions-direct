@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ctaClass } from '$lib/site';
+	import { site, ctaClass, legalNav } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
@@ -43,20 +43,20 @@
 		</div>
 		<h3 class="mb-2 text-xl font-bold text-slate-900">Thanks, We Got It!</h3>
 		<p class="text-sm text-slate-600">
-			A member of our team will reach out soon to set up your free consultation.
+			A member of our team will reach out during business hours ({site.hours}).
 		</p>
 	</div>
 {:else}
 	<form {id} onsubmit={handleSubmit} class="space-y-3">
 		<!-- Easy first question to start the form; optional -->
 		<fieldset class="space-y-1.5">
-			<legend class="mb-1.5 text-xs font-semibold text-slate-600">
+			<legend class="mb-1.5 text-sm font-semibold text-slate-700">
 				Roughly how much debt are you dealing with?
 			</legend>
 			<div class="grid grid-cols-2 gap-2">
 				{#each debtOptions as option}
 					<label
-						class="flex justify-center items-center h-10 text-sm font-semibold rounded-lg border cursor-pointer transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-pink {formData.debtAmount ===
+						class="flex justify-center items-center h-11 text-sm font-semibold rounded-lg border cursor-pointer transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-pink {formData.debtAmount ===
 						option
 							? 'border-brand-pink bg-pink-50 text-slate-900'
 							: 'border-slate-200 text-slate-600 hover:border-pink-200'}"
@@ -74,7 +74,7 @@
 			</div>
 		</fieldset>
 		<div class="space-y-1.5">
-			<Label for="{id}-name" class="text-xs font-semibold text-slate-600">Full Name</Label>
+			<Label for="{id}-name" class="text-sm font-semibold text-slate-700">Full Name</Label>
 			<div class="relative">
 				<User class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-500" />
 				<Input
@@ -89,7 +89,7 @@
 			</div>
 		</div>
 		<div class="space-y-1.5">
-			<Label for="{id}-phone" class="text-xs font-semibold text-slate-600">Phone Number</Label>
+			<Label for="{id}-phone" class="text-sm font-semibold text-slate-700">Phone Number</Label>
 			<div class="relative">
 				<Phone class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-500" />
 				<Input
@@ -104,7 +104,7 @@
 			</div>
 		</div>
 		<div class="space-y-1.5">
-			<Label for="{id}-email" class="text-xs font-semibold text-slate-600">Email Address</Label>
+			<Label for="{id}-email" class="text-sm font-semibold text-slate-700">Email <span class="font-normal text-slate-500">(optional)</span></Label>
 			<div class="relative">
 				<Mail class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-500" />
 				<Input
@@ -112,7 +112,6 @@
 					type="email"
 					placeholder="jane@email.com"
 					autocomplete="email"
-					required
 					bind:value={formData.email}
 					class="pl-9 h-11 border-slate-200"
 				/>
@@ -148,9 +147,10 @@
 				<ArrowRight class="ml-2 w-4 h-4" />
 			{/if}
 		</Button>
-		<p class="flex gap-1.5 justify-center items-center pt-1 text-xs text-slate-500">
-			<Lock class="w-3 h-3" />
-			Your information is kept private and secure
+		<p class="pt-1 text-xs text-center text-slate-500">
+			<Lock class="inline mr-1 w-3 h-3 align-[-1px]" />
+			We use your information as described in our
+			<a href={legalNav[0].href} class="underline hover:text-slate-700">Privacy Policy</a>.
 		</p>
 	</form>
 {/if}

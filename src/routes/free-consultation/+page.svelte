@@ -11,7 +11,7 @@
 			description: 'Tell us about your debts and what’s been going on.'
 		},
 		{
-			title: 'We explain your options',
+			title: 'We explain how it works',
 			description: 'Straight answers, no jargon, and no pressure to sign up for anything.'
 		},
 		{
@@ -25,7 +25,7 @@
 	<title>Free Consultation | {site.name}</title>
 	<meta
 		name="description"
-		content="Request a free, no-obligation consultation with Advanced Solutions Direct. Find out your options for dealing with overwhelming debt."
+		content="Request a free, no-obligation consultation with Advanced Solutions Direct. Find out how we may be able to help with overwhelming debt."
 	/>
 </svelte:head>
 

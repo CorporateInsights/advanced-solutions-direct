@@ -13,7 +13,10 @@
 
 <!-- Top Bar -->
 <div class="py-2 px-4 text-sm font-medium text-center text-white bg-brand-gradient-ui">
-	Overwhelmed by debt? You may have more options than you think.
+	Free, no-obligation call
+	<span class="hidden sm:inline">· {site.hours}</span>
+	·
+	<a href={site.phoneHref} class="font-bold underline underline-offset-2">{site.phoneDisplay}</a>
 </div>
 
 <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur-md">

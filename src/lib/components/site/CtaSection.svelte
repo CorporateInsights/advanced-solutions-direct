@@ -6,9 +6,10 @@
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	let {
-		title = 'Find Out Where You Stand.',
-		description = 'One free, no-pressure conversation can help you understand your options. There’s no cost and no obligation.'
-	}: { title?: string; description?: string } = $props();
+		title = 'Ready to Talk It Through?',
+		description = 'One free, no-pressure conversation can help you understand how this works. There’s no cost and no obligation.',
+		href = consultationHref
+	}: { title?: string; description?: string; href?: string } = $props();
 </script>
 
 <section class="py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
@@ -33,7 +34,7 @@
 				</h2>
 				<p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate-600">{description}</p>
 				<div class="flex flex-col gap-4 justify-center items-center mt-8 sm:flex-row">
-					<Button size="lg" href={consultationHref} class="h-12 px-8 text-base {ctaClass}">
+					<Button size="lg" {href} class="h-12 px-8 text-base {ctaClass}">
 						Get My Free Consultation
 						<ArrowRight class="ml-2 w-4 h-4" />
 					</Button>

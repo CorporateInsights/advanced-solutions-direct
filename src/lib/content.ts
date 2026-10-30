@@ -3,6 +3,18 @@ import { site, partners } from '$lib/site';
 
 export type Faq = { question: string; answer: string };
 
+// Debt types we can generally consider, and common exclusions (confirm with the partner)
+export const debtTypes = [
+	'Credit cards',
+	'Medical bills',
+	'Personal loans',
+	'Store cards',
+	'Private student loans',
+	'Utility bills',
+	'Other personal debts'
+];
+export const debtExclusions = 'Mortgages, federal student loans, and tax debt usually aren’t a fit.';
+
 // Core objection-handling FAQs (shown on the home page and at the top of /faq)
 export const coreFaqs: Faq[] = [
 	{
@@ -11,22 +23,21 @@ export const coreFaqs: Faq[] = [
 	},
 	{
 		question: 'Are you a law firm?',
-		answer: `No. ${site.name} is not a law firm and doesn’t give legal advice. We listen, explain your options, and connect you with ${partners.legal} that handles the legal work directly.`
+		answer: `No. ${site.name} is not a law firm and doesn’t give legal advice. We listen, explain how the process works, and connect you with ${partners.legal} that handles the legal work directly.`
 	},
 	{
-		question: 'Will the collection calls stop?',
-		answer:
-			'Once a debt collector knows an attorney represents you, they’re generally required to contact the attorney instead of you. Every situation is different, and the law firm can tell you what to expect in yours.'
+		question: 'What kinds of debt can you help with?',
+		answer: `Most types of personal debt, including credit cards, medical bills, and personal loans. ${debtExclusions} Tell us what you’re dealing with on your free call and we’ll let you know if it’s a fit.`
 	},
 	{
 		question: 'How long does it take?',
 		answer:
-			'It depends on your accounts and how quickly collectors respond. The law firm you’re matched with can give you a better idea once it reviews your situation.'
+			'It depends on your accounts and your situation. The law firm can give you a better idea once it reviews them.'
 	},
 	{
 		question: 'What happens on the call?',
 		answer:
-			'It’s a quick, no-pressure conversation with a member of our team. We’re not lawyers and we’re not debt collectors. We’ll ask about your debts and what’s been going on, walk you through your options, and, if it’s a fit, connect you with a partner that can help.'
+			'It’s a short, no-pressure conversation with a member of our team. We’re not lawyers and we’re not debt collectors. We’ll ask about your debts and what’s been going on, explain how the process works, and, if it’s a fit, connect you with a partner who can review your situation.'
 	}
 ];
 
@@ -37,9 +48,9 @@ export const moreFaqs: Faq[] = [
 		answer: `No. ${site.name} doesn’t contact your creditors, validate your debts, or negotiate on your behalf. That work is done by ${partners.legal}, under its own written agreement with you.`
 	},
 	{
-		question: 'What kinds of debt can you help with?',
+		question: 'What if debt collectors are already calling me?',
 		answer:
-			'We commonly hear from people dealing with credit cards, medical bills, personal loans, and other consumer debts that have gone to collections. Tell us what you’re dealing with on your free call and we’ll let you know if we can help.'
+			'You may have more rights than you realize. Collectors have rules they must follow, and they have to be able to back up what they say you owe. If you hire an attorney, collectors are generally required to contact the attorney instead of you. Original creditors may follow different rules. The law firm can tell you what to expect for your accounts.'
 	},
 	{
 		question: 'Do I have to sign anything on the call?',
@@ -54,6 +65,11 @@ export const moreFaqs: Faq[] = [
 	{
 		question: 'What if I’m being sued over a debt?',
 		answer:
-			'Don’t ignore it. Court deadlines matter. Call us right away so we can get you connected as quickly as possible.'
+			'Don’t ignore it. Court deadlines are strict, so speak with an attorney right away. You can call us too, and if our partner firm handles situations like yours, we’ll connect you quickly.'
+	},
+	{
+		question: 'How do you get paid?',
+		answer:
+			'Talking with us is free. We may be paid by our partners when we refer someone to them. That never changes what we tell you on the call.'
 	}
 ];

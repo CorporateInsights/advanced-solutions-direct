@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site, partners, consultationHref, ctaClass, link } from '$lib/site';
+	import { site, partners, ctaClass, link } from '$lib/site';
 	import { coreFaqs } from '$lib/content';
 	import { Button } from '$lib/components/ui/button';
 	import { Card, CardContent } from '$lib/components/ui/card';
@@ -11,16 +11,13 @@
 	import Shield from '@lucide/svelte/icons/shield';
 	import CheckCircle2 from '@lucide/svelte/icons/check-circle-2';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-	import Star from '@lucide/svelte/icons/star';
 	import Scale from '@lucide/svelte/icons/scale';
-	import Lock from '@lucide/svelte/icons/lock';
 	import PhoneCall from '@lucide/svelte/icons/phone-call';
 	import Handshake from '@lucide/svelte/icons/handshake';
 	import CreditCard from '@lucide/svelte/icons/credit-card';
 	import Gavel from '@lucide/svelte/icons/gavel';
 	import MessageSquare from '@lucide/svelte/icons/message-square';
 	import FileCheck from '@lucide/svelte/icons/file-check';
-	import Users from '@lucide/svelte/icons/users';
 	import XCircle from '@lucide/svelte/icons/circle-x';
 	import TrendingUp from '@lucide/svelte/icons/trending-up';
 	import Stethoscope from '@lucide/svelte/icons/stethoscope';
@@ -51,7 +48,7 @@
 		{
 			icon: CreditCard,
 			title: 'Collections on Your Credit',
-			description: 'Collection accounts showing up on your credit report.'
+			description: 'Collection accounts on your credit report that you want to understand.'
 		},
 		{
 			icon: Gavel,
@@ -82,8 +79,8 @@
 	const benefits = [
 		{
 			icon: Scale,
-			title: 'Licensed Partners',
-			description: `We work only with ${partners.general}, including consumer rights law firms.`
+			title: 'Independent Attorneys',
+			description: 'Legal work is done by an independent consumer rights law firm, not by us.'
 		},
 		{
 			icon: Handshake,
@@ -93,11 +90,11 @@
 		{
 			icon: MessageSquare,
 			title: 'Plain English',
-			description: 'Straight answers about your options. No jargon, no runaround.'
+			description: 'Straight answers about how this works. No jargon, no runaround.'
 		},
 		{
 			icon: FileCheck,
-			title: 'No Surprises',
+			title: 'Fees in Writing',
 			description: 'Any fees are set by the law firm and explained in writing before you commit.'
 		}
 	];
@@ -105,7 +102,7 @@
 	// Honesty section: plain statement of a broker's role
 	const weDo = [
 		'Listen to what’s going on',
-		'Explain your options in plain English',
+		'Explain how the process works',
 		`Connect you with ${partners.general}`
 	];
 	const weDont = [
@@ -115,19 +112,15 @@
 		'Pressure you to sign up'
 	];
 
-	// PLACEHOLDER testimonials: replace only with real, verified client reviews (with permission).
-	const testimonials = [
-		{ name: 'Client Name', location: 'City, ST' },
-		{ name: 'Client Name', location: 'City, ST' },
-		{ name: 'Client Name', location: 'City, ST' }
-	];
+	// Buttons on the home page scroll to the form already on this page
+	const formAnchor = '#lead-form';
 </script>
 
 <svelte:head>
 	<title>{site.name} | Overwhelmed by Debt? Find Out Where You Stand.</title>
 	<meta
 		name="description"
-		content="Overwhelmed by credit card bills, medical debt, or collection calls? Advanced Solutions Direct connects you with independent licensed partners, including consumer rights law firms. Free, no-obligation consultation."
+		content="Overwhelmed by credit card bills, medical debt, or collection calls? Advanced Solutions Direct connects you with independent partners, including consumer rights law firms. Free, no-obligation consultation."
 	/>
 </svelte:head>
 
@@ -152,7 +145,7 @@
 			<div class="text-center lg:text-left">
 				<Badge variant="outline" class="mb-6 bg-white border-pink-200 text-brand-pink">
 					<Shield class="mr-1.5 w-3 h-3" />
-					You Have Options
+					Free Consultation · Not a Law Firm
 				</Badge>
 
 				<h1
@@ -165,12 +158,13 @@
 				<p
 					class="mx-auto mt-6 max-w-xl text-lg leading-relaxed sm:text-xl lg:mx-0 text-slate-600"
 				>
-					Whether balances keep growing or collectors are already calling, you may have more options
-					than you think. Tell us what’s going on, and we’ll connect you with {partners.general} who can help.
+					Credit cards, medical bills, collection calls: whatever you’re dealing with, tell us
+					what’s going on. If it’s a fit, we’ll connect you with {partners.legal} that may be able
+					to help.
 				</p>
 
 				<div class="mx-auto mt-8 space-y-3 max-w-md text-left lg:mx-0">
-					{#each ['Free, no-obligation consultation', 'Help understanding your options', 'Matched with licensed partners, including consumer rights law firms'] as point}
+					{#each ['Free, no-obligation consultation', 'Most types of personal debt considered', 'Connected with an independent consumer rights law firm'] as point}
 						<div class="flex gap-3 items-start">
 							<CheckCircle2 class="mt-0.5 w-5 h-5 text-brand-pink shrink-0" />
 							<span class="text-slate-700">{point}</span>
@@ -185,11 +179,11 @@
 					</div>
 					<div class="flex gap-2 items-center text-slate-500">
 						<Scale class="w-4 h-4" />
-						<span class="text-xs font-medium">Licensed Partners</span>
+						<span class="text-xs font-medium">Independent Law Firm</span>
 					</div>
 					<div class="flex gap-2 items-center text-slate-500">
-						<Lock class="w-4 h-4" />
-						<span class="text-xs font-medium">Private & Secure</span>
+						<MessageSquare class="w-4 h-4" />
+						<span class="text-xs font-medium">No Pressure</span>
 					</div>
 				</div>
 			</div>
@@ -210,14 +204,14 @@
 			<p class="text-2xl font-extrabold text-white sm:text-3xl">
 				You don’t have to figure this out alone.
 			</p>
-			<p class="mt-1 text-lg text-white/90">One free call can help you understand your options.</p>
+			<p class="mt-1 text-lg text-white/90">One free call can help you understand how this works.</p>
 		</div>
 		<Button
 			size="lg"
-			href={consultationHref}
+			href={formAnchor}
 			class="h-12 px-7 font-bold bg-white shadow-lg hover:bg-white/90 text-brand-pink shrink-0"
 		>
-			Talk to Us Free
+			Talk to a Real Person
 			<ArrowRight class="ml-2 w-4 h-4" />
 		</Button>
 	</div>
@@ -249,22 +243,8 @@
 			{/each}
 		</div>
 
-		<!-- The rights angle, kept as a supporting point for people already in collections -->
-		<div
-			class="flex flex-col gap-4 items-start p-5 mx-auto mt-10 max-w-3xl rounded-2xl border border-pink-100 sm:flex-row sm:items-center sm:p-6 bg-pink-50/40"
-		>
-			<div class="flex justify-center items-center w-11 h-11 rounded-xl bg-brand-gradient shrink-0">
-				<Shield class="w-5 h-5 text-white" />
-			</div>
-			<p class="text-sm leading-relaxed sm:text-base text-slate-700">
-				<span class="font-bold text-slate-900">Already hearing from collectors?</span> They have
-				rules they must follow, and they have to be able to back up what they say you owe. You may
-				have more rights than you realize.
-			</p>
-		</div>
-
 		<div class="flex flex-col gap-4 justify-center items-center mt-10 sm:flex-row">
-			<Button size="lg" href={consultationHref} class={ctaClass}>
+			<Button size="lg" href={formAnchor} class={ctaClass}>
 				Get My Free Consultation
 				<ArrowRight class="ml-2 w-4 h-4" />
 			</Button>
@@ -330,10 +310,10 @@
 				Why Start With <span class="text-brand-gradient">Us?</span>
 			</h2>
 			<p class="mt-4 text-lg text-slate-600">
-				Getting help shouldn’t feel like another fight. One call gets you real answers and a clear
-				next step.
+				Getting help shouldn’t feel like another fight. One call gets you straight answers about how this
+				works.
 			</p>
-			<Button size="lg" href={consultationHref} class="mt-8 {ctaClass}">
+			<Button size="lg" href={formAnchor} class="mt-8 {ctaClass}">
 				Talk to Us Free
 				<ArrowRight class="ml-2 w-4 h-4" />
 			</Button>
@@ -400,7 +380,7 @@
 			Legal work is handled by {partners.legal}, under its own written agreement with you.
 		</p>
 		<div class="mt-8 text-center">
-			<Button size="lg" href={consultationHref} class={ctaClass}>
+			<Button size="lg" href={formAnchor} class={ctaClass}>
 				Get My Free Consultation
 				<ArrowRight class="ml-2 w-4 h-4" />
 			</Button>
@@ -408,51 +388,8 @@
 	</div>
 </section>
 
-<!-- Testimonials (PLACEHOLDERS) -->
-<section class="py-16 bg-white sm:py-20 lg:py-24">
-	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
-				What Our <span class="text-brand-gradient">Clients Say</span>
-			</h2>
-		</div>
-
-		<div class="grid gap-6 mt-12 lg:grid-cols-3 lg:gap-8">
-			{#each testimonials as testimonial}
-				<Card class="bg-white border-2 border-dashed border-slate-200">
-					<CardContent class="pt-6">
-						<Badge variant="outline" class="mb-4 text-amber-700 bg-amber-50 border-amber-200">
-							Placeholder: add verified review
-						</Badge>
-						<div class="flex gap-1 mb-4">
-							{#each Array(5) as _}
-								<Star class="w-4 h-4 text-slate-200 fill-slate-200" />
-							{/each}
-						</div>
-						<p class="mb-6 text-sm italic leading-relaxed text-slate-500">
-							A real client review goes here. Only use genuine reviews from actual clients, shared
-							with their permission.
-						</p>
-						<div class="flex gap-3 items-center pt-4 border-t border-slate-100">
-							<div
-								class="flex justify-center items-center w-10 h-10 rounded-full bg-slate-100 text-slate-500"
-							>
-								<Users class="w-4 h-4" />
-							</div>
-							<div>
-								<p class="text-sm font-semibold text-slate-500">{testimonial.name}</p>
-								<p class="text-xs text-slate-500">{testimonial.location}</p>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
-			{/each}
-		</div>
-	</div>
-</section>
-
 <!-- FAQ -->
-<section class="py-16 sm:py-20 lg:py-24 bg-slate-50">
+<section class="py-16 bg-white sm:py-20 lg:py-24">
 	<div class="px-4 mx-auto max-w-3xl sm:px-6 lg:px-8">
 		<div class="text-center">
 			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
@@ -470,4 +407,4 @@
 	</div>
 </section>
 
-<CtaSection />
+<CtaSection href={formAnchor} />

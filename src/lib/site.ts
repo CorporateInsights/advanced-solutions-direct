@@ -23,7 +23,7 @@ export const site = {
 // never says "our attorneys" or that we do the work. Change these if the partner type changes.
 export const partners = {
 	// General phrase: hero, footer, "why us", anywhere broad
-	general: 'independent licensed partners',
+	general: 'independent partners',
 	// Specific phrase: only where we explain who handles the legal work
 	legal: 'an independent consumer rights law firm'
 };

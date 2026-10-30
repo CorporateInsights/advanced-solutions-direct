@@ -1,26 +1,25 @@
 <script lang="ts">
-	import { site, consultationHref } from '$lib/site';
+	import { site, consultationHref, ctaClass } from '$lib/site';
+	import { debtTypes, debtExclusions } from '$lib/content';
+	import { Button } from '$lib/components/ui/button';
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import PageHeader from '$lib/components/site/PageHeader.svelte';
 	import CtaSection from '$lib/components/site/CtaSection.svelte';
 	import PhoneCall from '@lucide/svelte/icons/phone-call';
 	import Eye from '@lucide/svelte/icons/eye';
-	import Calculator from '@lucide/svelte/icons/calculator';
 	import CreditCard from '@lucide/svelte/icons/credit-card';
 	import Gavel from '@lucide/svelte/icons/gavel';
-	import Briefcase from '@lucide/svelte/icons/briefcase';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 	import TrendingUp from '@lucide/svelte/icons/trending-up';
 	import Stethoscope from '@lucide/svelte/icons/stethoscope';
 	import CalendarX from '@lucide/svelte/icons/calendar-x';
 
-	// Broad situations first, then collections-specific ones
+	// Broad situations first, then collections-related ones, all with equal weight
 	const situations = [
 		{
 			icon: TrendingUp,
 			title: 'Your balances keep growing',
-			description:
-				'You make payments every month, but interest and fees keep the balance from going anywhere.'
+			description: 'Interest and fees keep the balance from going anywhere, no matter what you pay.'
 		},
 		{
 			icon: CalendarX,
@@ -31,54 +30,26 @@
 		{
 			icon: Stethoscope,
 			title: 'Medical bills are piling up',
-			description:
-				'An illness, injury, or hospital stay left you with bills you weren’t prepared for.'
+			description: 'An illness, injury, or hospital stay left you with bills you weren’t prepared for.'
 		},
 		{
 			icon: PhoneCall,
-			title: 'The calls won’t stop',
+			title: 'Collectors keep calling',
 			description:
-				'Collectors are calling your cell, your home, maybe several times a day, and you dread every ring.'
+				'Calls and letters about your debts, maybe several times a day, and you dread every ring.'
 		},
 		{
 			icon: Eye,
-			title: 'You don’t recognize the debt',
+			title: 'A debt doesn’t look right',
 			description:
-				'A company you’ve never heard of says you owe them, and you’re not sure where the debt even came from.'
-		},
-		{
-			icon: Calculator,
-			title: 'The balance doesn’t add up',
-			description:
-				'Fees and interest have piled on, and the amount they want doesn’t match what you remember.'
+				'You don’t recognize a debt, or the amount someone says you owe doesn’t match what you remember.'
 		},
 		{
 			icon: CreditCard,
-			title: 'Collections are on your credit report',
+			title: 'Collections on your credit report',
 			description:
-				'Collection accounts are showing up on your report and holding you back from what you want next.'
-		},
-		{
-			icon: Gavel,
-			title: 'You’re being threatened with a lawsuit',
-			description:
-				'You’ve gotten letters or calls about court, or you’ve already been served. Don’t wait on this one.'
-		},
-		{
-			icon: Briefcase,
-			title: 'They’re calling your work or family',
-			description:
-				'Collectors are contacting you at your job or reaching out to people you know about your debt.'
+				'Collection accounts are showing up on your credit report and you want to understand them.'
 		}
-	];
-
-	const debtTypes = [
-		'Credit cards',
-		'Medical bills',
-		'Personal loans',
-		'Store cards',
-		'Utility bills',
-		'Other unsecured consumer debt'
 	];
 </script>
 
@@ -86,7 +57,7 @@
 	<title>Who We Help | {site.name}</title>
 	<meta
 		name="description"
-		content="Dealing with nonstop collection calls, a debt you don’t recognize, or threats of a lawsuit? Advanced Solutions Direct can connect you with independent licensed partners who can help."
+		content="Growing balances, medical bills, falling behind, or collection calls: Advanced Solutions Direct can connect you with independent partners who may be able to help."
 	/>
 </svelte:head>
 
@@ -94,33 +65,44 @@
 	eyebrow="Who We Help"
 	title="If Debt Is Making Your Life Hard,"
 	highlight=" Let’s Talk."
-	description="We hear from people every day who are dealing with debt, from growing balances to collection calls. If any of these sound like you, give us a call."
+	description="People reach out to us about all kinds of debt, from growing balances to collection calls. If any of these sound like you, give us a call."
 />
 
 <section class="pb-16 sm:pb-20">
 	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
 		<div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
 			{#each situations as s}
-				<a href={consultationHref} class="group">
-					<Card
-						class="h-full bg-white transition-all duration-300 group-hover:border-pink-200 group-hover:shadow-lg border-slate-100 group-hover:shadow-pink-50"
-					>
-						<CardContent class="flex flex-col pt-6 h-full">
-							<div class="flex justify-center items-center mb-4 w-12 h-12 bg-orange-50 rounded-xl">
-								<s.icon class="w-6 h-6 text-brand-orange" />
-							</div>
-							<h2 class="mb-2 text-lg font-bold text-slate-900">{s.title}</h2>
-							<p class="flex-1 text-sm leading-relaxed text-slate-600">{s.description}</p>
-							<span
-								class="inline-flex gap-1 items-center mt-5 text-sm font-semibold text-brand-pink"
-							>
-								Sound like you? Let’s talk
-								<ArrowRight class="w-4 h-4 transition-transform group-hover:translate-x-1" />
-							</span>
-						</CardContent>
-					</Card>
-				</a>
+				<Card class="h-full bg-white border-slate-100">
+					<CardContent class="pt-6">
+						<div class="flex justify-center items-center mb-4 w-12 h-12 bg-orange-50 rounded-xl">
+							<s.icon class="w-6 h-6 text-brand-orange" />
+						</div>
+						<h2 class="mb-2 text-lg font-bold text-slate-900">{s.title}</h2>
+						<p class="text-sm leading-relaxed text-slate-600">{s.description}</p>
+					</CardContent>
+				</Card>
 			{/each}
+		</div>
+
+		<!-- Lawsuits get their own note: the right first step is an attorney, not a sales call -->
+		<div
+			class="flex flex-col gap-4 items-start p-5 mx-auto mt-8 max-w-3xl rounded-2xl border border-amber-200 sm:flex-row sm:items-center sm:p-6 bg-amber-50"
+		>
+			<div class="flex justify-center items-center w-11 h-11 bg-amber-100 rounded-xl shrink-0">
+				<Gavel class="w-5 h-5 text-amber-700" />
+			</div>
+			<p class="text-sm leading-relaxed sm:text-base text-slate-700">
+				<span class="font-bold text-slate-900">Been served with a lawsuit?</span> Don’t ignore it.
+				Court deadlines are strict, so speak with an attorney right away. You can call us too, and if
+				our partner firm handles situations like yours, we’ll connect you quickly.
+			</p>
+		</div>
+
+		<div class="mt-10 text-center">
+			<Button size="lg" href={consultationHref} class={ctaClass}>
+				Sound Like You? Let’s Talk
+				<ArrowRight class="ml-2 w-4 h-4" />
+			</Button>
 		</div>
 	</div>
 </section>
@@ -140,9 +122,9 @@
 			{/each}
 		</div>
 		<p class="mt-6 text-sm text-slate-500">
-			Not sure if your situation qualifies? That’s exactly what the free consultation is for.
+			{debtExclusions} Not sure about yours? That’s exactly what the free consultation is for.
 		</p>
 	</div>
 </section>
 
-<CtaSection title="Sound Like You? Give Us a Call." />
+<CtaSection title="Ready to Talk It Through?" />

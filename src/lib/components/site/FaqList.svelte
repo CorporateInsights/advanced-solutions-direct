@@ -16,7 +16,7 @@
 			<AccordionTrigger class="text-base font-semibold text-left hover:no-underline text-slate-900">
 				{faq.question}
 			</AccordionTrigger>
-			<AccordionContent class="text-sm leading-relaxed text-slate-600">
+			<AccordionContent class="text-base leading-relaxed sm:text-sm text-slate-600">
 				{faq.answer}
 			</AccordionContent>
 		</AccordionItem>

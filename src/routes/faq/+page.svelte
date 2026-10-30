@@ -10,14 +10,14 @@
 	<title>FAQ | {site.name}</title>
 	<meta
 		name="description"
-		content="Answers to common questions about Advanced Solutions Direct, our free consultation, and how we connect you with independent licensed partners."
+		content="Answers to common questions about Advanced Solutions Direct, our free consultation, and how we connect you with independent partners."
 	/>
 </svelte:head>
 
 <PageHeader
 	eyebrow="FAQ"
-	title="Questions?"
-	highlight=" We’ve Got Answers."
+	title="Straight Answers to"
+	highlight=" Common Questions."
 	description="Here are the questions we hear most. For anything specific to your situation, the free consultation is the best place to start."
 />
 
