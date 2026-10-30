@@ -41,8 +41,8 @@
 
 <PageHeader
 	eyebrow="About Us"
-	title="Helping People Push Back on"
-	highlight=" Debt Collectors."
+	title="Straight Answers When"
+	highlight=" Debt Collectors Call."
 	description="We believe everyone deserves to understand their options, and to know where to turn for help."
 />
 
@@ -66,7 +66,7 @@
 		<div
 			class="flex justify-center items-center rounded-2xl border-2 border-dashed aspect-[4/3] border-slate-200 bg-slate-50"
 		>
-			<p class="px-6 text-sm text-center text-slate-400">Placeholder: team or brand photo</p>
+			<p class="px-6 text-sm text-center text-slate-500">Placeholder: team or brand photo</p>
 		</div>
 	</div>
 </section>

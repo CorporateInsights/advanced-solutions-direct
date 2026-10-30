@@ -11,7 +11,7 @@ export const coreFaqs: Faq[] = [
 	},
 	{
 		question: 'Are you a law firm?',
-		answer: `No. ${site.name} is not a law firm and doesn’t give legal advice. We listen, explain your options in plain English, and connect you with ${partners.legal} that handles the legal work directly.`
+		answer: `No. ${site.name} is not a law firm and doesn’t give legal advice. We listen, explain your options, and connect you with ${partners.legal} that handles the legal work directly.`
 	},
 	{
 		question: 'Will the collection calls stop?',
@@ -26,7 +26,7 @@ export const coreFaqs: Faq[] = [
 	{
 		question: 'What happens on the call?',
 		answer:
-			'It’s a quick, no-pressure conversation. We’ll ask who’s contacting you and what’s been going on, explain your options in plain English, and, if it’s a fit, connect you with a partner that can help.'
+			'It’s a quick, no-pressure conversation with a member of our team. We’re not lawyers and we’re not debt collectors. We’ll ask who’s contacting you and what’s been going on, walk you through your options, and, if it’s a fit, connect you with a partner that can help.'
 	}
 ];
 

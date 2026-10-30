@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BrandArc from './BrandArc.svelte';
 	import { site, consultationHref, ctaClass } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import Phone from '@lucide/svelte/icons/phone';
@@ -22,6 +23,9 @@
 				<div
 					class="absolute -right-24 -bottom-24 w-72 h-72 rounded-full bg-purple-200/30 blur-3xl"
 				></div>
+				<BrandArc
+					class="absolute -bottom-2 left-1/2 w-[48rem] max-w-none -translate-x-1/2 opacity-[0.10]"
+				/>
 			</div>
 			<div class="relative">
 				<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">

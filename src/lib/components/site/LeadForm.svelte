@@ -12,7 +12,10 @@
 
 	let { id }: { id: string } = $props();
 
+	const collectorOptions = ['Yes', 'No', 'Not sure'];
+
 	let formData = $state({
+		contacted: '',
 		name: '',
 		phone: '',
 		email: ''
@@ -44,10 +47,35 @@
 	</div>
 {:else}
 	<form {id} onsubmit={handleSubmit} class="space-y-3">
+		<!-- Easy first question to start the form; optional -->
+		<fieldset class="space-y-1.5">
+			<legend class="mb-1.5 text-xs font-semibold text-slate-600">
+				Is a debt collector contacting you?
+			</legend>
+			<div class="grid grid-cols-3 gap-2">
+				{#each collectorOptions as option}
+					<label
+						class="flex justify-center items-center h-10 text-sm font-semibold rounded-lg border cursor-pointer transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-pink {formData.contacted ===
+						option
+							? 'border-brand-pink bg-pink-50 text-slate-900'
+							: 'border-slate-200 text-slate-600 hover:border-pink-200'}"
+					>
+						<input
+							type="radio"
+							name="{id}-contacted"
+							value={option}
+							bind:group={formData.contacted}
+							class="sr-only"
+						/>
+						{option}
+					</label>
+				{/each}
+			</div>
+		</fieldset>
 		<div class="space-y-1.5">
 			<Label for="{id}-name" class="text-xs font-semibold text-slate-600">Full Name</Label>
 			<div class="relative">
-				<User class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-400" />
+				<User class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-500" />
 				<Input
 					id="{id}-name"
 					type="text"
@@ -62,7 +90,7 @@
 		<div class="space-y-1.5">
 			<Label for="{id}-phone" class="text-xs font-semibold text-slate-600">Phone Number</Label>
 			<div class="relative">
-				<Phone class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-400" />
+				<Phone class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-500" />
 				<Input
 					id="{id}-phone"
 					type="tel"
@@ -77,7 +105,7 @@
 		<div class="space-y-1.5">
 			<Label for="{id}-email" class="text-xs font-semibold text-slate-600">Email Address</Label>
 			<div class="relative">
-				<Mail class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-400" />
+				<Mail class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-slate-500" />
 				<Input
 					id="{id}-email"
 					type="email"

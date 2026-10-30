@@ -7,6 +7,7 @@
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
 	import FaqList from '$lib/components/site/FaqList.svelte';
 	import CtaSection from '$lib/components/site/CtaSection.svelte';
+	import BrandArc from '$lib/components/site/BrandArc.svelte';
 	import Shield from '@lucide/svelte/icons/shield';
 	import CheckCircle2 from '@lucide/svelte/icons/check-circle-2';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
@@ -126,6 +127,11 @@
 		<div
 			class="absolute -bottom-48 -left-40 w-[28rem] h-[28rem] rounded-full bg-orange-300/25 blur-3xl"
 		></div>
+		<!-- Brand arc rising behind the form -->
+		<BrandArc
+			class="hidden absolute -right-24 top-10 w-[46rem] opacity-[0.13] lg:block xl:right-0"
+		/>
+		<BrandArc class="absolute -top-6 -right-28 w-[26rem] opacity-[0.10] lg:hidden" />
 	</div>
 
 	<div class="relative py-14 px-4 mx-auto max-w-7xl sm:py-20 sm:px-6 lg:py-24 lg:px-8">
@@ -137,7 +143,7 @@
 				</Badge>
 
 				<h1
-					class="text-4xl font-extrabold tracking-tight leading-tight sm:text-5xl lg:text-6xl text-slate-900"
+					class="text-4xl font-extrabold tracking-tight leading-[1.1] text-balance sm:text-5xl lg:text-[3.25rem] xl:text-6xl text-slate-900"
 				>
 					Debt Collectors Have to Prove It.
 					<span class="block mt-1 text-brand-gradient">Find Out Where You Stand.</span>
@@ -151,7 +157,7 @@
 				</p>
 
 				<div class="mx-auto mt-8 space-y-3 max-w-md text-left lg:mx-0">
-					{#each ['Free, no-obligation consultation', 'Straight answers in plain English', 'Matched with licensed partners, including consumer rights law firms'] as point}
+					{#each ['Free, no-obligation consultation', 'Help understanding your options', 'Matched with licensed partners, including consumer rights law firms'] as point}
 						<div class="flex gap-3 items-start">
 							<CheckCircle2 class="mt-0.5 w-5 h-5 text-brand-pink shrink-0" />
 							<span class="text-slate-700">{point}</span>
@@ -291,27 +297,34 @@
 
 <!-- Why Us -->
 <section class="py-16 bg-white sm:py-20 lg:py-24">
-	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
+	<div class="grid gap-12 items-center px-4 mx-auto max-w-7xl sm:px-6 lg:grid-cols-5 lg:gap-16 lg:px-8">
+		<div class="text-center lg:col-span-2 lg:text-left">
+			<h2 class="text-3xl font-extrabold tracking-tight text-balance sm:text-4xl text-slate-900">
 				Why Start With <span class="text-brand-gradient">Us?</span>
 			</h2>
 			<p class="mt-4 text-lg text-slate-600">
-				Getting help shouldn’t feel like another fight.
+				Getting help shouldn’t feel like another fight. One call gets you real answers and a clear
+				next step.
 			</p>
+			<Button size="lg" href={consultationHref} class="mt-8 {ctaClass}">
+				Talk to Us Free
+				<ArrowRight class="ml-2 w-4 h-4" />
+			</Button>
 		</div>
 
-		<div class="grid gap-4 mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+		<div class="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:col-span-3">
 			{#each benefits as benefit}
-				<Card class="bg-white border-slate-100">
-					<CardContent class="pt-6">
-						<div class="flex justify-center items-center mb-4 w-12 h-12 bg-pink-50 rounded-xl">
-							<benefit.icon class="w-6 h-6 text-brand-pink" />
-						</div>
-						<h3 class="mb-2 text-base font-bold text-slate-900">{benefit.title}</h3>
-						<p class="text-sm leading-relaxed text-slate-600">{benefit.description}</p>
-					</CardContent>
-				</Card>
+				<div class="flex gap-4">
+					<div
+						class="flex justify-center items-center w-12 h-12 rounded-xl bg-brand-gradient shrink-0 shadow-md shadow-pink-200"
+					>
+						<benefit.icon class="w-6 h-6 text-white" />
+					</div>
+					<div>
+						<h3 class="text-base font-bold text-slate-900">{benefit.title}</h3>
+						<p class="mt-1 text-sm leading-relaxed text-slate-600">{benefit.description}</p>
+					</div>
+				</div>
 			{/each}
 		</div>
 	</div>
@@ -347,7 +360,7 @@
 					<ul class="space-y-3">
 						{#each weDont as item}
 							<li class="flex gap-3 items-start text-slate-700">
-								<XCircle class="mt-0.5 w-5 h-5 text-slate-400 shrink-0" />
+								<XCircle class="mt-0.5 w-5 h-5 text-slate-500 shrink-0" />
 								{item}
 							</li>
 						{/each}
@@ -359,6 +372,12 @@
 		<p class="mx-auto mt-6 max-w-2xl text-sm text-center text-slate-500">
 			Legal work is handled by {partners.legal}, under its own written agreement with you.
 		</p>
+		<div class="mt-8 text-center">
+			<Button size="lg" href={consultationHref} class={ctaClass}>
+				Get My Free Consultation
+				<ArrowRight class="ml-2 w-4 h-4" />
+			</Button>
+		</div>
 	</div>
 </section>
 
@@ -383,19 +402,19 @@
 								<Star class="w-4 h-4 text-slate-200 fill-slate-200" />
 							{/each}
 						</div>
-						<p class="mb-6 text-sm italic leading-relaxed text-slate-400">
+						<p class="mb-6 text-sm italic leading-relaxed text-slate-500">
 							A real client review goes here. Only use genuine reviews from actual clients, shared
 							with their permission.
 						</p>
 						<div class="flex gap-3 items-center pt-4 border-t border-slate-100">
 							<div
-								class="flex justify-center items-center w-10 h-10 rounded-full bg-slate-100 text-slate-400"
+								class="flex justify-center items-center w-10 h-10 rounded-full bg-slate-100 text-slate-500"
 							>
 								<Users class="w-4 h-4" />
 							</div>
 							<div>
-								<p class="text-sm font-semibold text-slate-400">{testimonial.name}</p>
-								<p class="text-xs text-slate-400">{testimonial.location}</p>
+								<p class="text-sm font-semibold text-slate-500">{testimonial.name}</p>
+								<p class="text-xs text-slate-500">{testimonial.location}</p>
 							</div>
 						</div>
 					</CardContent>

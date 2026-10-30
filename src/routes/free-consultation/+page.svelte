@@ -12,7 +12,7 @@
 		},
 		{
 			title: 'We explain your options',
-			description: 'Straight answers in plain English. No jargon, no pressure.'
+			description: 'Straight answers, no jargon, and no pressure to sign up for anything.'
 		},
 		{
 			title: 'We connect you',
@@ -43,7 +43,7 @@
 		<div class="grid gap-10 items-start lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-10">
 			<div class="text-center lg:text-left">
 				<h1
-					class="text-4xl font-extrabold tracking-tight leading-tight sm:text-5xl text-slate-900"
+					class="text-4xl font-extrabold tracking-tight leading-tight text-balance sm:text-5xl text-slate-900"
 				>
 					Your Free
 					<span class="text-brand-gradient">Consultation</span>
@@ -101,6 +101,14 @@
 								{point}
 							</span>
 						{/each}
+					</div>
+
+					<div class="p-4 mt-8 text-sm leading-relaxed rounded-xl border border-pink-100 bg-pink-50/40 text-slate-600">
+						<p class="font-semibold text-slate-900">Who you’ll talk to</p>
+						<p class="mt-1">
+							A member of the {site.name} team. We’re not lawyers and we’re not debt collectors. Our
+							job is to understand your situation and help you find your next step.
+						</p>
 					</div>
 				</div>
 			</div>

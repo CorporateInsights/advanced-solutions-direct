@@ -20,14 +20,14 @@
 		} catch {}
 	}
 
-	const options: { value: Choice; label: string }[] = [
-		{ value: 'brand', label: 'Brand colors' },
-		{ value: 'accessible', label: 'High contrast' }
+	const options: { value: Choice; label: string; short: string }[] = [
+		{ value: 'brand', label: 'Brand colors', short: 'Brand' },
+		{ value: 'accessible', label: 'High contrast', short: 'Contrast' }
 	];
 </script>
 
 <div
-	class="fixed left-3 bottom-20 z-50 flex items-center gap-1 rounded-full border border-slate-200 bg-white/95 p-1 text-xs shadow-lg backdrop-blur-md md:bottom-4"
+	class="fixed left-3 bottom-20 z-50 md:left-auto md:right-4 md:bottom-4 flex items-center gap-1 rounded-full border border-slate-200 bg-white/95 p-1 text-xs shadow-lg backdrop-blur-md "
 	role="group"
 	aria-label="Preview color palette"
 >
@@ -37,11 +37,11 @@
 			type="button"
 			aria-pressed={palette === option.value}
 			onclick={() => choose(option.value)}
-			class="rounded-full px-3 py-1.5 font-semibold transition-colors {palette === option.value
+			class="rounded-full px-2.5 py-1 font-semibold sm:px-3 sm:py-1.5 transition-colors {palette === option.value
 				? 'bg-slate-900 text-white'
 				: 'text-slate-600 hover:bg-slate-100'}"
 		>
-			{option.label}
+			<span class="sm:hidden">{option.short}</span><span class="hidden sm:inline">{option.label}</span>
 		</button>
 	{/each}
 </div>

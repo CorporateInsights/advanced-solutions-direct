@@ -19,11 +19,11 @@
 					<Phone class="w-4 h-4 text-brand-pink" />
 					{site.phoneDisplay}
 				</a>
-				<p class="mt-1 text-xs text-slate-400">{site.hours}</p>
+				<p class="mt-1 text-xs text-slate-500">{site.hours}</p>
 			</div>
 
 			<div>
-				<p class="mb-3 text-xs font-semibold tracking-widest uppercase text-slate-400">Company</p>
+				<p class="mb-3 text-xs font-semibold tracking-widest uppercase text-slate-500">Company</p>
 				<ul class="space-y-2 text-sm">
 					{#each nav as item}
 						<li>
@@ -41,7 +41,7 @@
 			</div>
 
 			<div>
-				<p class="mb-3 text-xs font-semibold tracking-widest uppercase text-slate-400">Legal</p>
+				<p class="mb-3 text-xs font-semibold tracking-widest uppercase text-slate-500">Legal</p>
 				<ul class="space-y-2 text-sm">
 					{#each legalNav as item}
 						<li>
@@ -57,7 +57,7 @@
 		<div class="pt-8 mt-10 space-y-3 border-t border-slate-100">
 			<!-- TODO: have compliance/counsel review this disclaimer, and add a disclosure of any
 			     compensation Advanced Solutions Direct receives from partner law firms if applicable. -->
-			<p class="text-xs leading-relaxed text-slate-400">
+			<p class="text-xs leading-relaxed text-slate-500">
 				{site.name} is not a law firm, does not provide legal advice, and is not a substitute for an
 				attorney. We connect consumers with independent licensed partners, including consumer rights law firms, which operate independently. Legal services are provided solely
 				by those firms, and an attorney-client relationship is formed only through a written agreement
@@ -66,7 +66,7 @@
 				credit repair organization, a debt settlement company, or a lender. Services are not available
 				in all states. <a href={link('/disclosures')} class="underline hover:text-slate-600">See full disclosures</a>.
 			</p>
-			<p class="text-xs text-slate-400">
+			<p class="text-xs text-slate-500">
 				© {new Date().getFullYear()}
 				{site.name}. All rights reserved.
 			</p>
