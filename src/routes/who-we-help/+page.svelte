@@ -64,15 +64,15 @@
 	<title>Who We Help | {site.name}</title>
 	<meta
 		name="description"
-		content="Dealing with nonstop collection calls, a debt you don’t recognize, or threats of a lawsuit? Advanced Solutions Direct can connect you with consumer rights attorneys."
+		content="Dealing with nonstop collection calls, a debt you don’t recognize, or threats of a lawsuit? Advanced Solutions Direct can connect you with independent licensed partners who can help."
 	/>
 </svelte:head>
 
 <PageHeader
 	eyebrow="Who We Help"
 	title="If a Debt Collector Is Making Your Life Hard,"
-	highlight=" We Can Help."
-	description="We work with everyday people dealing with debt collectors. If any of these sound like you, let’s talk."
+	highlight=" Let’s Talk."
+	description="We hear from people every day who are dealing with debt collectors. If any of these sound like you, give us a call."
 />
 
 <section class="pb-16 sm:pb-20">
@@ -123,4 +123,4 @@
 	</div>
 </section>
 
-<CtaSection title="Sound Like You? Let’s Talk." />
+<CtaSection title="Sound Like You? Give Us a Call." />

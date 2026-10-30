@@ -17,6 +17,15 @@ export const site = {
 	hours: 'Mon–Fri 6am–6pm PT'
 };
 
+// How the site refers to the companies clients are matched with. We're a broker, so the copy
+// never says "our attorneys" or that we do the work. Change these if the partner type changes.
+export const partners = {
+	// General phrase: hero, footer, "why us", anywhere broad
+	general: 'independent licensed partners',
+	// Specific phrase: only where we explain who handles the legal work
+	legal: 'an independent consumer rights law firm'
+};
+
 export const nav = [
 	{ href: link('/how-it-works'), label: 'How It Works' },
 	{ href: link('/who-we-help'), label: 'Who We Help' },

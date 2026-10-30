@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site } from '$lib/site';
+	import { site, partners } from '$lib/site';
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import PageHeader from '$lib/components/site/PageHeader.svelte';
 	import CtaSection from '$lib/components/site/CtaSection.svelte';
@@ -14,24 +14,23 @@
 	const steps = [
 		{
 			icon: MessageSquare,
-			title: 'Have a Free Consultation',
+			title: 'Tell Us What’s Going On',
 			description:
 				'Call us or fill out a quick form. We’ll ask who’s contacting you and what’s been going on, and explain your options in plain English.',
 			points: ['No cost', 'No obligation', 'No pressure']
 		},
 		{
 			icon: Handshake,
-			title: 'Get Matched With a Law Firm',
-			description:
-				'If it’s a fit, we connect you with an independent consumer rights law firm. You’ll get its agreement, including any fees, in writing to review before you sign.',
-			points: ['Experienced consumer rights attorneys', 'Everything explained up front']
+			title: 'Get Matched',
+			description: `If it’s a fit, we connect you with ${partners.legal}. The firm sends you its agreement, including any fees, in writing to review before you sign anything.`,
+			points: ['Licensed consumer rights attorneys', 'Everything explained up front']
 		},
 		{
 			icon: Scale,
-			title: 'The Attorneys Take It From There',
+			title: 'The Law Firm Takes It From There',
 			description:
-				'Once you’re represented, the law firm steps in and works directly with the collectors on your behalf, so you’re not facing them alone.',
-			points: ['Attorneys handle the collectors', 'You stay in the loop']
+				'If you decide to move forward, the law firm represents you and works directly with the collectors, so you’re not facing them alone. Our part is done once you’re connected.',
+			points: ['You decide whether to sign', 'The law firm handles the legal work']
 		}
 	];
 
@@ -46,7 +45,7 @@
 	<title>How It Works | {site.name}</title>
 	<meta
 		name="description"
-		content="Getting help with debt collectors is simple: a free consultation, a match with an independent consumer rights law firm, and attorneys who take it from there."
+		content="Getting help with debt collectors starts with one free call. Tell us what's going on, and if it's a fit, we'll connect you with an independent consumer rights law firm."
 	/>
 </svelte:head>
 

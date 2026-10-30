@@ -10,7 +10,7 @@
 			<div class="md:col-span-2">
 				<img src={site.logoPrimary} alt={site.name} width="384" height="216" class="-ml-3 w-auto h-24" />
 				<p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">
-					Connecting people dealing with debt collectors to independent consumer rights law firms.
+					Connecting people dealing with debt collectors to independent licensed partners.
 				</p>
 				<a
 					href={site.phoneHref}
@@ -59,7 +59,7 @@
 			     compensation Advanced Solutions Direct receives from partner law firms if applicable. -->
 			<p class="text-xs leading-relaxed text-slate-400">
 				{site.name} is not a law firm, does not provide legal advice, and is not a substitute for an
-				attorney. We connect consumers with independent law firms. Legal services are provided solely
+				attorney. We connect consumers with independent licensed partners, including consumer rights law firms, which operate independently. Legal services are provided solely
 				by those firms, and an attorney-client relationship is formed only through a written agreement
 				between you and the law firm. Any fees for legal services are set by and payable to the law
 				firm as described in that agreement. Results vary and are not guaranteed. {site.name} is not a

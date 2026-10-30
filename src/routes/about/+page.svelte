@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site, link } from '$lib/site';
+	import { site, partners, link } from '$lib/site';
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import PageHeader from '$lib/components/site/PageHeader.svelte';
 	import CtaSection from '$lib/components/site/CtaSection.svelte';
@@ -35,7 +35,7 @@
 	<title>About Us | {site.name}</title>
 	<meta
 		name="description"
-		content="Advanced Solutions Direct helps people dealing with debt collectors connect with independent consumer rights law firms."
+		content="Advanced Solutions Direct connects people dealing with debt collectors with independent licensed partners, including consumer rights law firms."
 	/>
 </svelte:head>
 
@@ -43,7 +43,7 @@
 	eyebrow="About Us"
 	title="Helping People Push Back on"
 	highlight=" Debt Collectors."
-	description="We believe everyone deserves to understand their options and to have experienced attorneys in their corner."
+	description="We believe everyone deserves to understand their options, and to know where to turn for help."
 />
 
 <section class="pb-16 sm:pb-20">
@@ -53,12 +53,12 @@
 			<div class="mt-4 space-y-4 text-lg leading-relaxed text-slate-600">
 				<p>
 					{site.name} helps people who are being pursued by debt collectors find out where they stand
-					and get connected with the right legal help.
+					and where to turn next.
 				</p>
 				<p>
-					Debt collection is a legal issue, and legal issues deserve lawyers. That’s why we partner
-					with independent consumer rights law firms. We make getting started easy; their attorneys
-					handle the legal work.
+					Debt collection can be a legal issue, and legal issues deserve lawyers. That’s why we work
+					with {partners.general}, including consumer rights law firms. Our job is to listen and
+					connect you. The legal work is handled by the law firm, under its own agreement with you.
 				</p>
 			</div>
 		</div>
@@ -102,13 +102,13 @@
 			</div>
 			<div>
 				<h2 class="flex gap-2 items-center text-xl font-bold text-slate-900">
-					How Our Partnership Works
+					How Our Partnerships Work
 				</h2>
 				<p class="mt-2 leading-relaxed text-slate-600">
 					{site.name} is not a law firm and doesn’t provide legal advice. When you’re a fit, we connect
-					you with an independent consumer rights law firm. You’ll sign an agreement directly with
-					that firm, which sets out the services it will provide and any fees, so you know exactly
-					what you’re getting before you commit.
+					you with {partners.legal}. Our partners operate independently. You’ll sign an agreement
+					directly with the firm, which sets out the services it will provide and any fees, so you
+					know exactly what you’re getting before you commit.
 				</p>
 				<p class="flex gap-1.5 items-center mt-3 text-sm text-slate-500">
 					<Info class="w-4 h-4" />

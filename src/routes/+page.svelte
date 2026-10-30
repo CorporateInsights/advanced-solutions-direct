@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site, consultationHref, ctaClass, link } from '$lib/site';
+	import { site, partners, consultationHref, ctaClass, link } from '$lib/site';
 	import { coreFaqs } from '$lib/content';
 	import { Button } from '$lib/components/ui/button';
 	import { Card, CardContent } from '$lib/components/ui/card';
@@ -21,6 +21,7 @@
 	import MessageSquare from '@lucide/svelte/icons/message-square';
 	import FileCheck from '@lucide/svelte/icons/file-check';
 	import Users from '@lucide/svelte/icons/users';
+	import XCircle from '@lucide/svelte/icons/circle-x';
 
 	const painPoints = [
 		{
@@ -48,26 +49,27 @@
 	const steps = [
 		{
 			icon: MessageSquare,
-			title: 'Free Consultation',
-			description: 'Tell us what’s going on. No cost, no obligation, no pressure.'
+			title: 'Tell Us What’s Going On',
+			description: 'One free, no-pressure call. Who’s contacting you, and what are they saying?'
 		},
 		{
 			icon: Handshake,
 			title: 'Get Matched',
-			description: 'If it’s a fit, we connect you with an independent consumer rights law firm.'
+			description: `If it’s a fit, we connect you with ${partners.legal}.`
 		},
 		{
 			icon: Scale,
-			title: 'Attorneys Step In',
-			description: 'The attorneys take it from there and deal with the collectors for you.'
+			title: 'You Decide',
+			description:
+				'The law firm explains its services and fees in writing. Whether to move forward is up to you.'
 		}
 	];
 
 	const benefits = [
 		{
 			icon: Scale,
-			title: 'Real Attorneys',
-			description: 'You’re matched with a licensed consumer rights law firm, not a form letter.'
+			title: 'Licensed Partners',
+			description: `We work only with ${partners.general}, including consumer rights law firms.`
 		},
 		{
 			icon: Handshake,
@@ -82,8 +84,21 @@
 		{
 			icon: FileCheck,
 			title: 'No Surprises',
-			description: 'Any legal fees are explained in writing before you commit to anything.'
+			description: 'Any fees are set by the law firm and explained in writing before you commit.'
 		}
+	];
+
+	// Honesty section: plain statement of a broker's role
+	const weDo = [
+		'Listen to what’s going on',
+		'Explain your options in plain English',
+		`Connect you with ${partners.general}`
+	];
+	const weDont = [
+		'Give legal advice',
+		'Contact your creditors or collectors',
+		'Promise results',
+		'Pressure you to sign up'
 	];
 
 	// PLACEHOLDER testimonials: replace only with real, verified client reviews (with permission).
@@ -98,7 +113,7 @@
 	<title>{site.name} | Debt Collectors Have to Prove It.</title>
 	<meta
 		name="description"
-		content="Being contacted by debt collectors? Advanced Solutions Direct connects you with independent consumer rights attorneys. Free, no-obligation consultation."
+		content="Being contacted by debt collectors? Advanced Solutions Direct connects you with independent licensed partners, including consumer rights law firms. Free, no-obligation consultation."
 	/>
 </svelte:head>
 
@@ -125,18 +140,18 @@
 					class="text-4xl font-extrabold tracking-tight leading-tight sm:text-5xl lg:text-6xl text-slate-900"
 				>
 					Debt Collectors Have to Prove It.
-					<span class="block mt-1 text-brand-gradient">We Help Make Sure They Do.</span>
+					<span class="block mt-1 text-brand-gradient">Find Out Where You Stand.</span>
 				</h1>
 
 				<p
 					class="mx-auto mt-6 max-w-xl text-lg leading-relaxed sm:text-xl lg:mx-0 text-slate-600"
 				>
-					If a debt collector is coming after you, you may have more options than you think. We
-					connect you with consumer rights attorneys who can step in on your behalf.
+					If a debt collector is coming after you, you may have more options than you think. Tell
+					us what’s going on, and we’ll connect you with {partners.general} who can help.
 				</p>
 
 				<div class="mx-auto mt-8 space-y-3 max-w-md text-left lg:mx-0">
-					{#each ['Free, no-obligation consultation', 'Matched with experienced consumer rights attorneys', 'Let the attorneys deal with the collectors'] as point}
+					{#each ['Free, no-obligation consultation', 'Straight answers in plain English', 'Matched with licensed partners, including consumer rights law firms'] as point}
 						<div class="flex gap-3 items-start">
 							<CheckCircle2 class="mt-0.5 w-5 h-5 text-brand-pink shrink-0" />
 							<span class="text-slate-700">{point}</span>
@@ -151,7 +166,7 @@
 					</div>
 					<div class="flex gap-2 items-center text-slate-500">
 						<Scale class="w-4 h-4" />
-						<span class="text-xs font-medium">Partner Law Firms</span>
+						<span class="text-xs font-medium">Licensed Partners</span>
 					</div>
 					<div class="flex gap-2 items-center text-slate-500">
 						<Lock class="w-4 h-4" />
@@ -302,8 +317,53 @@
 	</div>
 </section>
 
-<!-- Testimonials (PLACEHOLDERS) -->
+<!-- What We Do / Don't Do -->
 <section class="py-16 sm:py-20 lg:py-24 bg-slate-50">
+	<div class="px-4 mx-auto max-w-5xl sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-2xl text-center">
+			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
+				No Promises We <span class="text-brand-gradient">Can’t Keep</span>
+			</h2>
+			<p class="mt-4 text-lg text-slate-600">Here’s exactly what we do, and what we don’t.</p>
+		</div>
+
+		<div class="grid gap-6 mt-12 md:grid-cols-2">
+			<Card class="bg-white border-slate-100">
+				<CardContent class="pt-6">
+					<h3 class="mb-4 text-lg font-bold text-slate-900">What We Do</h3>
+					<ul class="space-y-3">
+						{#each weDo as item}
+							<li class="flex gap-3 items-start text-slate-700">
+								<CheckCircle2 class="mt-0.5 w-5 h-5 text-brand-pink shrink-0" />
+								{item}
+							</li>
+						{/each}
+					</ul>
+				</CardContent>
+			</Card>
+			<Card class="bg-white border-slate-100">
+				<CardContent class="pt-6">
+					<h3 class="mb-4 text-lg font-bold text-slate-900">What We Don’t Do</h3>
+					<ul class="space-y-3">
+						{#each weDont as item}
+							<li class="flex gap-3 items-start text-slate-700">
+								<XCircle class="mt-0.5 w-5 h-5 text-slate-400 shrink-0" />
+								{item}
+							</li>
+						{/each}
+					</ul>
+				</CardContent>
+			</Card>
+		</div>
+
+		<p class="mx-auto mt-6 max-w-2xl text-sm text-center text-slate-500">
+			Legal work is handled by {partners.legal}, under its own written agreement with you.
+		</p>
+	</div>
+</section>
+
+<!-- Testimonials (PLACEHOLDERS) -->
+<section class="py-16 bg-white sm:py-20 lg:py-24">
 	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
@@ -346,7 +406,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="py-16 bg-white sm:py-20 lg:py-24">
+<section class="py-16 sm:py-20 lg:py-24 bg-slate-50">
 	<div class="px-4 mx-auto max-w-3xl sm:px-6 lg:px-8">
 		<div class="text-center">
 			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">

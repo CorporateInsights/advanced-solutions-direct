@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site } from '$lib/site';
+	import { site, partners } from '$lib/site';
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
 	import Phone from '@lucide/svelte/icons/phone';
 	import Check from '@lucide/svelte/icons/check';
@@ -16,7 +16,7 @@
 		},
 		{
 			title: 'We connect you',
-			description: 'If it’s a fit, we match you with an independent consumer rights law firm.'
+			description: `If it’s a fit, we match you with ${partners.legal}. That’s where our part ends.`
 		}
 	];
 </script>
