@@ -68,6 +68,16 @@
 					Already enrolled in debt settlement but struggling to afford your payments? You may
 					qualify for a more affordable alternative!
 				</p>
+
+				<!-- Desktop only, so the form stays near the top on phones -->
+				<img
+					src={link('/images/hero-couple-kitchen.webp')}
+					alt="A couple at their kitchen table looking over their options on a laptop"
+					width="1400"
+					height="933"
+					fetchpriority="high"
+					class="hidden object-cover mt-8 w-full max-w-xl rounded-2xl shadow-xl lg:block aspect-[16/10] shadow-slate-900/10"
+				/>
 			</div>
 
 			<div class="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
@@ -85,9 +95,17 @@
 <!-- Band -->
 <section class="py-12 px-4 bg-brand-gradient-ui sm:px-6 lg:px-8">
 	<div
-		class="flex flex-col gap-6 justify-between items-center mx-auto max-w-5xl text-center md:flex-row md:text-left"
+		class="flex flex-col gap-6 justify-between items-center mx-auto max-w-6xl text-center md:flex-row md:gap-8 md:text-left"
 	>
-		<div>
+		<img
+			src={link('/images/band-couple-bills.webp')}
+			alt="An older couple sorting through their bills together"
+			width="1000"
+			height="563"
+			loading="lazy"
+			class="object-cover w-full max-w-sm rounded-2xl ring-4 shadow-xl md:w-64 lg:w-72 aspect-[16/10] ring-white/30 shrink-0"
+		/>
+		<div class="md:flex-1">
 			<p class="text-2xl font-extrabold text-white text-balance sm:text-3xl">
 				Behind on Bills? In Collections? Debt Settlement Payments Too High?
 			</p>

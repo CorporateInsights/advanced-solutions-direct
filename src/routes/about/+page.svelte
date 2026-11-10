@@ -63,12 +63,14 @@
 				</p>
 			</div>
 		</div>
-		<!-- Placeholder for a team or brand photo -->
-		<div
-			class="flex justify-center items-center rounded-2xl border-2 border-dashed aspect-[4/3] border-slate-200 bg-slate-50"
-		>
-			<p class="px-6 text-sm text-center text-slate-500">Placeholder: team or brand photo</p>
-		</div>
+		<!-- Stock photo of a model, not staff or a client. Swap for a real team photo if one is approved. -->
+		<img
+			src={link('/images/about-first-call.webp')}
+			alt="A woman smiling while talking on the phone at home"
+			width="1200"
+			height="675"
+			class="object-cover w-full rounded-2xl shadow-xl aspect-[4/3] object-[35%_50%] shadow-slate-900/10"
+		/>
 	</div>
 </section>
 
