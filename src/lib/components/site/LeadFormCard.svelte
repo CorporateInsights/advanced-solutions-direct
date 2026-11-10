@@ -1,13 +1,20 @@
 <script lang="ts">
-	import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '$lib/components/ui/card';
+	import {
+		Card,
+		CardContent,
+		CardHeader,
+		CardTitle,
+		CardDescription
+	} from '$lib/components/ui/card';
 	import Handshake from '@lucide/svelte/icons/handshake';
 	import LeadForm from './LeadForm.svelte';
 
 	let {
 		id,
 		title = 'Request Your Free Call',
-		description = 'Takes about a minute. A real person will call you.'
-	}: { id: string; title?: string; description?: string } = $props();
+		description = 'Takes about a minute. A real person will call you.',
+		submitLabel
+	}: { id: string; title?: string; description?: string; submitLabel?: string } = $props();
 </script>
 
 <div class="p-[2px] rounded-2xl shadow-2xl bg-brand-gradient shadow-pink-500/15">
@@ -19,10 +26,12 @@
 				<Handshake class="w-6 h-6 text-white" />
 			</div>
 			<CardTitle class="text-xl text-slate-900">{title}</CardTitle>
-			<CardDescription class="text-sm text-slate-500">{description}</CardDescription>
+			{#if description}
+				<CardDescription class="text-sm text-slate-500">{description}</CardDescription>
+			{/if}
 		</CardHeader>
 		<CardContent>
-			<LeadForm {id} />
+			<LeadForm {id} {submitLabel} />
 		</CardContent>
 	</Card>
 </div>

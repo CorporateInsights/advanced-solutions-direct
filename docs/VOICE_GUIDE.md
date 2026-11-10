@@ -51,6 +51,8 @@ These are compliance rules, not style preferences.
   "we'll stop the calls," "our program."
 - **Never promise outcomes.** No savings percentages, "debt free," "eliminate," "erase," timelines
   ("in 24 months"), guaranteed results, or credit score claims.
+- **Never mention credit removal or stopping creditor/collector calls** (owner's rule). No "remove
+  items from your credit report," "stop the calls," or "collectors will contact the attorney instead."
 - **Never mention stopping or pausing payments,** in either direction. That is between the client and
   the law firm.
 - **No unverifiable proof.** No made-up stats, ratings, "thousands helped," "#1," "trusted by,"
@@ -71,7 +73,7 @@ Always pair a call to action with the low-risk reminder: free, no pressure, no o
 | Instead of | Write |
 | --- | --- |
 | We'll eliminate your debt. | Talk to a real person first. |
-| Our attorneys will stop the calls. | If you hire an attorney, collectors generally have to contact the attorney instead of you. |
+| Our attorneys will stop the calls. | (Don't. No claims about stopping calls.) |
 | Save up to 50%! | (Don't. No savings claims.) |
 | Act now before it's too late! | Ready when you are. |
 | Our debt relief program | The law firm explains what it can do for your accounts. |
