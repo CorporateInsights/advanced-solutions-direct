@@ -1,7 +1,7 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn-svelte/tailwind.css";
-@import "@fontsource-variable/montserrat";
+@import 'tw-animate-css';
+@import 'shadcn-svelte/tailwind.css';
+@import '@fontsource-variable/montserrat';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -175,5 +175,15 @@
 	}
 	html {
 		@apply font-sans;
+	}
+}
+
+/* Very wide screens (1600px+, e.g. a 32" monitor): let the page grow to 1440px and scale text and
+   spacing up ~6% so it doesn't look small and lost. 1440px is also the hard cap, so lines of text
+   never get too long on ultra-wide monitors. Laptops and smaller screens are unchanged. */
+@media (min-width: 1600px) {
+	:root {
+		font-size: 106.25%;
+		--container-7xl: 1440px;
 	}
 }

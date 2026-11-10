@@ -158,8 +158,11 @@
 </section>
 
 <!-- Situations, plus the phone line -->
-<section class="relative px-4 pb-14 bg-white sm:px-6 lg:px-8">
-	<ul class="grid gap-4 mx-auto max-w-7xl sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+<!-- Same width and side padding as the hero, so the cards line up with the copy and the form -->
+<section class="relative pb-14 bg-white">
+	<ul
+		class="grid gap-4 px-4 mx-auto max-w-7xl sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:gap-5 lg:px-8"
+	>
 		{#each situations as s}
 			<li
 				class="p-[2px] rounded-2xl shadow-xl transition bg-brand-gradient-ui shadow-purple-900/10 hover:-translate-y-0.5 hover:shadow-2xl"
