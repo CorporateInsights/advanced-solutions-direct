@@ -91,7 +91,7 @@ export const moreFaqs: Faq[] = [
 	{
 		question: 'What if debt collectors are already calling me?',
 		answer:
-			'You may have more rights than you realize. Collectors have rules they must follow, and if you dispute a debt, they generally have to verify it. If you hire an attorney, collectors are generally required to contact the attorney instead of you. Original creditors may follow different rules. The law firm can tell you what to expect for your accounts.'
+			'You may have more rights than you realize. Collectors have rules they must follow, and if you dispute a debt, they generally have to verify it. The law firm can tell you what to expect for your accounts.'
 	},
 	{
 		question: 'Do I have to sign anything on the call?',
@@ -101,7 +101,7 @@ export const moreFaqs: Faq[] = [
 	{
 		question: 'Will this fix my credit?',
 		answer:
-			'No one can guarantee changes to your credit report, and we’re not a credit repair company. The law firm can review your situation, including how your accounts are being reported.'
+			'No one can guarantee changes to your credit report, and we’re not a credit repair company.'
 	},
 	{
 		question: 'What if I’m being sued over a debt?',

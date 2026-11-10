@@ -15,6 +15,8 @@ export const site = {
 	phoneHref: 'tel:18005550123',
 	// TODO: placeholder hours; confirm.
 	hours: 'Mon–Fri 6am–6pm PT',
+	// TODO: list of states served, from the owner. Shown in the landing page disclaimer.
+	statesServed: '[states served]',
 	// TODO: set to false at launch. Shows the brand / high-contrast palette switch for reviewers.
 	showPaletteToggle: true
 };
