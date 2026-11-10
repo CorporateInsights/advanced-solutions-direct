@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site, nav, legalNav, consultationHref, link } from '$lib/site';
+	import { site, footerNav, legalNav, consultationHref, link } from '$lib/site';
 	import Phone from '@lucide/svelte/icons/phone';
 </script>
 
@@ -32,7 +32,7 @@
 			<div>
 				<p class="mb-3 text-xs font-semibold tracking-widest uppercase text-slate-500">Company</p>
 				<ul class="space-y-2 text-sm">
-					{#each nav as item}
+					{#each footerNav as item}
 						<li>
 							<a href={item.href} class="transition-colors text-slate-600 hover:text-slate-900"
 								>{item.label}</a

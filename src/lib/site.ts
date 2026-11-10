@@ -31,13 +31,25 @@ export const partners = {
 	legal: 'an independent consumer rights law firm'
 };
 
+// Header menu, per the owner's Page 1 mockup plus Home
 export const nav = [
+	{ href: link('/'), label: 'Home' },
+	{ href: link('/how-it-works'), label: 'How It Works' },
+	{ href: link('/who-we-help'), label: 'Who We Help' },
+	{ href: link('/faq'), label: 'FAQ' }
+];
+
+// Footer keeps the full list of pages
+export const footerNav = [
 	{ href: link('/'), label: 'Home' },
 	{ href: link('/how-it-works'), label: 'How It Works' },
 	{ href: link('/who-we-help'), label: 'Who We Help' },
 	{ href: link('/about'), label: 'About' },
 	{ href: link('/faq'), label: 'FAQ' }
 ];
+
+// Main call to action label, used in the header, mobile bar and buttons
+export const ctaLabel = 'Explore My Options';
 
 // Legal pages. Each slug is served by src/routes/legal/[slug] (except Disclosures, which has its own page).
 // TODO: final text for each page to be provided by counsel.

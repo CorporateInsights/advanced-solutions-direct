@@ -1,16 +1,12 @@
 <script lang="ts">
-	import { site, ctaClass, legalNav } from '$lib/site';
+	import { site, ctaClass, link } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import { Label } from '$lib/components/ui/label';
 	import CheckCircle2 from '@lucide/svelte/icons/check-circle-2';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-	import Lock from '@lucide/svelte/icons/lock';
 
-	let { id, submitLabel = 'Get My Free Consultation' }: { id: string; submitLabel?: string } =
-		$props();
+	let { id, submitLabel = 'Get Started' }: { id: string; submitLabel?: string } = $props();
 
-	// Fields follow the owner's application form spec. Ranges are for routing only.
+	// Fields follow the owner's Page 1 mockup. Ranges are for routing only.
 	const states = [
 		'Alabama',
 		'Alaska',
@@ -86,6 +82,7 @@
 		'Multiple types',
 		'Other'
 	];
+	const programOptions = ['Yes', 'No', 'Previously'];
 
 	let formData = $state({
 		firstName: '',
@@ -96,7 +93,7 @@
 		totalDebt: '',
 		monthlyPayments: '',
 		debtType: '',
-		inDebtSettlement: ''
+		inDebtReliefProgram: ''
 	});
 
 	let submitted = $state(false);
@@ -112,10 +109,10 @@
 		}, 1500);
 	}
 
-	const labelClass = 'text-sm font-semibold text-slate-700';
-	const fieldClass = 'h-11 border-slate-200';
-	const selectClass =
-		'flex w-full h-11 px-3 text-sm bg-white rounded-md border border-slate-200 shadow-xs outline-none text-slate-900 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 invalid:text-slate-500 [&>option]:text-slate-900';
+	// Labels sit inside the fields (placeholders); real labels stay for screen readers
+	const fieldClass =
+		'block w-full h-11 px-4 text-[0.95rem] font-semibold bg-white rounded-xl border-[1.5px] border-slate-300 text-slate-900 placeholder:font-semibold placeholder:text-slate-700 shadow-sm outline-none transition focus:border-brand-purple/60 focus:ring-[3px] focus:ring-brand-purple/15';
+	const selectClass = `${fieldClass} appearance-none pr-10 invalid:text-slate-700 [&>option]:text-slate-900 bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")] bg-[length:1rem] bg-[position:right_1rem_center] bg-no-repeat`;
 </script>
 
 {#if submitted}
@@ -135,24 +132,26 @@
 		</p>
 	</div>
 {:else}
-	<form {id} onsubmit={handleSubmit} class="space-y-3">
-		<div class="grid grid-cols-2 gap-3">
-			<div class="space-y-1.5">
-				<Label for="{id}-first-name" class={labelClass}>First Name</Label>
-				<Input
+	<form {id} onsubmit={handleSubmit} class="space-y-2.5">
+		<div class="grid grid-cols-2 gap-2.5">
+			<div>
+				<label for="{id}-first-name" class="sr-only">First Name</label>
+				<input
 					id="{id}-first-name"
 					type="text"
+					placeholder="First Name"
 					autocomplete="given-name"
 					required
 					bind:value={formData.firstName}
 					class={fieldClass}
 				/>
 			</div>
-			<div class="space-y-1.5">
-				<Label for="{id}-last-name" class={labelClass}>Last Name</Label>
-				<Input
+			<div>
+				<label for="{id}-last-name" class="sr-only">Last Name</label>
+				<input
 					id="{id}-last-name"
 					type="text"
+					placeholder="Last Name"
 					autocomplete="family-name"
 					required
 					bind:value={formData.lastName}
@@ -161,35 +160,34 @@
 			</div>
 		</div>
 
-		<div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-			<div class="space-y-1.5">
-				<Label for="{id}-phone" class={labelClass}>Phone</Label>
-				<Input
-					id="{id}-phone"
-					type="tel"
-					placeholder="(555) 123-4567"
-					autocomplete="tel"
-					required
-					bind:value={formData.phone}
-					class={fieldClass}
-				/>
-			</div>
-			<div class="space-y-1.5">
-				<Label for="{id}-email" class={labelClass}>Email</Label>
-				<Input
-					id="{id}-email"
-					type="email"
-					placeholder="jane@email.com"
-					autocomplete="email"
-					required
-					bind:value={formData.email}
-					class={fieldClass}
-				/>
-			</div>
+		<div>
+			<label for="{id}-phone" class="sr-only">Phone</label>
+			<input
+				id="{id}-phone"
+				type="tel"
+				placeholder="Phone"
+				autocomplete="tel"
+				required
+				bind:value={formData.phone}
+				class={fieldClass}
+			/>
 		</div>
 
-		<div class="space-y-1.5">
-			<Label for="{id}-state" class={labelClass}>State</Label>
+		<div>
+			<label for="{id}-email" class="sr-only">Email</label>
+			<input
+				id="{id}-email"
+				type="email"
+				placeholder="Email"
+				autocomplete="email"
+				required
+				bind:value={formData.email}
+				class={fieldClass}
+			/>
+		</div>
+
+		<div>
+			<label for="{id}-state" class="sr-only">State</label>
 			<select
 				id="{id}-state"
 				autocomplete="address-level1"
@@ -197,65 +195,64 @@
 				bind:value={formData.state}
 				class={selectClass}
 			>
-				<option value="" disabled>Select your state</option>
+				<option value="" disabled>State</option>
 				{#each states as s}
 					<option value={s}>{s}</option>
 				{/each}
 			</select>
 		</div>
 
-		<div class="space-y-1.5">
-			<Label for="{id}-total-debt" class={labelClass}>Estimated Total Debt</Label>
+		<div>
+			<label for="{id}-total-debt" class="sr-only">Estimated Total Debt</label>
 			<select id="{id}-total-debt" required bind:value={formData.totalDebt} class={selectClass}>
-				<option value="" disabled>Select an amount</option>
+				<option value="" disabled>Estimated Total Debt</option>
 				{#each totalDebtOptions as o}
 					<option value={o}>{o}</option>
 				{/each}
 			</select>
 		</div>
 
-		<div class="space-y-1.5">
-			<Label for="{id}-monthly-payments" class={labelClass}>Current Monthly Debt Payments</Label>
+		<div>
+			<label for="{id}-monthly-payments" class="sr-only">Current Monthly Payments</label>
 			<select
 				id="{id}-monthly-payments"
 				required
 				bind:value={formData.monthlyPayments}
 				class={selectClass}
 			>
-				<option value="" disabled>Select an amount</option>
+				<option value="" disabled>Current Monthly Payments</option>
 				{#each monthlyPaymentOptions as o}
 					<option value={o}>{o}</option>
 				{/each}
 			</select>
 		</div>
 
-		<div class="space-y-1.5">
-			<Label for="{id}-debt-type" class={labelClass}>Type of Debt</Label>
+		<div>
+			<label for="{id}-debt-type" class="sr-only">Type of Debt</label>
 			<select id="{id}-debt-type" required bind:value={formData.debtType} class={selectClass}>
-				<option value="" disabled>Select a type</option>
+				<option value="" disabled>Type of Debt</option>
 				{#each debtTypeOptions as o}
 					<option value={o}>{o}</option>
 				{/each}
 			</select>
 		</div>
 
-		<fieldset class="space-y-1.5">
-			<legend class="mb-1.5 {labelClass}">Currently in Debt Settlement?</legend>
-			<div class="grid grid-cols-2 gap-2">
-				{#each ['Yes', 'No'] as option}
+		<fieldset class="pt-1.5">
+			<legend class="mb-2 text-[0.95rem] font-extrabold text-slate-900">
+				Currently enrolled in a debt relief program?
+			</legend>
+			<div class="flex flex-wrap gap-x-6 gap-y-2">
+				{#each programOptions as option}
 					<label
-						class="flex justify-center items-center h-11 text-sm font-semibold rounded-lg border cursor-pointer transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-pink {formData.inDebtSettlement ===
-						option
-							? 'border-brand-pink bg-pink-50 text-slate-900'
-							: 'border-slate-200 text-slate-600 hover:border-pink-200'}"
+						class="inline-flex gap-2 items-center text-[0.95rem] font-semibold cursor-pointer text-slate-800"
 					>
 						<input
 							type="radio"
-							name="{id}-in-debt-settlement"
+							name="{id}-debt-relief-program"
 							value={option}
 							required
-							bind:group={formData.inDebtSettlement}
-							class="sr-only"
+							bind:group={formData.inDebtReliefProgram}
+							class="w-[1.1rem] h-[1.1rem] cursor-pointer accent-brand-purple"
 						/>
 						{option}
 					</label>
@@ -263,17 +260,10 @@
 			</div>
 		</fieldset>
 
-		<!-- DRAFT consent language. MUST be replaced with counsel-approved TCPA wording before launch,
-		     including whether partners are named and whether automated calls/texts are used. -->
-		<p class="text-xs leading-relaxed text-slate-500">
-			By submitting, you agree that
-			{site.name} and its partners may contact you at the number and email you provided, including by
-			phone call or text message. Consent isn’t required to get help. Message and data rates may apply.
-		</p>
 		<Button
 			type="submit"
 			disabled={submitting}
-			class="w-full h-12 text-base tracking-wide uppercase disabled:opacity-70 {ctaClass}"
+			class="mt-2 w-full h-12 text-base rounded-full disabled:opacity-70 {ctaClass}"
 		>
 			{#if submitting}
 				<span class="flex gap-2 items-center">
@@ -299,10 +289,20 @@
 				<ArrowRight class="ml-2 w-4 h-4" />
 			{/if}
 		</Button>
-		<p class="pt-1 text-xs text-center text-slate-500">
-			<Lock class="inline mr-1 w-3 h-3 align-[-1px]" />
-			We use your information as described in our
-			<a href={legalNav[0].href} class="underline hover:text-slate-700">Privacy Policy</a>.
+
+		<!-- Consent wording from the owner's mockup. TODO: counsel to approve before launch. -->
+		<p class="pt-1 text-[0.7rem] leading-relaxed text-slate-500">
+			By clicking “{submitLabel},” I agree that {site.name} may contact me regarding my inquiry by phone,
+			text, or email. Marketing contact consent is not required as a condition of purchase. Message and
+			data rates may apply. Reply STOP to opt out of texts. See our
+			<a href={link('/legal/privacy-policy')} class="font-semibold underline text-brand-purple"
+				>Privacy Policy</a
+			>
+			and
+			<a
+				href={link('/legal/terms-and-conditions')}
+				class="font-semibold underline text-brand-purple">Terms &amp; Conditions</a
+			>.
 		</p>
 	</form>
 {/if}

@@ -1,115 +1,206 @@
 <script lang="ts">
-	// Landing page copy is the owner's approved wording. Do not edit the text without their sign-off.
-	import { site, link } from '$lib/site';
+	// Page 1 follows the owner's approved mockup (copy and layout). Don't change the wording
+	// without the owner's sign-off.
+	import { site, ctaClass, ctaLabel, link } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
-	import BrandArc from '$lib/components/site/BrandArc.svelte';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import CalendarDays from '@lucide/svelte/icons/calendar-days';
+	import Coins from '@lucide/svelte/icons/coins';
+	import CreditCard from '@lucide/svelte/icons/credit-card';
+	import PhoneCall from '@lucide/svelte/icons/phone-call';
+
+	const heroPhoto = link('/images/hero-couple-worried.webp');
+	const heroPhotoAlt = 'A worried couple at their kitchen table going over their bills';
+
+	const situations = [
+		{ icon: CalendarDays, label: 'Behind on Bills', color: 'text-brand-purple' },
+		{ icon: Coins, label: 'In Collections', color: 'text-brand-pink' },
+		{ icon: CreditCard, label: 'Debt Settlement Payments Too High', color: 'text-brand-purple' }
+	];
+
+	const ink = 'text-[#1e1452]';
 </script>
 
 <svelte:head>
-	<title>{site.name} | Drowning in Debt or Struggling with Debt Settlement Payments?</title>
+	<title>Drowning in Debt? | {site.name}</title>
 	<meta
 		name="description"
-		content="Struggling with high-interest credit cards, unaffordable debt settlement payments, personal loans, collections, or medical bills? There's another way. Discover your options."
+		content="We're not another debt settlement company. We connect you with alternative solutions that may be a better fit for your financial situation. Explore your options."
 	/>
 </svelte:head>
 
-<!-- Hero: headline left, application form right -->
-<section class="overflow-hidden relative bg-gradient-to-b from-orange-50/60 via-white to-white">
-	<div class="absolute inset-0 pointer-events-none">
-		<div
-			class="absolute -top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-purple-300/25 blur-3xl"
-		></div>
-		<div
-			class="absolute -bottom-48 -left-40 w-[28rem] h-[28rem] rounded-full bg-orange-300/25 blur-3xl"
-		></div>
+<section class="overflow-hidden relative bg-white">
+	<!-- Desktop: an upright photo, sized by height so it isn't over-zoomed, centered in the gap
+	     between the copy and the form. Only its left and bottom edges fade. -->
+	<div
+		class="hidden absolute inset-y-0 lg:block aspect-[2/3] left-[calc(50%+5.5rem)] -translate-x-1/2 pointer-events-none"
+	>
+		<img
+			src={heroPhoto}
+			alt={heroPhotoAlt}
+			width="1300"
+			height="1866"
+			fetchpriority="high"
+			class="object-cover w-full h-full object-[50%_35%] [mask-image:linear-gradient(to_right,transparent,#000_18%,#000_82%,transparent),linear-gradient(to_bottom,#000_80%,transparent)] [mask-composite:intersect]"
+		/>
 	</div>
 
-	<div class="relative py-12 px-4 mx-auto max-w-7xl sm:py-20 sm:px-6 lg:py-24 lg:px-8">
-		<div class="grid gap-10 items-start lg:grid-cols-2 lg:gap-16">
-			<div class="text-center lg:text-left">
+	<!-- Soft white glow behind the copy so text never sits on a busy part of the photo -->
+	<div
+		class="hidden absolute inset-y-0 left-0 lg:block w-[47%] bg-gradient-to-r from-white from-60% via-white/80 to-transparent pointer-events-none"
+	></div>
+
+	<div
+		class="relative px-4 pt-6 pb-12 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:pt-14 lg:pb-16 lg:px-8"
+	>
+		<div
+			class="grid gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
+		>
+			<div class="mx-auto max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left">
+				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm italic {ink}">
+					Real Solutions. A Brighter Financial Future.
+				</p>
+
 				<h1
-					class="text-4xl font-extrabold tracking-tight leading-[1.1] text-balance sm:text-5xl lg:text-[3.25rem] text-slate-900"
+					class="mt-2 text-[3.25rem] font-black tracking-tight italic leading-[0.95] sm:mt-3 sm:text-7xl xl:text-[5.25rem] {ink}"
 				>
-					Drowning in Debt or Struggling with Debt Settlement Payments?
+					Drowning<br />in Debt?
 				</h1>
+				<!-- Brush swoosh under the headline -->
+				<svg
+					class="mx-auto mt-2 w-56 h-4 sm:w-72 lg:mx-0"
+					viewBox="0 0 300 16"
+					fill="none"
+					aria-hidden="true"
+				>
+					<defs>
+						<linearGradient
+							id="swoosh"
+							x1="0"
+							y1="0"
+							x2="300"
+							y2="0"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#FF8A00" />
+							<stop offset="1" stop-color="#FF2D55" stop-opacity="0.85" />
+						</linearGradient>
+					</defs>
+					<path d="M4 12 C 80 2, 200 0, 296 8 C 210 5, 110 7, 30 14 Z" fill="url(#swoosh)" />
+				</svg>
 
-				<p class="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl text-brand-gradient">
-					There’s Another Way!
+				<!-- Phones and tablets: photo as a clean rounded card; the banner overlaps its bottom edge -->
+				<img
+					src={heroPhoto}
+					alt={heroPhotoAlt}
+					width="1300"
+					height="1866"
+					fetchpriority="high"
+					class="object-cover mt-5 w-full rounded-3xl shadow-xl lg:hidden aspect-[4/3] object-[50%_26%] shadow-purple-900/15"
+				/>
+
+				<div
+					class="inline-block relative py-3 px-7 -mt-9 text-white rounded-full ring-4 ring-white shadow-lg sm:px-9 lg:mt-6 lg:ring-0 bg-brand-gradient-ui shadow-pink-500/25"
+				>
+					<p
+						class="text-[1.35rem] font-extrabold italic leading-tight whitespace-nowrap sm:text-3xl"
+					>
+						We Have Another Way
+					</p>
+					<p class="text-[0.95rem] font-bold italic whitespace-nowrap sm:text-xl">
+						You May Not Have Been Offered!
+					</p>
+				</div>
+
+				<p class="mt-6 text-[1.05rem] font-bold italic leading-snug sm:mt-7 sm:text-xl {ink}">
+					We’re <span
+						class="underline decoration-2 underline-offset-4 text-brand-orange decoration-brand-orange"
+						>NOT</span
+					>
+					another debt settlement company! We connect you with alternative solutions that may be a better
+					fit for your financial situation.
 				</p>
 
-				<p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed sm:text-xl lg:mx-0 text-slate-600">
-					Struggling with high-interest credit cards, unaffordable debt settlement payments,
-					personal loans, collections, or medical bills?
-				</p>
-
-				<p class="mt-8 text-2xl font-extrabold tracking-tight sm:text-3xl text-slate-900">
-					We’re NOT Another Debt Settlement Company!
-				</p>
-
-				<p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed sm:text-xl lg:mx-0 text-slate-600">
-					Discover a different approach to debt relief that most people have never even heard of!
-				</p>
-
-				<p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed lg:mx-0 text-slate-600">
-					Your rights as a consumer may open the door to alternatives beyond traditional debt
-					settlement, without filing bankruptcy, with the potential for significantly lower monthly
-					payments, leaving more of your hard-earned money in your pocket.
-				</p>
+				<div
+					class="mx-auto mt-6 max-w-md h-0.5 bg-gradient-to-r rounded-full lg:mx-0 from-brand-orange via-brand-pink to-transparent"
+				></div>
 
 				<p
-					class="py-4 px-5 mx-auto mt-6 max-w-xl text-lg font-semibold leading-relaxed text-left bg-white rounded-xl border border-pink-100 shadow-sm lg:mx-0 text-slate-800"
+					class="mt-5 text-xl font-extrabold italic sm:text-2xl lg:text-[1.4rem] lg:whitespace-nowrap text-brand-orange"
 				>
-					Already enrolled in debt settlement but struggling to afford your payments? You may
-					qualify for a more affordable alternative!
+					Know Your Consumer Protection Rights.
 				</p>
+				<p class="mt-1 text-base italic sm:text-lg {ink}">
+					There May Be Another Option Worth Exploring.
+				</p>
+
+				<div class="grid grid-cols-2 gap-3 mt-7 sm:flex sm:justify-center sm:mt-8 lg:justify-start">
+					<Button
+						href="#lead-form"
+						class="h-12 px-3 text-[0.85rem] rounded-full sm:px-7 sm:text-base {ctaClass}"
+					>
+						{ctaLabel}
+						<ArrowRight class="ml-2 w-4 h-4" />
+					</Button>
+					<Button
+						href={link('/how-it-works')}
+						variant="outline"
+						class="h-12 px-3 text-[0.85rem] font-bold bg-white rounded-full border-2 sm:px-8 sm:text-base border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+					>
+						How It Works
+					</Button>
+				</div>
 			</div>
 
-			<div class="isolate relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
-				<!-- Brand arc rising over the form. Fully on screen, with its ends faded out. -->
-				<BrandArc
-					class="absolute left-1/2 -z-10 max-w-none -translate-x-1/2 pointer-events-none -top-14 w-[22rem] opacity-[0.25] sm:-top-20 sm:w-[31rem] [mask-image:linear-gradient(to_bottom,#000_45%,transparent_100%)]"
-				/>
-				<LeadFormCard
-					id="lead-form"
-					title="Discover Your Options!"
-					description=""
-					submitLabel="Explore My Options"
-					image={{
-						src: link('/images/form-couple-smiling.webp'),
-						alt: 'A couple smiling while looking at a phone together at home',
-						position: '50% 40%'
-					}}
-				/>
+			<div class="mx-auto w-full max-w-md lg:max-w-none">
+				<LeadFormCard id="lead-form" />
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Band -->
-<section class="py-12 px-4 bg-brand-gradient-ui sm:px-6 lg:px-8">
+<!-- Situations, plus the phone line -->
+<section class="relative px-4 pb-14 bg-white sm:px-6 lg:px-8">
+	<ul class="grid gap-4 mx-auto max-w-7xl sm:grid-cols-2 lg:grid-cols-4">
+		{#each situations as s}
+			<li
+				class="flex gap-4 items-center py-5 px-6 bg-white rounded-2xl border shadow-lg border-slate-100 shadow-purple-900/5"
+			>
+				<s.icon class="w-9 h-9 shrink-0 {s.color}" strokeWidth={1.75} />
+				<span class="w-px h-10 bg-gradient-to-b from-brand-orange to-brand-pink shrink-0"></span>
+				<span class="text-lg font-bold leading-snug {ink}">{s.label}</span>
+			</li>
+		{/each}
+		<li>
+			<a
+				href={site.phoneHref}
+				class="flex gap-4 items-center py-5 px-6 h-full bg-white rounded-2xl border shadow-lg transition border-slate-100 shadow-purple-900/5 hover:shadow-xl hover:border-pink-200"
+			>
+				<PhoneCall class="w-9 h-9 shrink-0 text-brand-pink" strokeWidth={1.75} />
+				<span class="w-px h-10 bg-gradient-to-b from-brand-orange to-brand-pink shrink-0"></span>
+				<span>
+					<span class="block text-base font-bold leading-snug {ink}"
+						>Call Now to Speak Live With Us</span
+					>
+					<span class="block text-xl font-extrabold text-brand-orange">{site.phoneDisplay}</span>
+				</span>
+			</a>
+		</li>
+	</ul>
+</section>
+
+<!-- Gradient bar above the footer -->
+<section class="py-10 px-4 sm:px-6 lg:px-8 bg-brand-gradient-ui">
 	<div
-		class="flex flex-col gap-6 justify-between items-center mx-auto max-w-6xl text-center md:flex-row md:gap-8 md:text-left"
+		class="flex flex-col gap-5 justify-between items-center mx-auto max-w-6xl text-center md:flex-row md:text-left"
 	>
-		<img
-			src={link('/images/band-couple-bills.webp')}
-			alt="An older couple sorting through their bills together"
-			width="1000"
-			height="563"
-			loading="lazy"
-			class="object-cover w-full max-w-sm rounded-2xl ring-4 shadow-xl md:w-64 lg:w-72 aspect-[16/10] ring-white/30 shrink-0"
-		/>
-		<div class="md:flex-1">
-			<p class="text-2xl font-extrabold text-white text-balance sm:text-3xl">
-				Behind on Bills? In Collections? Debt Settlement Payments Too High?
-			</p>
-			<p class="mt-2 text-lg text-white/90">You may have more options than you realize.</p>
-		</div>
+		<p class="text-2xl font-extrabold italic text-white text-balance sm:text-3xl">
+			You may have more options than you realize.
+		</p>
 		<Button
-			size="lg"
 			href={link('/how-it-works')}
-			class="h-12 px-7 font-bold uppercase bg-white shadow-lg hover:bg-white/90 text-brand-pink shrink-0"
+			class="h-12 px-8 font-bold uppercase bg-white rounded-full shadow-lg hover:bg-white/90 text-brand-pink shrink-0"
 		>
 			See How It Works
 			<ArrowRight class="ml-2 w-4 h-4" />
