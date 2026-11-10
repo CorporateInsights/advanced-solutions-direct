@@ -17,9 +17,7 @@ export const site = {
 	// TODO: placeholder hours; confirm.
 	hours: 'Mon–Fri 6am–6pm PT',
 	// TODO: list of states served, from the owner. Shown in the landing page disclaimer.
-	statesServed: '[states served]',
-	// TODO: set to false at launch. Shows the brand / high-contrast palette switch for reviewers.
-	showPaletteToggle: true
+	statesServed: '[states served]'
 };
 
 // How the site refers to the companies clients are matched with. We're a broker, so the copy

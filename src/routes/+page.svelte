@@ -14,9 +14,9 @@
 	const heroPhotoAlt = 'A worried couple at their kitchen table going over their bills';
 
 	const situations = [
-		{ icon: CalendarDays, label: 'Behind on Bills', color: 'text-brand-purple' },
-		{ icon: Coins, label: 'In Collections', color: 'text-brand-pink' },
-		{ icon: CreditCard, label: 'Debt Settlement Payments Too High', color: 'text-brand-purple' }
+		{ icon: CalendarDays, label: 'Behind on Bills' },
+		{ icon: Coins, label: 'In Collections' },
+		{ icon: CreditCard, label: 'Debt Settlement Payments Too High' }
 	];
 
 	const ink = 'text-[#1e1452]';
@@ -162,28 +162,36 @@
 
 <!-- Situations, plus the phone line -->
 <section class="relative px-4 pb-14 bg-white sm:px-6 lg:px-8">
-	<ul class="grid gap-4 mx-auto max-w-7xl sm:grid-cols-2 lg:grid-cols-4">
+	<ul class="grid gap-4 mx-auto max-w-7xl sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
 		{#each situations as s}
 			<li
-				class="flex gap-4 items-center py-5 px-6 bg-white rounded-2xl border shadow-lg border-slate-100 shadow-purple-900/5"
+				class="p-[2px] rounded-2xl shadow-xl transition bg-brand-gradient-ui shadow-purple-900/10 hover:-translate-y-0.5 hover:shadow-2xl"
 			>
-				<s.icon class="w-9 h-9 shrink-0 {s.color}" strokeWidth={1.75} />
-				<span class="w-px h-10 bg-gradient-to-b from-brand-orange to-brand-pink shrink-0"></span>
-				<span class="text-lg font-bold leading-snug {ink}">{s.label}</span>
+				<div class="flex gap-4 items-center py-5 px-5 h-full bg-white rounded-[calc(1rem-2px)]">
+					<span
+						class="flex justify-center items-center w-14 h-14 rounded-2xl shadow-md shrink-0 bg-brand-gradient-ui shadow-pink-500/25"
+					>
+						<s.icon class="w-7 h-7 text-white" strokeWidth={2} />
+					</span>
+					<span class="text-[1.05rem] font-extrabold leading-snug {ink}">{s.label}</span>
+				</div>
 			</li>
 		{/each}
 		<li>
 			<a
 				href={site.phoneHref}
-				class="flex gap-4 items-center py-5 px-6 h-full bg-white rounded-2xl border shadow-lg transition border-slate-100 shadow-purple-900/5 hover:shadow-xl hover:border-pink-200"
+				class="flex gap-4 items-center py-5 px-5 h-full text-white rounded-2xl shadow-xl transition bg-brand-gradient-ui shadow-pink-500/30 hover:-translate-y-0.5 hover:shadow-2xl"
 			>
-				<PhoneCall class="w-9 h-9 shrink-0 text-brand-pink" strokeWidth={1.75} />
-				<span class="w-px h-10 bg-gradient-to-b from-brand-orange to-brand-pink shrink-0"></span>
+				<span
+					class="flex justify-center items-center w-14 h-14 bg-white rounded-2xl shadow-md shrink-0"
+				>
+					<PhoneCall class="w-7 h-7 text-brand-pink" strokeWidth={2} />
+				</span>
 				<span>
-					<span class="block text-base font-bold leading-snug {ink}"
+					<span class="block text-[0.95rem] font-bold leading-snug"
 						>Call Now to Speak Live With Us</span
 					>
-					<span class="block text-xl font-extrabold text-brand-orange">{site.phoneDisplay}</span>
+					<span class="block text-2xl font-extrabold tracking-tight">{site.phoneDisplay}</span>
 				</span>
 			</a>
 		</li>

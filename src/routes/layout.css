@@ -43,8 +43,7 @@
 		var(--brand-pink),
 		var(--brand-purple)
 	);
-	/* UI gradient: for text and for backgrounds behind white text. Same as the brand gradient
-	   unless the high-contrast palette is on (see [data-palette='accessible'] below). */
+	/* UI gradient: for text and for backgrounds behind white text. Same as the brand gradient */
 	--brand-orange-ui: var(--brand-orange);
 	--brand-red-ui: var(--brand-red);
 	--brand-gradient-ui: linear-gradient(
@@ -142,13 +141,6 @@
 	--radius-2xl: calc(var(--radius) * 1.8);
 	--radius-3xl: calc(var(--radius) * 2.2);
 	--radius-4xl: calc(var(--radius) * 2.6);
-}
-
-/* High-contrast palette: deeper orange and red on text and buttons only, so white text and
-   gradient headlines meet WCAG AA (4.5:1). The logo and decorative graphics are unaffected. */
-:root[data-palette='accessible'] {
-	--brand-orange-ui: #c25400;
-	--brand-red-ui: #e0193f;
 }
 
 @utility bg-brand-gradient {

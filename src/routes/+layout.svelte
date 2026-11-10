@@ -5,7 +5,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import SiteHeader from '$lib/components/site/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/site/SiteFooter.svelte';
-	import PaletteToggle from '$lib/components/site/PaletteToggle.svelte';
 	import Phone from '@lucide/svelte/icons/phone';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
@@ -14,7 +13,28 @@
 	const showStickyCta = $derived(page.url.pathname !== consultationHref);
 	// On the home page the form is already on the page, so scroll to it instead of navigating
 	const stickyHref = $derived(page.url.pathname === link('/') ? '#lead-form' : consultationHref);
+
+	// Any "#lead-form" link (hero, header, sticky bar): bring the whole form card into view below
+	// the sticky header and put the cursor in First Name, ready to type.
+	function goToForm(e: MouseEvent) {
+		const a = (e.target as HTMLElement | null)?.closest('a[href="#lead-form"]');
+		const form = document.getElementById('lead-form');
+		if (!a || !form) return;
+		e.preventDefault();
+		const card = (form.closest('[data-form-card]') as HTMLElement | null) ?? form;
+		const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		// Focus first (without moving), then scroll; focusing mid-scroll would cut the scroll short
+		form.querySelector<HTMLInputElement>('input')?.focus({ preventScroll: true });
+		card.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+		// Safety net: if a browser skips the smooth scroll, jump there so the form is always shown
+		setTimeout(() => {
+			const top = card.getBoundingClientRect().top;
+			if (top < 0 || top > window.innerHeight / 2) card.scrollIntoView({ block: 'start' });
+		}, 900);
+	}
 </script>
+
+<svelte:document onclick={goToForm} />
 
 <svelte:head>
 	<link rel="icon" href={site.icon} />
@@ -34,10 +54,6 @@
 		{@render children()}
 	</main>
 	<SiteFooter />
-
-	{#if site.showPaletteToggle}
-		<PaletteToggle />
-	{/if}
 
 	{#if showStickyCta}
 		<!-- Mobile Sticky CTA -->

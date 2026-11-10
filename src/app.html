@@ -4,18 +4,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="text-scale" content="scale" />
-		<script>
-			// Preview-only palette switch (see PaletteToggle.svelte). Applied before first paint.
-			// ?palette=accessible or ?palette=brand in the URL wins over the saved choice.
-			(function () {
-				try {
-					var p = new URLSearchParams(location.search).get('palette');
-					if (p === 'accessible' || p === 'brand') localStorage.setItem('asd-palette', p);
-					else p = localStorage.getItem('asd-palette');
-					if (p === 'accessible') document.documentElement.dataset.palette = 'accessible';
-				} catch (e) {}
-			})();
-		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
