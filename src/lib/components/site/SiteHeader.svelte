@@ -1,51 +1,49 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { site, nav, consultationHref, ctaClass, link } from '$lib/site';
+	import { site, nav, consultationHref, ctaClass, ctaLabel, link } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import Phone from '@lucide/svelte/icons/phone';
 	import Menu from '@lucide/svelte/icons/menu';
 	import X from '@lucide/svelte/icons/x';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	let menuOpen = $state(false);
 
 	const isActive = (href: string) => page.url.pathname === href;
+	// On the home page the form is already there, so the button scrolls to it
+	const ctaHref = $derived(page.url.pathname === link('/') ? '#lead-form' : consultationHref);
 </script>
 
-<!-- Top Bar -->
-<div class="py-2 px-4 text-sm font-medium text-center text-white bg-brand-gradient-ui">
-	Free, no-obligation call
-	<span class="hidden sm:inline">· {site.hours}</span>
-	·
-	<a href={site.phoneHref} class="font-bold underline underline-offset-2">{site.phoneDisplay}</a>
-</div>
-
-<nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur-md">
+<nav class="sticky top-0 z-50 border-b border-slate-100/80 bg-white/95 backdrop-blur-md">
 	<div class="flex justify-between items-center px-4 mx-auto max-w-7xl h-20 sm:px-6 lg:px-8">
 		<a href={link('/')} class="flex gap-2 items-center" onclick={() => (menuOpen = false)}>
 			<img src={site.logo} alt={site.name} width="357" height="182" class="w-auto h-14 sm:h-16" />
 		</a>
 
 		<!-- Desktop -->
-		<div class="hidden gap-7 items-center lg:flex">
-			{#each nav as item}
-				<a
-					href={item.href}
-					aria-current={isActive(item.href) ? 'page' : undefined}
-					class="text-sm font-medium transition-colors hover:text-slate-900 {isActive(item.href)
-						? 'text-brand-pink'
-						: 'text-slate-600'}"
-				>
-					{item.label}
-				</a>
-			{/each}
-			<a
-				href={site.phoneHref}
-				class="flex gap-2 items-center text-sm font-semibold transition-colors text-slate-700 hover:text-slate-900"
-			>
-				<Phone class="w-4 h-4 text-brand-pink" />
-				{site.phoneDisplay}
-			</a>
-			<Button href={consultationHref} class={ctaClass}>Free Consultation</Button>
+		<div class="hidden items-center lg:flex">
+			<ul class="flex items-center">
+				{#each nav as item, i}
+					<li class="flex items-center">
+						{#if i > 0}<span class="mx-5 w-px h-5 bg-slate-300" aria-hidden="true"></span>{/if}
+						<a
+							href={item.href}
+							aria-current={isActive(item.href) ? 'page' : undefined}
+							class="text-[0.95rem] font-semibold transition-colors hover:text-brand-pink {isActive(
+								item.href
+							)
+								? 'text-brand-pink'
+								: 'text-slate-800'}"
+						>
+							{item.label}
+						</a>
+					</li>
+				{/each}
+			</ul>
+			<Button href={ctaHref} class="ml-8 h-11 px-6 rounded-full text-[0.95rem] {ctaClass}">
+				{ctaLabel}
+				<ArrowRight class="ml-1.5 w-4 h-4" />
+			</Button>
 		</div>
 
 		<!-- Mobile -->
@@ -79,11 +77,11 @@
 				</a>
 			{/each}
 			<Button
-				href={consultationHref}
+				href={ctaHref}
 				onclick={() => (menuOpen = false)}
-				class="mt-4 w-full h-11 {ctaClass}"
+				class="mt-4 w-full h-11 rounded-full {ctaClass}"
 			>
-				Get My Free Consultation
+				{ctaLabel}
 			</Button>
 		</div>
 	{/if}

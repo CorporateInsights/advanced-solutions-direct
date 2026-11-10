@@ -11,9 +11,9 @@ export const site = {
 	logoPrimary: link('/brand/asd-logo-primary.svg'),
 	icon: link('/favicon.ico'),
 	appleIcon: link('/brand/apple-touch-icon.png'),
-	// TODO: placeholder phone number; replace with the real line.
-	phoneDisplay: '(800) 555-0123',
-	phoneHref: 'tel:18005550123',
+	// Number from the owner's Page 1 mockup. TODO: confirm it's the live line before launch.
+	phoneDisplay: '(855) 410-7368',
+	phoneHref: 'tel:18554107368',
 	// TODO: placeholder hours; confirm.
 	hours: 'Mon–Fri 6am–6pm PT',
 	// TODO: list of states served, from the owner. Shown in the landing page disclaimer.
@@ -31,13 +31,24 @@ export const partners = {
 	legal: 'an independent consumer rights law firm'
 };
 
+// Header menu, per the owner's Page 1 mockup (the logo links home)
 export const nav = [
+	{ href: link('/how-it-works'), label: 'How It Works' },
+	{ href: link('/who-we-help'), label: 'Who We Help' },
+	{ href: link('/faq'), label: 'FAQ' }
+];
+
+// Footer keeps the full list of pages
+export const footerNav = [
 	{ href: link('/'), label: 'Home' },
 	{ href: link('/how-it-works'), label: 'How It Works' },
 	{ href: link('/who-we-help'), label: 'Who We Help' },
 	{ href: link('/about'), label: 'About' },
 	{ href: link('/faq'), label: 'FAQ' }
 ];
+
+// Main call to action label, used in the header, mobile bar and buttons
+export const ctaLabel = 'Explore My Options';
 
 // Legal pages. Each slug is served by src/routes/legal/[slug] (except Disclosures, which has its own page).
 // TODO: final text for each page to be provided by counsel.

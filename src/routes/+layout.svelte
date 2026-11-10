@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import { page } from '$app/state';
-	import { site, consultationHref, ctaClass, link } from '$lib/site';
+	import { site, consultationHref, ctaClass, ctaLabel, link } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import SiteHeader from '$lib/components/site/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/site/SiteFooter.svelte';
@@ -53,8 +53,8 @@
 					<Phone class="w-5 h-5 text-brand-pink" />
 					Call Now
 				</a>
-				<Button href={stickyHref} class="h-12 text-sm {ctaClass}">
-					Free Consultation
+				<Button href={stickyHref} class="h-12 text-sm rounded-lg {ctaClass}">
+					{ctaLabel}
 					<ArrowRight class="ml-1 w-4 h-4" />
 				</Button>
 			</div>
