@@ -6,7 +6,8 @@ export const link = (path: string) => `${base}${path}`;
 // Central place for brand + contact details. Swap placeholders here once they're final.
 export const site = {
 	name: 'Advanced Solutions Direct',
-	logo: link('/brand/asd-logo-horizontal.svg'),
+	// Full logo with the arch, cropped tight for the header
+	logo: link('/brand/asd-logo-header.svg'),
 	logoPrimary: link('/brand/asd-logo-primary.svg'),
 	icon: link('/favicon.ico'),
 	appleIcon: link('/brand/apple-touch-icon.png'),
@@ -31,6 +32,7 @@ export const partners = {
 };
 
 export const nav = [
+	{ href: link('/'), label: 'Home' },
 	{ href: link('/how-it-works'), label: 'How It Works' },
 	{ href: link('/who-we-help'), label: 'Who We Help' },
 	{ href: link('/about'), label: 'About' },

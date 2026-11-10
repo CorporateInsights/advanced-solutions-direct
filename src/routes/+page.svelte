@@ -24,10 +24,6 @@
 		<div
 			class="absolute -bottom-48 -left-40 w-[28rem] h-[28rem] rounded-full bg-orange-300/25 blur-3xl"
 		></div>
-		<BrandArc
-			class="hidden absolute -right-24 top-10 w-[46rem] opacity-[0.13] lg:block xl:right-0"
-		/>
-		<BrandArc class="absolute -top-6 -right-28 w-[26rem] opacity-[0.10] lg:hidden" />
 	</div>
 
 	<div class="relative py-12 px-4 mx-auto max-w-7xl sm:py-20 sm:px-6 lg:py-24 lg:px-8">
@@ -70,12 +66,21 @@
 				</p>
 			</div>
 
-			<div class="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
+			<div class="isolate relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
+				<!-- Brand arc rising over the form. Fully on screen, with its ends faded out. -->
+				<BrandArc
+					class="absolute left-1/2 -z-10 max-w-none -translate-x-1/2 pointer-events-none -top-14 w-[22rem] opacity-[0.25] sm:-top-20 sm:w-[31rem] [mask-image:linear-gradient(to_bottom,#000_45%,transparent_100%)]"
+				/>
 				<LeadFormCard
 					id="lead-form"
 					title="Discover Your Options!"
 					description=""
 					submitLabel="Explore My Options"
+					image={{
+						src: link('/images/form-couple-smiling.webp'),
+						alt: 'A couple smiling while looking at a phone together at home',
+						position: '50% 40%'
+					}}
 				/>
 			</div>
 		</div>
