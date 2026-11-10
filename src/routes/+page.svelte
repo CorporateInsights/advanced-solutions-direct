@@ -24,10 +24,6 @@
 		<div
 			class="absolute -bottom-48 -left-40 w-[28rem] h-[28rem] rounded-full bg-orange-300/25 blur-3xl"
 		></div>
-		<BrandArc
-			class="hidden absolute -right-24 top-10 w-[46rem] opacity-[0.13] lg:block xl:right-0"
-		/>
-		<BrandArc class="absolute -top-6 -right-28 w-[26rem] opacity-[0.10] lg:hidden" />
 	</div>
 
 	<div class="relative py-12 px-4 mx-auto max-w-7xl sm:py-20 sm:px-6 lg:py-24 lg:px-8">
@@ -70,12 +66,21 @@
 				</p>
 			</div>
 
-			<div class="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
+			<div class="isolate relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
+				<!-- Brand arc rising over the form. Fully on screen, with its ends faded out. -->
+				<BrandArc
+					class="absolute left-1/2 -z-10 max-w-none -translate-x-1/2 pointer-events-none -top-14 w-[22rem] opacity-[0.25] sm:-top-20 sm:w-[31rem] [mask-image:linear-gradient(to_bottom,#000_45%,transparent_100%)]"
+				/>
 				<LeadFormCard
 					id="lead-form"
 					title="Discover Your Options!"
 					description=""
 					submitLabel="Explore My Options"
+					image={{
+						src: link('/images/form-couple-smiling.webp'),
+						alt: 'A couple smiling while looking at a phone together at home',
+						position: '50% 40%'
+					}}
 				/>
 			</div>
 		</div>
@@ -85,9 +90,17 @@
 <!-- Band -->
 <section class="py-12 px-4 bg-brand-gradient-ui sm:px-6 lg:px-8">
 	<div
-		class="flex flex-col gap-6 justify-between items-center mx-auto max-w-5xl text-center md:flex-row md:text-left"
+		class="flex flex-col gap-6 justify-between items-center mx-auto max-w-6xl text-center md:flex-row md:gap-8 md:text-left"
 	>
-		<div>
+		<img
+			src={link('/images/band-couple-bills.webp')}
+			alt="An older couple sorting through their bills together"
+			width="1000"
+			height="563"
+			loading="lazy"
+			class="object-cover w-full max-w-sm rounded-2xl ring-4 shadow-xl md:w-64 lg:w-72 aspect-[16/10] ring-white/30 shrink-0"
+		/>
+		<div class="md:flex-1">
 			<p class="text-2xl font-extrabold text-white text-balance sm:text-3xl">
 				Behind on Bills? In Collections? Debt Settlement Payments Too High?
 			</p>
@@ -102,14 +115,4 @@
 			<ArrowRight class="ml-2 w-4 h-4" />
 		</Button>
 	</div>
-</section>
-
-<!-- Disclaimer -->
-<section class="py-10 px-4 bg-white sm:px-6 lg:px-8">
-	<p class="mx-auto max-w-4xl text-sm leading-relaxed text-center text-slate-500">
-		{site.name} is a marketing and enrollment company, not a law firm, and does not offer debt settlement
-		services. Debt validation and legal services are provided by independent law firms under separate
-		client agreements. ASD receives compensation for qualifying client referrals. Eligibility, fees, and
-		results vary. No specific outcome is guaranteed. Available in {site.statesServed}
-	</p>
 </section>

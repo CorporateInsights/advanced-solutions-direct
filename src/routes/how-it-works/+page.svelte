@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site, partners } from '$lib/site';
+	import { site, partners, link } from '$lib/site';
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import PageHeader from '$lib/components/site/PageHeader.svelte';
 	import CtaSection from '$lib/components/site/CtaSection.svelte';
@@ -58,6 +58,13 @@
 
 <section class="pb-16 sm:pb-20">
 	<div class="px-4 mx-auto space-y-6 max-w-4xl sm:px-6 lg:px-8">
+		<img
+			src={link('/images/how-it-works-couple-laptop.webp')}
+			alt="An older couple smiling while looking at a laptop together at home"
+			width="1400"
+			height="788"
+			class="object-cover w-full rounded-2xl shadow-xl aspect-[16/9] sm:aspect-[21/9] object-[50%_35%] shadow-slate-900/10"
+		/>
 		{#each steps as step, i}
 			<Card class="bg-white border-slate-100">
 				<CardContent class="flex flex-col gap-5 pt-6 sm:flex-row sm:gap-8">
