@@ -9,8 +9,10 @@
 	}: { id: string; title?: string; description?: string; submitLabel?: string } = $props();
 </script>
 
+<!-- scroll-mt keeps the card clear of the sticky header when a button jumps to it -->
 <div
-	class="p-6 bg-white rounded-3xl border shadow-2xl sm:p-7 border-slate-100 shadow-purple-900/10"
+	data-form-card
+	class="p-6 bg-white rounded-3xl border shadow-2xl scroll-mt-24 sm:p-7 border-slate-100 shadow-purple-900/10"
 >
 	<div class="mb-5 text-center">
 		<h2
