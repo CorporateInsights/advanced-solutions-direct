@@ -12,7 +12,7 @@
 <!-- scroll-mt keeps the card clear of the sticky header when a button jumps to it -->
 <div
 	data-form-card
-	class="p-6 bg-white rounded-3xl border shadow-2xl scroll-mt-24 sm:p-7 border-slate-100 shadow-purple-900/10"
+	class="p-6 bg-white rounded-3xl border shadow-2xl scroll-mt-24 lg:scroll-mt-28 sm:p-7 border-slate-100 shadow-purple-900/10"
 >
 	<div class="mb-5 text-center">
 		<h2
