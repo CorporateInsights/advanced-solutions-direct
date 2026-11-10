@@ -51,18 +51,8 @@
 		class="hidden absolute inset-y-0 left-0 lg:block w-[47%] bg-gradient-to-r from-white from-60% via-white/80 to-transparent pointer-events-none"
 	></div>
 
-	<!-- Phones: photo across the top, fading into the page -->
-	<img
-		src={heroPhoto}
-		alt={heroPhotoAlt}
-		width="1300"
-		height="1866"
-		fetchpriority="high"
-		class="object-cover w-full h-56 sm:h-72 lg:hidden object-[50%_30%] [mask-image:linear-gradient(to_bottom,#000_65%,transparent)]"
-	/>
-
 	<div
-		class="relative px-4 pb-14 mx-auto max-w-7xl -mt-6 sm:px-6 lg:pt-14 lg:pb-16 lg:mt-0 lg:px-8"
+		class="relative px-4 pt-6 pb-12 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:pt-14 lg:pb-16 lg:px-8"
 	>
 		<div
 			class="grid gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
@@ -73,7 +63,7 @@
 				</p>
 
 				<h1
-					class="mt-3 text-6xl font-black tracking-tight italic leading-[0.95] sm:text-7xl xl:text-[5.25rem] {ink}"
+					class="mt-2 text-[3.25rem] font-black tracking-tight italic leading-[0.95] sm:mt-3 sm:text-7xl xl:text-[5.25rem] {ink}"
 				>
 					Drowning<br />in Debt?
 				</h1>
@@ -100,8 +90,18 @@
 					<path d="M4 12 C 80 2, 200 0, 296 8 C 210 5, 110 7, 30 14 Z" fill="url(#swoosh)" />
 				</svg>
 
+				<!-- Phones and tablets: photo as a clean rounded card; the banner overlaps its bottom edge -->
+				<img
+					src={heroPhoto}
+					alt={heroPhotoAlt}
+					width="1300"
+					height="1866"
+					fetchpriority="high"
+					class="object-cover mt-5 w-full rounded-3xl shadow-xl lg:hidden aspect-[4/3] object-[50%_26%] shadow-purple-900/15"
+				/>
+
 				<div
-					class="inline-block py-3 px-7 mt-6 text-white rounded-full shadow-lg sm:px-9 bg-brand-gradient-ui shadow-pink-500/25"
+					class="inline-block relative py-3 px-7 -mt-9 text-white rounded-full ring-4 ring-white shadow-lg sm:px-9 lg:mt-6 lg:ring-0 bg-brand-gradient-ui shadow-pink-500/25"
 				>
 					<p
 						class="text-[1.35rem] font-extrabold italic leading-tight whitespace-nowrap sm:text-3xl"
@@ -113,7 +113,7 @@
 					</p>
 				</div>
 
-				<p class="mt-7 text-lg font-bold italic leading-snug sm:text-xl {ink}">
+				<p class="mt-6 text-[1.05rem] font-bold italic leading-snug sm:mt-7 sm:text-xl {ink}">
 					We’re <span
 						class="underline decoration-2 underline-offset-4 text-brand-orange decoration-brand-orange"
 						>NOT</span
@@ -135,15 +135,18 @@
 					There May Be Another Option Worth Exploring.
 				</p>
 
-				<div class="flex flex-col gap-3 justify-center mt-8 sm:flex-row lg:justify-start">
-					<Button href="#lead-form" class="h-12 px-7 text-base rounded-full {ctaClass}">
+				<div class="grid grid-cols-2 gap-3 mt-7 sm:flex sm:justify-center sm:mt-8 lg:justify-start">
+					<Button
+						href="#lead-form"
+						class="h-12 px-3 text-[0.85rem] rounded-full sm:px-7 sm:text-base {ctaClass}"
+					>
 						{ctaLabel}
 						<ArrowRight class="ml-2 w-4 h-4" />
 					</Button>
 					<Button
 						href={link('/how-it-works')}
 						variant="outline"
-						class="h-12 px-8 text-base font-bold bg-white rounded-full border-2 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+						class="h-12 px-3 text-[0.85rem] font-bold bg-white rounded-full border-2 sm:px-8 sm:text-base border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
 					>
 						How It Works
 					</Button>
