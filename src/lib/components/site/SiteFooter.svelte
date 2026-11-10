@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site, partners, nav, legalNav, consultationHref, link } from '$lib/site';
+	import { site, nav, legalNav, consultationHref, link } from '$lib/site';
 	import Phone from '@lucide/svelte/icons/phone';
 </script>
 
@@ -8,7 +8,13 @@
 	<div class="py-12 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
 		<div class="grid gap-10 md:grid-cols-4">
 			<div class="md:col-span-2">
-				<img src={site.logoPrimary} alt={site.name} width="384" height="216" class="-ml-3 w-auto h-24" />
+				<img
+					src={site.logoPrimary}
+					alt={site.name}
+					width="384"
+					height="216"
+					class="-ml-3 w-auto h-24"
+				/>
 				<p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">
 					The first call when debt gets overwhelming. We connect people with independent partners,
 					including consumer rights law firms.
@@ -56,18 +62,16 @@
 		</div>
 
 		<div class="pt-8 mt-10 space-y-3 border-t border-slate-100">
-			<!-- TODO: have compliance/counsel review this disclaimer, including the referral
-			     compensation sentence. -->
+			<!-- Owner's approved disclaimer, verbatim. Shown on every page. -->
 			<p class="text-xs leading-relaxed text-slate-500">
-				{site.name} is not a law firm, does not provide legal advice, and is not a substitute for an
-				attorney. We connect consumers with {partners.general}, including consumer rights law firms,
-				which operate independently. Legal services are provided solely by those firms, and an
-				attorney-client relationship is formed only through a written agreement between you and the law
-				firm. Any fees for legal services are set by and payable to the law firm as described in that
-				agreement. We may be paid by partners for referrals. Results vary and are not guaranteed.
-				{site.name} is not a credit repair organization, a debt settlement or debt consolidation
-				company, or a lender. Services are not available in all states.
-				<a href={link('/disclosures')} class="underline hover:text-slate-600">See full disclosures</a>.
+				{site.name} is a marketing and enrollment company, not a law firm, and does not offer debt settlement
+				services. Debt validation and legal services are provided by independent law firms under separate
+				client agreements. ASD receives compensation for qualifying client referrals. Eligibility, fees,
+				and results vary. No specific outcome is guaranteed. Available in
+				{site.statesServed}
+				<a href={link('/disclosures')} class="ml-1 underline hover:text-slate-600"
+					>See full disclosures</a
+				>
 			</p>
 			<p class="text-xs text-slate-500">
 				© {new Date().getFullYear()}

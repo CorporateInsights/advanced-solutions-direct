@@ -111,13 +111,3 @@
 		</Button>
 	</div>
 </section>
-
-<!-- Disclaimer -->
-<section class="py-10 px-4 bg-white sm:px-6 lg:px-8">
-	<p class="mx-auto max-w-4xl text-sm leading-relaxed text-center text-slate-500">
-		{site.name} is a marketing and enrollment company, not a law firm, and does not offer debt settlement
-		services. Debt validation and legal services are provided by independent law firms under separate
-		client agreements. ASD receives compensation for qualifying client referrals. Eligibility, fees, and
-		results vary. No specific outcome is guaranteed. Available in {site.statesServed}
-	</p>
-</section>
