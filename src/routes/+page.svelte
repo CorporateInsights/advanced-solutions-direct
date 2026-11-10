@@ -68,16 +68,6 @@
 					Already enrolled in debt settlement but struggling to afford your payments? You may
 					qualify for a more affordable alternative!
 				</p>
-
-				<!-- Desktop only, so the form stays near the top on phones -->
-				<img
-					src={link('/images/hero-couple-kitchen.webp')}
-					alt="A couple at their kitchen table looking over their options on a laptop"
-					width="1400"
-					height="933"
-					fetchpriority="high"
-					class="hidden object-cover mt-8 w-full max-w-xl rounded-2xl shadow-xl lg:block aspect-[16/10] shadow-slate-900/10"
-				/>
 			</div>
 
 			<div class="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">

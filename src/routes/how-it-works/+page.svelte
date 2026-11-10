@@ -59,11 +59,11 @@
 <section class="pb-16 sm:pb-20">
 	<div class="px-4 mx-auto space-y-6 max-w-4xl sm:px-6 lg:px-8">
 		<img
-			src={link('/images/how-it-works-phone-call.webp')}
-			alt="A woman at her kitchen table talking on the phone"
+			src={link('/images/how-it-works-couple-laptop.webp')}
+			alt="An older couple smiling while looking at a laptop together at home"
 			width="1400"
-			height="933"
-			class="object-cover w-full rounded-2xl shadow-xl aspect-[16/9] sm:aspect-[21/9] object-[60%_15%] shadow-slate-900/10"
+			height="788"
+			class="object-cover w-full rounded-2xl shadow-xl aspect-[16/9] sm:aspect-[21/9] object-[50%_35%] shadow-slate-900/10"
 		/>
 		{#each steps as step, i}
 			<Card class="bg-white border-slate-100">

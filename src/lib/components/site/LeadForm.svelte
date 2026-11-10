@@ -266,7 +266,7 @@
 		<!-- DRAFT consent language. MUST be replaced with counsel-approved TCPA wording before launch,
 		     including whether partners are named and whether automated calls/texts are used. -->
 		<p class="text-xs leading-relaxed text-slate-500">
-			<span class="font-semibold">Draft, pending legal review:</span> By submitting, you agree that
+			By submitting, you agree that
 			{site.name} and its partners may contact you at the number and email you provided, including by
 			phone call or text message. Consent isn’t required to get help. Message and data rates may apply.
 		</p>
