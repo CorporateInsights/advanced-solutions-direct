@@ -111,8 +111,8 @@
 
 	// Labels sit inside the fields (placeholders); real labels stay for screen readers
 	const fieldClass =
-		'block w-full h-11 px-4 text-sm bg-white rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-500 outline-none transition focus:border-brand-purple/60 focus:ring-[3px] focus:ring-brand-purple/15';
-	const selectClass = `${fieldClass} appearance-none pr-10 invalid:text-slate-500 [&>option]:text-slate-900 bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")] bg-[length:1rem] bg-[position:right_1rem_center] bg-no-repeat`;
+		'block w-full h-11 px-4 text-[0.95rem] font-semibold bg-white rounded-xl border-[1.5px] border-slate-300 text-slate-900 placeholder:font-semibold placeholder:text-slate-700 shadow-sm outline-none transition focus:border-brand-purple/60 focus:ring-[3px] focus:ring-brand-purple/15';
+	const selectClass = `${fieldClass} appearance-none pr-10 invalid:text-slate-700 [&>option]:text-slate-900 bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")] bg-[length:1rem] bg-[position:right_1rem_center] bg-no-repeat`;
 </script>
 
 {#if submitted}
@@ -238,12 +238,14 @@
 		</div>
 
 		<fieldset class="pt-1.5">
-			<legend class="mb-2 text-sm font-bold text-slate-800">
+			<legend class="mb-2 text-[0.95rem] font-extrabold text-slate-900">
 				Currently enrolled in a debt relief program?
 			</legend>
 			<div class="flex flex-wrap gap-x-6 gap-y-2">
 				{#each programOptions as option}
-					<label class="inline-flex gap-2 items-center text-sm cursor-pointer text-slate-700">
+					<label
+						class="inline-flex gap-2 items-center text-[0.95rem] font-semibold cursor-pointer text-slate-800"
+					>
 						<input
 							type="radio"
 							name="{id}-debt-relief-program"

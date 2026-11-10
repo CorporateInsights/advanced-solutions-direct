@@ -10,8 +10,8 @@
 	import CreditCard from '@lucide/svelte/icons/credit-card';
 	import PhoneCall from '@lucide/svelte/icons/phone-call';
 
-	const heroPhoto = link('/images/hero-couple-bills.webp');
-	const heroPhotoAlt = 'A couple going through their bills together at home';
+	const heroPhoto = link('/images/hero-couple-worried.webp');
+	const heroPhotoAlt = 'A worried couple at their kitchen table going over their bills';
 
 	const situations = [
 		{ icon: CalendarDays, label: 'Behind on Bills', color: 'text-brand-purple' },
@@ -31,30 +31,34 @@
 </svelte:head>
 
 <section class="overflow-hidden relative bg-white">
-	<!-- Desktop: photo sits between the copy and the form and fades out at its edges -->
-	<div class="hidden absolute inset-y-0 lg:block left-[30%] right-[16%] pointer-events-none">
+	<!-- Desktop: an upright photo, sized by height so it isn't over-zoomed, centered in the gap
+	     between the copy and the form. Only its left and bottom edges fade. -->
+	<div
+		class="hidden absolute inset-y-0 lg:block aspect-[2/3] left-[calc(50%+5.5rem)] -translate-x-1/2 pointer-events-none"
+	>
 		<img
 			src={heroPhoto}
 			alt={heroPhotoAlt}
-			width="1800"
-			height="1013"
+			width="1300"
+			height="1866"
 			fetchpriority="high"
-			class="object-cover w-full h-full object-[50%_40%] [mask-image:linear-gradient(to_right,transparent,#000_25%,#000_80%,transparent),linear-gradient(to_bottom,#000_70%,transparent)] [mask-composite:intersect]"
+			class="object-cover w-full h-full object-[50%_35%] [mask-image:linear-gradient(to_right,transparent,#000_18%,#000_82%,transparent),linear-gradient(to_bottom,#000_80%,transparent)] [mask-composite:intersect]"
 		/>
 	</div>
-	<!-- Soft glow so the copy always sits on a light background -->
+
+	<!-- Soft white glow behind the copy so text never sits on a busy part of the photo -->
 	<div
-		class="hidden absolute inset-y-0 left-0 lg:block w-[52%] bg-gradient-to-r from-white via-white/90 to-transparent pointer-events-none"
+		class="hidden absolute inset-y-0 left-0 lg:block w-[47%] bg-gradient-to-r from-white from-60% via-white/80 to-transparent pointer-events-none"
 	></div>
 
 	<!-- Phones: photo across the top, fading into the page -->
 	<img
 		src={heroPhoto}
 		alt={heroPhotoAlt}
-		width="1800"
-		height="1013"
+		width="1300"
+		height="1866"
 		fetchpriority="high"
-		class="object-cover w-full h-48 sm:h-64 lg:hidden object-[50%_35%] [mask-image:linear-gradient(to_bottom,#000_60%,transparent)]"
+		class="object-cover w-full h-56 sm:h-72 lg:hidden object-[50%_30%] [mask-image:linear-gradient(to_bottom,#000_65%,transparent)]"
 	/>
 
 	<div
@@ -63,7 +67,7 @@
 		<div
 			class="grid gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
 		>
-			<div class="mx-auto max-w-xl text-center lg:mx-0 lg:max-w-[34rem] lg:text-left">
+			<div class="mx-auto max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left">
 				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm italic {ink}">
 					Real Solutions. A Brighter Financial Future.
 				</p>
@@ -122,7 +126,9 @@
 					class="mx-auto mt-6 max-w-md h-0.5 bg-gradient-to-r rounded-full lg:mx-0 from-brand-orange via-brand-pink to-transparent"
 				></div>
 
-				<p class="mt-5 text-xl font-extrabold italic sm:text-2xl text-brand-orange">
+				<p
+					class="mt-5 text-xl font-extrabold italic sm:text-2xl lg:text-[1.4rem] lg:whitespace-nowrap text-brand-orange"
+				>
 					Know Your Consumer Protection Rights.
 				</p>
 				<p class="mt-1 text-base italic sm:text-lg {ink}">
@@ -181,23 +187,20 @@
 	</ul>
 </section>
 
-<!-- Gradient wave into the footer -->
-<svg
-	class="block -mb-px w-full h-14 sm:h-20"
-	viewBox="0 0 1440 100"
-	preserveAspectRatio="none"
-	aria-hidden="true"
->
-	<defs>
-		<linearGradient id="wave" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
-			<stop stop-color="#5B0FD0" />
-			<stop offset=".45" stop-color="#D100BB" />
-			<stop offset=".75" stop-color="#FF2D55" />
-			<stop offset="1" stop-color="#FF8A00" />
-		</linearGradient>
-	</defs>
-	<path
-		d="M0 60 C 300 10, 600 10, 900 45 C 1150 75, 1300 70, 1440 40 V100 H0 Z"
-		fill="url(#wave)"
-	/>
-</svg>
+<!-- Gradient bar above the footer -->
+<section class="py-10 px-4 sm:px-6 lg:px-8 bg-brand-gradient-ui">
+	<div
+		class="flex flex-col gap-5 justify-between items-center mx-auto max-w-6xl text-center md:flex-row md:text-left"
+	>
+		<p class="text-2xl font-extrabold italic text-white text-balance sm:text-3xl">
+			You may have more options than you realize.
+		</p>
+		<Button
+			href={link('/how-it-works')}
+			class="h-12 px-8 font-bold uppercase bg-white rounded-full shadow-lg hover:bg-white/90 text-brand-pink shrink-0"
+		>
+			See How It Works
+			<ArrowRight class="ml-2 w-4 h-4" />
+		</Button>
+	</div>
+</section>

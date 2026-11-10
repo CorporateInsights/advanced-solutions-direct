@@ -11,9 +11,9 @@ export const site = {
 	logoPrimary: link('/brand/asd-logo-primary.svg'),
 	icon: link('/favicon.ico'),
 	appleIcon: link('/brand/apple-touch-icon.png'),
-	// Number from the owner's Page 1 mockup. TODO: confirm it's the live line before launch.
-	phoneDisplay: '(855) 410-7368',
-	phoneHref: 'tel:18554107368',
+	// TODO: placeholder phone number; replace with the real line.
+	phoneDisplay: '(800) 555-0123',
+	phoneHref: 'tel:18005550123',
 	// TODO: placeholder hours; confirm.
 	hours: 'Mon–Fri 6am–6pm PT',
 	// TODO: list of states served, from the owner. Shown in the landing page disclaimer.
@@ -31,8 +31,9 @@ export const partners = {
 	legal: 'an independent consumer rights law firm'
 };
 
-// Header menu, per the owner's Page 1 mockup (the logo links home)
+// Header menu, per the owner's Page 1 mockup plus Home
 export const nav = [
+	{ href: link('/'), label: 'Home' },
 	{ href: link('/how-it-works'), label: 'How It Works' },
 	{ href: link('/who-we-help'), label: 'Who We Help' },
 	{ href: link('/faq'), label: 'FAQ' }
