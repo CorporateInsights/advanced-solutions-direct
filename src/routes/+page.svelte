@@ -31,31 +31,28 @@
 </svelte:head>
 
 <section class="overflow-hidden relative bg-white">
-	<!-- Desktop: an upright photo, sized by height so it isn't over-zoomed, centered in the gap
-	     between the copy and the form. Only its left and bottom edges fade. -->
-	<div
-		class="hidden absolute inset-y-0 lg:block aspect-[2/3] left-[calc(50%+5.5rem)] -translate-x-1/2 pointer-events-none"
-	>
-		<img
-			src={heroPhoto}
-			alt={heroPhotoAlt}
-			width="1300"
-			height="1866"
-			fetchpriority="high"
-			class="object-cover w-full h-full object-[50%_35%] [mask-image:linear-gradient(to_right,transparent,#000_18%,#000_82%,transparent),linear-gradient(to_bottom,#000_80%,transparent)] [mask-composite:intersect]"
-		/>
-	</div>
-
-	<!-- Soft white glow behind the copy so text never sits on a busy part of the photo -->
-	<div
-		class="hidden absolute inset-y-0 left-0 lg:block w-[47%] bg-gradient-to-r from-white from-60% via-white/80 to-transparent pointer-events-none"
-	></div>
-
 	<div
 		class="relative px-4 pt-6 pb-12 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:pt-14 lg:pb-16 lg:px-8"
 	>
+		<!-- Desktop: an upright photo anchored to the same content width as the copy and the form, so
+		     it sits in the gap between them at every screen size. All four edges fade into the page. -->
+		<div class="hidden absolute inset-y-6 lg:block left-[33%] aspect-[2/3] pointer-events-none">
+			<img
+				src={heroPhoto}
+				alt={heroPhotoAlt}
+				width="1300"
+				height="1866"
+				fetchpriority="high"
+				class="object-cover w-full h-full object-[50%_35%] [mask-image:linear-gradient(to_right,transparent,#000_28%,#000_86%,transparent),linear-gradient(to_bottom,transparent,#000_10%,#000_82%,transparent)] [mask-composite:intersect]"
+			/>
+		</div>
+		<!-- Soft white glow behind the copy so text never sits on a busy part of the photo -->
 		<div
-			class="grid gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
+			class="hidden absolute inset-y-0 left-0 lg:block w-[44%] bg-gradient-to-r from-white from-80% to-transparent pointer-events-none"
+		></div>
+
+		<div
+			class="grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
 		>
 			<div class="mx-auto max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left">
 				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm italic {ink}">
@@ -115,7 +112,7 @@
 
 				<p class="mt-6 text-[1.05rem] font-bold italic leading-snug sm:mt-7 sm:text-xl {ink}">
 					We’re <span
-						class="underline decoration-2 underline-offset-4 text-brand-orange decoration-brand-orange"
+						class="underline decoration-2 underline-offset-4 text-[#D9480F] decoration-[#D9480F]"
 						>NOT</span
 					>
 					another debt settlement company! We connect you with alternative solutions that may be a better
@@ -127,7 +124,7 @@
 				></div>
 
 				<p
-					class="mt-5 text-xl font-extrabold italic sm:text-2xl lg:text-[1.4rem] lg:whitespace-nowrap text-brand-orange"
+					class="mt-5 text-xl font-extrabold italic sm:text-2xl lg:text-[1.3rem] xl:text-[1.4rem] text-[#D9480F]"
 				>
 					Know Your Consumer Protection Rights.
 				</p>
