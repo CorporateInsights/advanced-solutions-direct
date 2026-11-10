@@ -15,9 +15,17 @@
 </script>
 
 <nav class="sticky top-0 z-50 border-b border-slate-100/80 bg-white/95 backdrop-blur-md">
-	<div class="flex justify-between items-center px-4 mx-auto max-w-7xl h-20 sm:px-6 lg:px-8">
+	<div
+		class="flex justify-between items-center px-4 mx-auto max-w-7xl h-20 sm:px-6 lg:h-24 lg:px-8"
+	>
 		<a href={link('/')} class="flex gap-2 items-center" onclick={() => (menuOpen = false)}>
-			<img src={site.logo} alt={site.name} width="357" height="182" class="w-auto h-14 sm:h-16" />
+			<img
+				src={site.logo}
+				alt={site.name}
+				width="357"
+				height="182"
+				class="w-auto h-14 sm:h-16 lg:h-[4.75rem]"
+			/>
 		</a>
 
 		<!-- Desktop -->
