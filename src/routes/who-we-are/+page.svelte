@@ -11,7 +11,7 @@
 	import Globe from '@lucide/svelte/icons/globe';
 	import Building2 from '@lucide/svelte/icons/building-2';
 	import MapPin from '@lucide/svelte/icons/map-pin';
-	import CircleCheck from '@lucide/svelte/icons/circle-check';
+	import Check from '@lucide/svelte/icons/check';
 
 	const specialistPhoto = link('/images/who-we-are-specialist.webp');
 	const specialistPhotoAlt = 'A smiling Client Solutions Specialist wearing a headset at her desk';
@@ -183,8 +183,8 @@
 		<ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4 lg:gap-6">
 			{#each highlights as h}
 				<li class="@container flex flex-col gap-5 p-5 h-full sm:p-7 {card}">
-					<span class="flex justify-center items-center w-14 h-14 rounded-full shrink-0 {h.tone}">
-						<h.icon class="w-7 h-7" strokeWidth={2} />
+					<span class="flex justify-center items-center w-12 h-12 rounded-xl shrink-0 {h.tone}">
+						<h.icon class="w-6 h-6" strokeWidth={2} />
 					</span>
 					<div>
 						<h3 class="text-[min(1.3rem,10cqi)] font-extrabold leading-snug text-balance {ink}">
@@ -232,7 +232,10 @@
 					<li
 						class="flex gap-3 items-start text-lg font-bold leading-snug break-words hyphens-auto {ink}"
 					>
-						<CircleCheck class="mt-0.5 w-6 h-6 shrink-0 {orange}" strokeWidth={2.25} />
+						<span
+							class="flex justify-center items-center mt-0.5 w-6 h-6 bg-gradient-to-br from-[#F97316] to-[#E8590C] rounded-full shadow-sm shrink-0"
+							aria-hidden="true"><Check class="w-3.5 h-3.5 text-white" strokeWidth={3.5} /></span
+						>
 						<span class="min-w-0">{promise}</span>
 					</li>
 				{/each}
