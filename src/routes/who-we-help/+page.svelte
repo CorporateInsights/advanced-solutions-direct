@@ -99,7 +99,7 @@
 <section class="overflow-hidden relative bg-white">
 	<!-- Lavender wash that fades back to white at the bottom, into the tagline row -->
 	<div
-		class="hidden absolute inset-0 bg-gradient-to-b to-white pointer-events-none lg:block from-purple-100/80 via-pink-50/70"
+		class="hidden absolute inset-0 bg-gradient-to-b to-white pointer-events-none lg:block from-purple-50/70 via-white"
 		aria-hidden="true"
 	></div>
 
@@ -160,23 +160,27 @@
 
 		<!-- Photo with the "on your side" badge over its corner -->
 		<div class="isolate relative mx-auto w-full max-w-xl lg:max-w-none">
-			<!-- Brand shapes from the mockup, sized and placed relative to the photo so they always
-			     sit behind it and never reach the text: one wide soft band (a "cylinder") sweeping
-			     across the top, and one purple circle in the top right corner. Colors are sampled
-			     from her mockup. Smooth CSS gradients, no blur, so nothing looks grainy. -->
-			<div class="hidden absolute inset-0 pointer-events-none -z-10 lg:block" aria-hidden="true">
-				<!-- Peach-pink haze the photo's left edge melts into -->
+			<!-- Background art, all CSS, modeled on the soft gradient art the owner liked. It's sized
+			     and placed relative to the photo (so it always sits behind it and never reaches the
+			     text) and fades out to white at the left and bottom. Layers:
+			     1. A soft glow: peach, coral, magenta and lilac radial gradients.
+			     2. Two huge, faintly tinted ovals; only their top-left edges show, as sweeping arcs.
+			     3. One see-through purple circle in the top right corner. -->
+			<div
+				class="hidden absolute pointer-events-none -z-10 lg:block -left-[53%] -top-[21%] w-[160%] h-[142%] [mask-image:linear-gradient(to_bottom,#000_55%,transparent_96%),linear-gradient(to_right,transparent_12%,#000_42%)] min-[1600px]:[mask-image:linear-gradient(to_bottom,#000_55%,transparent_96%),linear-gradient(to_right,transparent_12%,#000_42%,#000_88%,transparent)] [mask-composite:intersect]"
+				aria-hidden="true"
+			>
 				<div
-					class="absolute top-0 -left-[14%] w-[50%] h-full rounded-full bg-[radial-gradient(closest-side,rgba(255,184,130,0.7),rgba(255,196,170,0.35)_55%,rgba(255,196,170,0))]"
+					class="absolute inset-0 bg-[radial-gradient(36%_30%_at_40%_10%,rgba(255,190,130,0.95),transparent_70%),radial-gradient(36%_30%_at_58%_10%,rgba(255,100,130,0.85),transparent_70%),radial-gradient(30%_30%_at_78%_6%,rgba(200,30,210,0.9),transparent_70%),radial-gradient(40%_50%_at_96%_45%,rgba(215,140,240,0.55),transparent_75%),radial-gradient(55%_45%_at_50%_30%,rgba(255,175,160,0.5),transparent_80%)]"
 				></div>
-				<!-- The band: peach on the left through pink and magenta to lilac, rising slightly to
-				     the right, and fading out on its left end -->
 				<div
-					class="absolute -top-[40%] -left-[14%] w-[126%] h-[78%] rounded-full opacity-70 -rotate-[5deg] bg-[linear-gradient(90deg,#FFC48F_0%,#FFAE78_20%,#F99A8C_34%,#EC86B4_47%,#DA71C7_60%,#CD60D1_74%,#D38DE2_88%,#D6A0E8_100%)] [mask-image:linear-gradient(to_right,transparent,#000_20%)]"
+					class="absolute left-[18%] top-[3%] w-[110%] h-[112%] rounded-[50%] bg-[linear-gradient(to_bottom,rgba(240,70,160,0.16),rgba(240,70,160,0.06)_30%,transparent_55%)]"
 				></div>
-				<!-- The circle -->
 				<div
-					class="absolute -top-[57%] left-[38%] w-full rounded-full opacity-70 aspect-square bg-[linear-gradient(160deg,#A92CBF_0%,#B04CCB_50%,#BB66D3_100%)]"
+					class="absolute left-[33%] top-[10%] w-[130%] h-[126%] rounded-[50%] bg-[linear-gradient(to_bottom,rgba(235,60,150,0.16),rgba(235,60,150,0.06)_30%,transparent_55%)]"
+				></div>
+				<div
+					class="absolute left-[85.6%] -top-[12.5%] w-[30%] rounded-full aspect-square bg-[linear-gradient(200deg,rgba(150,60,230,0.85),rgba(170,80,235,0.6)_65%,rgba(200,130,245,0.45))] shadow-[inset_8px_-8px_24px_rgba(255,255,255,0.25)]"
 				></div>
 			</div>
 			<img
