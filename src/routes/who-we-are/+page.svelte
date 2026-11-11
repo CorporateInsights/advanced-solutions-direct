@@ -15,10 +15,11 @@
 
 	const specialistPhoto = link('/images/who-we-are-specialist.webp');
 	const specialistPhotoAlt = 'A smiling Client Solutions Specialist wearing a headset at her desk';
-	// TODO: placeholder. Her mockup has two people celebrating on a rock at sunset; swap that in
-	// once it's generated.
-	const promisePhoto = link('/images/who-we-help-family.webp');
-	const promisePhotoAlt = 'A smiling family looking over a letter together at their kitchen table';
+	// Unsplash photo by Luminous Sparkle (Unsplash License: free for commercial use, no credit needed)
+	// https://unsplash.com/photos/a-couple-of-people-standing-on-top-of-a-beach-d74rTDoxdes
+	const promisePhoto = link('/images/who-we-are-promise.webp');
+	const promisePhotoAlt =
+		'Two people raising their arms in celebration against a sunset by the sea';
 	// An AI-generated likeness of the Tempe headquarters (Hayden Ferry Lakeside II), no signs or logos
 	const officePhoto = link('/images/who-we-are-office.webp');
 	const officePhotoAlt =
@@ -209,8 +210,8 @@
 		<img
 			src={promisePhoto}
 			alt={promisePhotoAlt}
-			width="1448"
-			height="1086"
+			width="1400"
+			height="1050"
 			loading="lazy"
 			class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] shadow-purple-900/15"
 		/>
