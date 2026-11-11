@@ -92,61 +92,16 @@
 	/>
 </svelte:head>
 
-<!-- Hero: copy on the left, photo on the right. Behind them, like the mockup: a lavender
-     wash, a soft pink glow around the photo, and a sweeping orange-to-purple arc across the top
-     right. Large screens only, so the text on phones stays on plain white. -->
+<!-- Hero: copy on the left, photo on the right. Behind them, like the mockup: a lavender wash
+     and two big crisp circles tucked behind the photo's top right corner (a light peach-to-lilac
+     one, and a magenta-to-purple one in front of it). Large screens only, so the text on phones
+     stays on plain white. -->
 <section class="overflow-hidden relative bg-white">
-	<div class="hidden absolute inset-0 pointer-events-none lg:block" aria-hidden="true">
-		<!-- Lavender wash that fades back to white at the bottom, into the tagline row -->
-		<div class="absolute inset-0 bg-gradient-to-b from-purple-100/80 via-pink-50/70 to-white"></div>
-		<!-- Glow and arc stay near the content on very wide screens -->
-		<div
-			class="absolute inset-y-0 left-1/2 w-full max-w-[110rem] -translate-x-1/2 min-[1900px]:[mask-image:linear-gradient(to_left,transparent,#000_18%)]"
-		>
-			<!-- Pink glow behind the photo -->
-			<div
-				class="absolute top-[8%] right-[2%] w-[46%] h-[80%] rounded-full bg-[radial-gradient(closest-side,rgba(209,0,187,0.4),rgba(255,45,85,0.18)_55%,transparent)] blur-2xl"
-			></div>
-			<!-- The arc: thin and warm on the left, wide and purple at the right edge -->
-			<svg
-				class="absolute top-0 right-0 w-[68%] h-[78%]"
-				viewBox="0 0 1000 600"
-				preserveAspectRatio="none"
-			>
-				<defs>
-					<linearGradient id="wwh-arc" x1="0" y1="0" x2="1" y2="0.25">
-						<stop offset="0" stop-color="#FF8A00" stop-opacity="0.15" />
-						<stop offset="0.25" stop-color="#FF2D55" stop-opacity="0.75" />
-						<stop offset="0.55" stop-color="#D100BB" stop-opacity="0.95" />
-						<stop offset="1" stop-color="#7A00FF" stop-opacity="1" />
-					</linearGradient>
-					<linearGradient id="wwh-haze" x1="0" y1="0" x2="1" y2="0.4">
-						<stop offset="0" stop-color="#FF8A00" stop-opacity="0.15" />
-						<stop offset="0.5" stop-color="#D100BB" stop-opacity="0.4" />
-						<stop offset="1" stop-color="#7A00FF" stop-opacity="0.6" />
-					</linearGradient>
-					<filter id="wwh-soft" x="-10%" y="-20%" width="120%" height="140%">
-						<feGaussianBlur stdDeviation="9" />
-					</filter>
-					<filter id="wwh-softer" x="-10%" y="-20%" width="120%" height="140%">
-						<feGaussianBlur stdDeviation="40" />
-					</filter>
-				</defs>
-				<!-- Wide, faint haze under the arc -->
-				<path
-					d="M 0 0 C 380 10, 780 60, 1000 230 L 1000 520 C 820 300, 450 90, 0 0 Z"
-					fill="url(#wwh-haze)"
-					filter="url(#wwh-softer)"
-				/>
-				<!-- The arc band itself -->
-				<path
-					d="M 60 -10 C 420 0, 800 30, 1010 110 L 1010 360 C 820 180, 470 50, 60 -10 Z"
-					fill="url(#wwh-arc)"
-					filter="url(#wwh-soft)"
-				/>
-			</svg>
-		</div>
-	</div>
+	<!-- Lavender wash that fades back to white at the bottom, into the tagline row -->
+	<div
+		class="hidden absolute inset-0 bg-gradient-to-b to-white pointer-events-none lg:block from-purple-100/80 via-pink-50/70"
+		aria-hidden="true"
+	></div>
 
 	<div
 		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:pt-14 lg:pb-16"
@@ -204,7 +159,23 @@
 		</div>
 
 		<!-- Photo with the "on your side" badge over its corner -->
-		<div class="relative mx-auto w-full max-w-xl lg:max-w-none">
+		<div class="isolate relative mx-auto w-full max-w-xl lg:max-w-none">
+			<!-- Brand circles, sized and placed relative to the photo so they always sit behind
+			     its top right corner. Smooth CSS gradients, no blur, so the edges stay crisp. -->
+			<div class="hidden absolute inset-0 pointer-events-none -z-10 lg:block" aria-hidden="true">
+				<!-- Warm glow on the photo's left side -->
+				<div
+					class="absolute top-[5%] -left-[8%] w-[45%] h-[70%] rounded-full bg-[radial-gradient(closest-side,rgba(255,170,120,0.45),rgba(255,170,120,0))]"
+				></div>
+				<!-- Large light circle -->
+				<div
+					class="absolute -top-[96%] left-[13%] w-[144%] aspect-square rounded-full bg-[linear-gradient(115deg,rgba(255,196,160,0.85)_0%,rgba(244,160,214,0.85)_35%,rgba(206,150,255,0.9)_70%)]"
+				></div>
+				<!-- Magenta-to-purple circle in front of it -->
+				<div
+					class="absolute -top-[57%] left-[35%] w-[100%] aspect-square rounded-full bg-[linear-gradient(115deg,#E23BC6_0%,#C21BD6_35%,#8A0BF5_75%,#7A00FF_100%)] shadow-[0_0_60px_rgba(209,0,187,0.35)]"
+				></div>
+			</div>
 			<img
 				src={heroPhoto}
 				alt={heroPhotoAlt}
