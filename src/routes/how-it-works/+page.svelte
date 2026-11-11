@@ -80,7 +80,7 @@
 					</div>
 					<div>
 						<h2 class="text-xl font-bold sm:text-2xl text-slate-900">{step.title}</h2>
-						<p class="mt-2 leading-relaxed text-slate-600">{step.description}</p>
+						<p class="mt-2 leading-relaxed text-slate-700">{step.description}</p>
 						<ul class="flex flex-wrap gap-x-5 gap-y-2 mt-4">
 							{#each step.points as point}
 								<li class="flex gap-1.5 items-center text-sm font-medium text-slate-700">
@@ -102,13 +102,15 @@
 			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
 				What to Have <span class="text-brand-gradient">Handy</span>
 			</h2>
-			<p class="mt-4 text-lg text-slate-600">
+			<p class="mt-4 text-lg text-slate-700">
 				Don’t have everything? Call anyway. We’ll work through it together.
 			</p>
 		</div>
 		<div class="grid gap-4 mt-10 sm:grid-cols-3">
 			{#each bringToCall as item}
-				<div class="flex flex-col gap-3 items-center p-6 text-center bg-white rounded-xl border border-slate-100">
+				<div
+					class="flex flex-col gap-3 items-center p-6 text-center bg-white rounded-xl border border-slate-100"
+				>
 					<div class="flex justify-center items-center w-12 h-12 bg-pink-50 rounded-xl">
 						<item.icon class="w-6 h-6 text-brand-pink" />
 					</div>

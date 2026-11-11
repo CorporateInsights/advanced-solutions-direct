@@ -24,14 +24,18 @@
 	</div>
 	<div class="relative py-14 px-4 mx-auto max-w-3xl text-center sm:py-20 sm:px-6 lg:px-8">
 		{#if eyebrow}
-			<Badge variant="outline" class="mb-5 bg-white border-pink-200 text-brand-pink">{eyebrow}</Badge>
+			<Badge variant="outline" class="mb-5 bg-white border-pink-200 text-brand-pink"
+				>{eyebrow}</Badge
+			>
 		{/if}
-		<h1 class="text-4xl font-extrabold tracking-tight leading-tight text-balance sm:text-5xl text-slate-900">
+		<h1
+			class="text-4xl font-extrabold tracking-tight leading-tight text-balance sm:text-5xl text-slate-900"
+		>
 			{title}
 			{#if highlight}<span class="text-brand-gradient">{highlight}</span>{/if}
 		</h1>
 		{#if description}
-			<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">{description}</p>
+			<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-700">{description}</p>
 		{/if}
 	</div>
 </section>
