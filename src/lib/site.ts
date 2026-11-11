@@ -31,12 +31,12 @@ export const partners = {
 export const careersHref = 'https://apply.workable.com/';
 
 // Menu, per the owner's latest mockups: Home | Who We Help | FAQ | Who We Are | Careers.
-// Who We Are is the About page for now. External links open in a new tab.
+// External links open in a new tab.
 export const nav: { href: string; label: string; external?: boolean }[] = [
 	{ href: link('/'), label: 'Home' },
 	{ href: link('/who-we-help'), label: 'Who We Help' },
 	{ href: link('/faq'), label: 'FAQ' },
-	{ href: link('/about'), label: 'Who We Are' },
+	{ href: link('/who-we-are'), label: 'Who We Are' },
 	{ href: careersHref, label: 'Careers', external: true }
 ];
 
