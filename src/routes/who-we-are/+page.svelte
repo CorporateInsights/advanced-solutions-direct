@@ -11,7 +11,7 @@
 	import Globe from '@lucide/svelte/icons/globe';
 	import Building2 from '@lucide/svelte/icons/building-2';
 	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Check from '@lucide/svelte/icons/check';
+	import CheckDot from '$lib/components/site/CheckDot.svelte';
 
 	const specialistPhoto = link('/images/who-we-are-specialist.webp');
 	const specialistPhotoAlt = 'A smiling Client Solutions Specialist wearing a headset at her desk';
@@ -232,10 +232,7 @@
 					<li
 						class="flex gap-3 items-start text-lg font-bold leading-snug break-words hyphens-auto {ink}"
 					>
-						<span
-							class="flex justify-center items-center mt-0.5 w-6 h-6 bg-gradient-to-br from-[#F97316] to-[#E8590C] rounded-full shadow-sm shrink-0"
-							aria-hidden="true"><Check class="w-3.5 h-3.5 text-white" strokeWidth={3.5} /></span
-						>
+						<CheckDot class="mt-0.5" />
 						<span class="min-w-0">{promise}</span>
 					</li>
 				{/each}

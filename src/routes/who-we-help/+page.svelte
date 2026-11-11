@@ -12,7 +12,7 @@
 	import PhoneCall from '@lucide/svelte/icons/phone-call';
 	import PiggyBank from '@lucide/svelte/icons/piggy-bank';
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
-	import CircleCheck from '@lucide/svelte/icons/circle-check';
+	import CheckDot from '$lib/components/site/CheckDot.svelte';
 	import ClipboardList from '@lucide/svelte/icons/clipboard-list';
 	import FileText from '@lucide/svelte/icons/file-text';
 
@@ -266,8 +266,8 @@
 			<ul class="mt-7 space-y-3.5">
 				{#each wants as want}
 					<li class="flex gap-3 items-start text-lg font-bold leading-snug {ink}">
-						<CircleCheck class="mt-0.5 w-6 h-6 shrink-0 {orange}" strokeWidth={2.25} />
-						{want}
+						<CheckDot class="mt-0.5" />
+						<span class="min-w-0">{want}</span>
 					</li>
 				{/each}
 			</ul>

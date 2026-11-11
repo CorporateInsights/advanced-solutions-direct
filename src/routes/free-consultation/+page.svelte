@@ -2,7 +2,7 @@
 	import { site, partners } from '$lib/site';
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
 	import Phone from '@lucide/svelte/icons/phone';
-	import Check from '@lucide/svelte/icons/check';
+	import CheckDot from '$lib/components/site/CheckDot.svelte';
 	import Clock from '@lucide/svelte/icons/clock';
 
 	const expect = [
@@ -103,7 +103,7 @@
 					<div class="flex flex-wrap gap-x-5 gap-y-2 mt-6">
 						{#each ['No cost', 'No obligation', 'No pressure'] as point}
 							<span class="flex gap-1.5 items-center text-sm font-medium text-slate-800">
-								<Check class="w-4 h-4 text-brand-pink" />
+								<CheckDot size="sm" />
 								{point}
 							</span>
 						{/each}
