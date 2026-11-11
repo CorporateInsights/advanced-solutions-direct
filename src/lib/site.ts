@@ -30,23 +30,18 @@ export const partners = {
 // TODO: placeholder. Replace with the company's Workable careers page once it's provided.
 export const careersHref = 'https://apply.workable.com/';
 
-// Header menu, per the owner's Page 1 mockup plus Home. External links open in a new tab.
+// Menu, per the owner's latest mockups: Home | Who We Help | FAQ | Who We Are | Careers.
+// Who We Are is the About page for now. External links open in a new tab.
 export const nav: { href: string; label: string; external?: boolean }[] = [
 	{ href: link('/'), label: 'Home' },
-	{ href: link('/how-it-works'), label: 'How It Works' },
 	{ href: link('/who-we-help'), label: 'Who We Help' },
 	{ href: link('/faq'), label: 'FAQ' },
+	{ href: link('/about'), label: 'Who We Are' },
 	{ href: careersHref, label: 'Careers', external: true }
 ];
 
-// Footer keeps the full list of pages
-export const footerNav = [
-	{ href: link('/'), label: 'Home' },
-	{ href: link('/how-it-works'), label: 'How It Works' },
-	{ href: link('/who-we-help'), label: 'Who We Help' },
-	{ href: link('/about'), label: 'About' },
-	{ href: link('/faq'), label: 'FAQ' }
-];
+// Footer uses the same list
+export const footerNav = nav;
 
 // Main call to action label, used in the header, mobile bar and buttons
 export const ctaLabel = 'Discover My Options';
