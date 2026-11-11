@@ -23,6 +23,8 @@
 						<li>
 							<a
 								href={item.href}
+								target={item.external ? '_blank' : undefined}
+								rel={item.external ? 'noopener noreferrer' : undefined}
 								class="text-sm font-semibold transition-colors hover:text-brand-pink {ink}"
 								>{item.label}</a
 							>

@@ -176,11 +176,11 @@
 						<ArrowRight class="ml-2 w-4 h-4" />
 					</Button>
 					<Button
-						href={link('/how-it-works')}
+						href={link('/who-we-help')}
 						variant="outline"
 						class="grow h-auto min-h-12 py-2.5 px-5 max-w-full text-[0.9rem] font-bold leading-tight text-center whitespace-normal bg-white rounded-full border-2 sm:grow-0 sm:px-7 sm:text-base border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
 					>
-						See How It Works
+						See Who We Help
 					</Button>
 				</div>
 			</div>

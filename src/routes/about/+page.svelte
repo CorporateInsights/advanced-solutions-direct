@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>About Us | {site.name}</title>
+	<title>Who We Are | {site.name}</title>
 	<meta
 		name="description"
 		content="Advanced Solutions Direct is the first call when debt gets overwhelming. We listen, explain how the process works, and connect you with an independent consumer rights law firm if it's a fit."
@@ -40,7 +40,7 @@
 </svelte:head>
 
 <PageHeader
-	eyebrow="About Us"
+	eyebrow="Who We Are"
 	title="We’re the"
 	highlight=" First Call."
 	description="When debt gets overwhelming, it’s hard to know who to trust or where to start. We’re the calm, honest place to begin."
