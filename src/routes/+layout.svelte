@@ -64,14 +64,17 @@
 				<!-- Tap-to-call: equal billing with the form, since most mobile visitors would rather call -->
 				<a
 					href={site.phoneHref}
-					class="flex gap-2 justify-center items-center h-12 text-sm font-bold rounded-lg border-2 border-pink-200 text-slate-900 bg-white active:bg-pink-50"
+					class="flex gap-2 justify-center items-center min-h-12 text-sm font-bold rounded-lg border-2 border-pink-200 text-slate-900 bg-white active:bg-pink-50"
 				>
 					<Phone class="w-5 h-5 text-brand-pink" />
 					Call Now
 				</a>
-				<Button href={stickyHref} class="h-12 text-sm rounded-lg {ctaClass}">
+				<Button
+					href={stickyHref}
+					class="px-2 h-auto min-h-12 text-sm leading-tight text-center whitespace-normal rounded-lg {ctaClass}"
+				>
 					{ctaLabel}
-					<ArrowRight class="ml-1 w-4 h-4" />
+					<ArrowRight class="hidden ml-1 w-4 h-4 min-[25rem]:block" />
 				</Button>
 			</div>
 		</div>

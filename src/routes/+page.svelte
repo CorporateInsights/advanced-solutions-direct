@@ -1,14 +1,18 @@
 <script lang="ts">
-	// Page 1 follows the owner's approved mockup (copy and layout). Don't change the wording
-	// without the owner's sign-off.
+	// Page 1 follows the owner's approved mockup (her rewrite: copy and layout). Don't change the
+	// wording without the owner's sign-off.
 	import { site, ctaClass, ctaLabel, link } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import Check from '@lucide/svelte/icons/check';
 	import CalendarDays from '@lucide/svelte/icons/calendar-days';
 	import Coins from '@lucide/svelte/icons/coins';
 	import CreditCard from '@lucide/svelte/icons/credit-card';
 	import PhoneCall from '@lucide/svelte/icons/phone-call';
+	import HandCoins from '@lucide/svelte/icons/hand-coins';
+	import Signpost from '@lucide/svelte/icons/signpost';
+	import ClipboardCheck from '@lucide/svelte/icons/clipboard-check';
 
 	const heroPhoto = link('/images/hero-couple-letter.webp');
 	const heroPhotoAlt = 'A concerned couple at their kitchen table reading a letter together';
@@ -19,58 +23,59 @@
 		{ icon: CreditCard, label: 'Debt Settlement Payments Too High' }
 	];
 
+	const approaches = [
+		{
+			icon: HandCoins,
+			title: 'Explore Lower Payment Options',
+			text: 'See whether a different monthly payment structure may be available.'
+		},
+		{
+			icon: Signpost,
+			title: 'Explore Alternative Options',
+			text: 'Learn about an approach beyond traditional debt programs.'
+		},
+		{
+			icon: ClipboardCheck,
+			title: 'Find a Fit for Your Situation',
+			text: 'Explore options based on your accounts and circumstances.'
+		}
+	];
+
 	const ink = 'text-[#1e1452]';
+	const orange = 'text-[#D9480F]';
+	const eyebrow = 'text-xs font-bold tracking-[0.2em] uppercase text-brand-pink';
+	const sectionTitle = `text-3xl font-extrabold tracking-tight leading-tight text-balance sm:text-4xl lg:text-[2.5rem] ${ink}`;
 </script>
 
 <svelte:head>
 	<title>Drowning in Debt? | {site.name}</title>
 	<meta
 		name="description"
-		content="We're not another debt settlement company. We connect you with alternative solutions that may be a better fit for your financial situation. Explore your options."
+		content="Are your bills or debt settlement payments too high? We're not another debt settlement company. We connect you with alternative solutions that may be a better fit for your financial situation."
 	/>
 </svelte:head>
 
-<section class="overflow-hidden relative bg-white">
-	<div
-		class="relative px-4 pt-6 pb-12 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:pt-14 lg:pb-16 lg:px-8"
-	>
-		<!-- Large screens: the photo as the hero background, like the owner's mockup. It bleeds to the
-		     top edge, fades into white at the bottom and right, and is sized so both faces sit in the
-		     open space between the copy and the form. A white glow keeps the copy readable. -->
+<!-- Hero: copy, photo, form (three columns on large screens) -->
+<section class="bg-white">
+	<div class="px-4 pt-6 pb-10 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:px-8 lg:pt-12 lg:pb-12">
 		<div
-			class="hidden absolute top-0 left-0 xl:block h-[35rem] aspect-[1672/941] pointer-events-none"
-		>
-			<img
-				src={heroPhoto}
-				alt={heroPhotoAlt}
-				width="1672"
-				height="941"
-				fetchpriority="high"
-				class="object-cover w-full h-full [mask-image:linear-gradient(to_right,#000_84%,transparent),linear-gradient(to_bottom,#000_70%,transparent)] [mask-composite:intersect]"
-			/>
-		</div>
-		<div
-			class="hidden absolute inset-y-0 left-0 xl:block w-[34rem] bg-gradient-to-r from-white from-65% to-transparent pointer-events-none"
-		></div>
-
-		<div
-			class="grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
+			class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_26rem] lg:items-center xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)_25rem] xl:gap-7 xl:items-stretch"
 		>
 			<div
-				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left"
+				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left xl:max-w-none xl:self-center"
 			>
-				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm italic {ink}">
+				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm xl:text-xs {ink}">
 					Real Solutions. A Brighter Financial Future.
 				</p>
 
 				<h1
-					class="mt-2 text-[3.25rem] font-black tracking-tight italic leading-[0.95] sm:mt-3 sm:text-7xl lg:text-[clamp(2.25rem,16.8cqi,5.25rem)] {ink}"
+					class="mt-2 text-[min(3.25rem,15cqi)] font-black tracking-tight leading-[0.95] sm:mt-3 sm:text-[min(4.5rem,15cqi)] lg:text-[clamp(2.25rem,16.8cqi,5.25rem)] {ink}"
 				>
 					Drowning<br />in Debt?
 				</h1>
 				<!-- Brush swoosh under the headline -->
 				<svg
-					class="mx-auto mt-2 w-56 h-4 sm:w-72 lg:mx-0"
+					class="mx-auto mt-2 w-56 max-w-full h-4 sm:w-72 lg:mx-0"
 					viewBox="0 0 300 16"
 					fill="none"
 					aria-hidden="true"
@@ -91,57 +96,53 @@
 					<path d="M4 12 C 80 2, 200 0, 296 8 C 210 5, 110 7, 30 14 Z" fill="url(#swoosh)" />
 				</svg>
 
-				<!-- Phones, tablets and small laptops: photo as a rounded card; the banner overlaps its bottom edge -->
+				<!-- Phones, tablets and laptops: the photo sits here; the banner overlaps its bottom edge.
+				     Wide screens show it in its own middle column instead. -->
 				<img
 					src={heroPhoto}
 					alt={heroPhotoAlt}
 					width="1672"
 					height="941"
 					fetchpriority="high"
-					class="object-cover mt-5 w-full rounded-3xl ring-[3px] ring-brand-purple/70 shadow-xl xl:hidden aspect-[4/3] object-[64%_40%] shadow-purple-900/15"
+					class="object-cover mt-5 w-full rounded-3xl shadow-xl xl:hidden aspect-[4/3] object-[64%_40%] shadow-purple-900/15"
 				/>
 
 				<div
-					class="inline-block relative py-3 px-7 -mt-9 text-white rounded-full ring-4 ring-white shadow-lg sm:px-9 xl:mt-6 xl:ring-0 bg-brand-gradient-ui shadow-pink-500/25"
+					class="inline-block relative py-3 px-6 max-w-full -mt-9 text-white rounded-2xl ring-4 ring-white shadow-lg sm:px-8 xl:mt-5 xl:ring-0 bg-brand-gradient-ui shadow-pink-500/25"
 				>
-					<p
-						class="text-[1.35rem] font-extrabold italic leading-tight whitespace-nowrap sm:text-3xl lg:text-[clamp(0.7rem,6cqi,1.875rem)]"
-					>
+					<p class="text-[clamp(0.7rem,6.6cqi,1.875rem)] font-extrabold leading-tight text-balance">
 						We Have Another Way
 					</p>
-					<p
-						class="text-[0.95rem] font-bold italic whitespace-nowrap sm:text-xl lg:text-[clamp(0.5rem,4cqi,1.25rem)]"
-					>
-						You May Not Have Been Offered!
+					<p class="text-[clamp(0.5rem,4.3cqi,1.25rem)] font-semibold text-balance">
+						You May NOT Have Been Offered.
 					</p>
 				</div>
 
-				<p class="mt-6 text-[1.05rem] font-bold italic leading-snug sm:mt-7 sm:text-xl {ink}">
-					We’re <span
-						class="underline decoration-2 underline-offset-4 text-[#D9480F] decoration-[#D9480F]"
-						>NOT</span
-					>
-					another debt settlement company! We connect you with alternative solutions that may be a better
-					fit for your financial situation.
-				</p>
-
-				<div
-					class="mx-auto mt-6 max-w-md h-0.5 bg-gradient-to-r rounded-full lg:mx-0 from-brand-orange via-brand-pink to-transparent"
-				></div>
-
 				<p
-					class="mt-5 text-xl font-extrabold italic sm:text-2xl lg:text-[1.3rem] xl:text-[1.4rem] text-[#D9480F]"
+					class="mt-6 text-xl font-extrabold leading-tight uppercase sm:text-2xl lg:text-[1.6rem] {ink}"
 				>
-					Know Your Consumer Protection Rights.
+					Are Your Bills or Debt Settlement Payments Too High?
 				</p>
-				<p class="mt-1 text-base italic sm:text-lg {ink}">
-					There May Be Another Option Worth Exploring.
+				<p
+					class="mt-1.5 text-3xl font-black tracking-tight uppercase sm:text-4xl lg:text-[2.1rem] {orange}"
+				>
+					We Need to Talk.
+				</p>
+				<p class="mt-1 text-base font-semibold sm:text-lg {ink}">
+					We may have an alternative worth exploring.
 				</p>
 
-				<div class="grid grid-cols-2 gap-3 mt-7 sm:flex sm:justify-center sm:mt-8 lg:justify-start">
+				<p class="mt-4 text-[0.95rem] leading-relaxed sm:text-base text-slate-700">
+					<strong class="font-extrabold {ink}"
+						>We’re <span class="italic {orange}">NOT</span> another debt settlement company.</strong
+					>
+					We connect you with alternative solutions that may be a better fit for your financial situation.
+				</p>
+
+				<div class="flex flex-wrap gap-3 justify-center mt-7 lg:justify-start">
 					<Button
 						href="#lead-form"
-						class="h-12 px-3 text-[0.85rem] rounded-full sm:px-7 sm:text-base {ctaClass}"
+						class="grow h-auto min-h-12 py-2.5 px-5 max-w-full text-[0.9rem] leading-tight text-center whitespace-normal rounded-full sm:grow-0 sm:px-7 sm:text-base xl:min-h-11 xl:px-4 xl:text-[0.8rem] {ctaClass}"
 					>
 						{ctaLabel}
 						<ArrowRight class="ml-2 w-4 h-4" />
@@ -149,11 +150,25 @@
 					<Button
 						href={link('/how-it-works')}
 						variant="outline"
-						class="h-12 px-3 text-[0.85rem] font-bold bg-white rounded-full border-2 sm:px-8 sm:text-base border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+						class="grow h-auto min-h-12 py-2.5 px-5 max-w-full text-[0.9rem] font-bold leading-tight text-center whitespace-normal bg-white rounded-full border-2 sm:grow-0 sm:px-7 sm:text-base xl:min-h-11 xl:px-4 xl:text-[0.8rem] border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
 					>
-						How It Works
+						See How It Works
 					</Button>
 				</div>
+			</div>
+
+			<!-- Wide screens: the photo as the middle column, as tall as the copy and form -->
+			<div
+				class="hidden overflow-hidden relative rounded-3xl shadow-xl xl:block min-h-[28rem] shadow-purple-900/15"
+			>
+				<img
+					src={heroPhoto}
+					alt={heroPhotoAlt}
+					width="1672"
+					height="941"
+					fetchpriority="high"
+					class="object-cover absolute inset-0 w-full h-full object-[72%_50%]"
+				/>
 			</div>
 
 			<div class="mx-auto w-full max-w-md lg:max-w-none">
@@ -163,61 +178,142 @@
 	</div>
 </section>
 
-<!-- Situations, plus the phone line -->
-<!-- Same width and side padding as the hero, so the cards line up with the copy and the form -->
-<section class="relative pb-14 bg-white">
-	<ul
-		class="grid gap-4 px-4 mx-auto max-w-7xl sm:grid-cols-2 sm:px-6 xl:grid-cols-4 lg:gap-5 lg:px-8"
-	>
-		{#each situations as s}
-			<li
-				class="p-[2px] rounded-2xl shadow-xl transition bg-brand-gradient-ui shadow-purple-900/10 hover:-translate-y-0.5 hover:shadow-2xl"
+<!-- Already enrolled, situations, and the phone line. Same width as the hero. -->
+<section class="pb-12 bg-white sm:pb-14">
+	<div class="px-4 mx-auto space-y-5 max-w-7xl sm:px-6 lg:px-8">
+		<div
+			class="flex flex-col gap-4 items-center py-5 px-5 text-center bg-gradient-to-r rounded-2xl border shadow-sm sm:flex-row sm:gap-5 sm:px-7 sm:text-left border-brand-purple/25 from-pink-50 via-purple-50 to-pink-50/40 shadow-purple-900/5"
+		>
+			<span
+				class="flex justify-center items-center w-12 h-12 bg-white rounded-full border-2 border-brand-purple shrink-0"
 			>
-				<div class="flex gap-4 items-center py-5 px-5 h-full bg-white rounded-[calc(1rem-2px)]">
-					<span
-						class="flex justify-center items-center w-14 h-14 rounded-2xl shadow-md shrink-0 bg-brand-gradient-ui shadow-pink-500/25"
-					>
-						<s.icon class="w-7 h-7 text-white" strokeWidth={2} />
+				<Check class="w-6 h-6 text-brand-purple" strokeWidth={3} />
+			</span>
+			<div>
+				<h2 class="text-xl font-extrabold leading-snug sm:text-2xl {ink}">
+					Already Enrolled in Debt Settlement? No Problem!
+				</h2>
+				<p class="mt-1 text-base sm:text-lg text-slate-700">
+					You may still qualify for an alternative with lower monthly payments.
+				</p>
+			</div>
+		</div>
+
+		<ul class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 lg:gap-5">
+			{#each situations as s}
+				<li
+					class="flex gap-4 items-center py-4 px-5 bg-white rounded-2xl border shadow-md border-slate-200 shadow-purple-900/5"
+				>
+					<span class="flex justify-center items-center w-12 h-12 bg-purple-50 rounded-xl shrink-0">
+						<s.icon class="w-6 h-6 text-brand-purple" strokeWidth={2} />
 					</span>
 					<span class="text-[1.05rem] font-extrabold leading-snug {ink}">{s.label}</span>
-				</div>
-			</li>
-		{/each}
-		<li>
-			<a
-				href={site.phoneHref}
-				class="flex gap-4 items-center py-5 px-5 h-full text-white rounded-2xl shadow-xl transition bg-brand-gradient-ui shadow-pink-500/30 hover:-translate-y-0.5 hover:shadow-2xl"
-			>
-				<span
-					class="flex justify-center items-center w-14 h-14 bg-white rounded-2xl shadow-md shrink-0"
+				</li>
+			{/each}
+			<li>
+				<a
+					href={site.phoneHref}
+					class="flex gap-4 items-center py-4 px-5 h-full rounded-2xl border-2 shadow-md transition border-brand-purple/30 bg-purple-50/70 shadow-purple-900/5 hover:border-brand-purple/60 hover:shadow-lg"
 				>
-					<PhoneCall class="w-7 h-7 text-brand-pink" strokeWidth={2} />
-				</span>
-				<span>
-					<span class="block text-[0.95rem] font-bold leading-snug"
-						>Call Now to Speak Live With Us</span
+					<span
+						class="flex justify-center items-center w-12 h-12 rounded-xl shadow-md shrink-0 bg-brand-gradient-ui shadow-pink-500/25"
 					>
-					<span class="block text-2xl font-extrabold tracking-tight">{site.phoneDisplay}</span>
-				</span>
-			</a>
-		</li>
-	</ul>
+						<PhoneCall class="w-6 h-6 text-white" strokeWidth={2} />
+					</span>
+					<span>
+						<span class="block text-[0.95rem] font-bold leading-snug {ink}"
+							>Call to Speak Live With Us</span
+						>
+						<span class="block text-xl font-extrabold tracking-tight text-brand-purple"
+							>{site.phoneDisplay}</span
+						>
+					</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 </section>
 
-<!-- Gradient bar above the footer -->
-<section class="py-10 px-4 sm:px-6 lg:px-8 bg-brand-gradient-ui">
-	<div
-		class="flex flex-col gap-5 justify-between items-center mx-auto max-w-6xl text-center md:flex-row md:text-left"
-	>
-		<p class="min-w-0 text-2xl font-extrabold italic text-white text-balance sm:text-3xl md:flex-1">
-			You may have more options than you realize.
+<!-- Who we help -->
+<section class="py-12 bg-white sm:py-14">
+	<div class="px-4 mx-auto max-w-5xl text-center sm:px-6">
+		<p class={eyebrow}>Who We Help</p>
+		<h2 class="mt-3 {sectionTitle}">
+			Struggling With <span class="sm:whitespace-nowrap {orange}">$10,000 or More</span> in Debt?
+		</h2>
+		<p class="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-slate-800">
+			Credit cards, personal loans, <strong class="font-extrabold {ink}"
+				>private student loans</strong
+			>, medical bills, collection accounts, and other debts may be eligible for review.
 		</p>
-		<Button
-			href={link('/how-it-works')}
-			class="h-12 px-8 font-bold uppercase bg-white rounded-full shadow-lg hover:bg-white/90 text-brand-pink shrink-0"
+		<p class="mt-2 text-base text-slate-700">
+			You do not have to be behind on your payments to explore your options.
+		</p>
+
+		<div
+			class="flex gap-3 justify-center items-center py-4 px-6 mx-auto mt-8 max-w-3xl bg-gradient-to-r rounded-2xl sm:rounded-full from-purple-50/40 via-purple-100/80 to-pink-50/40"
 		>
-			See How It Works
-			<ArrowRight class="ml-2 w-4 h-4" />
+			<PhoneCall class="w-6 h-6 text-brand-purple shrink-0" strokeWidth={2} />
+			<p class="text-base font-extrabold sm:text-lg text-balance {ink}">
+				Are creditors calling? Are you receiving threatening letters?
+			</p>
+		</div>
+	</div>
+</section>
+
+<!-- A different approach -->
+<section class="pt-6 pb-14 bg-white sm:pb-16">
+	<div class="px-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class={eyebrow}>A Different Approach</p>
+			<h2 class="mt-3 {sectionTitle}">
+				Discover a Different Approach to Debt Relief <span class={orange}
+					>You May Not Have Been Offered.</span
+				>
+			</h2>
+			<p class="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-slate-800">
+				You have rights as a consumer that may open the door to alternatives beyond traditional debt
+				programs, with the potential for <span class="font-bold {orange}"
+					>lower monthly payments</span
+				>.
+			</p>
+		</div>
+
+		<ul class="grid gap-4 mt-10 lg:grid-cols-3 lg:gap-6">
+			{#each approaches as a}
+				<li
+					class="flex gap-4 p-5 bg-white rounded-2xl border shadow-md sm:p-6 border-slate-200 shadow-purple-900/5"
+				>
+					<span class="flex justify-center items-center w-11 h-11 bg-purple-50 rounded-xl shrink-0">
+						<a.icon class="w-6 h-6 text-brand-purple" strokeWidth={2} />
+					</span>
+					<div class="min-w-0">
+						<h3 class="text-lg font-extrabold leading-snug {ink}">{a.title}</h3>
+						<p class="mt-1 text-[0.95rem] leading-relaxed text-slate-700">{a.text}</p>
+					</div>
+				</li>
+			{/each}
+		</ul>
+	</div>
+</section>
+
+<!-- Closing line and button -->
+<section class="py-14 text-center bg-gradient-to-b from-white to-purple-50/70 sm:py-20">
+	<div class="px-4 mx-auto max-w-6xl sm:px-6">
+		<h2
+			class="text-4xl font-black tracking-tight leading-tight sm:text-5xl lg:text-[3.25rem] {ink}"
+		>
+			<span class="inline-block">You Have <span class={orange}>Rights.</span></span>
+			<span class="inline-block">You Have <span class={orange}>Options.</span></span>
+			<br class="hidden sm:block" />
+			<span class="inline-block">You Have <span class={orange}>Us.</span></span>
+		</h2>
+		<Button
+			href="#lead-form"
+			class="py-3 px-8 mt-8 max-w-full h-auto min-h-14 text-base tracking-wide leading-tight text-center uppercase whitespace-normal rounded-full sm:px-10 {ctaClass}"
+		>
+			{ctaLabel}
+			<ArrowRight class="ml-2 w-5 h-5" />
 		</Button>
 	</div>
 </section>

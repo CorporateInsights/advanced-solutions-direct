@@ -15,9 +15,7 @@ export const site = {
 	phoneDisplay: '(800) 555-0123',
 	phoneHref: 'tel:18005550123',
 	// TODO: placeholder hours; confirm.
-	hours: 'Mon–Fri 6am–6pm PT',
-	// TODO: list of states served, from the owner. Shown in the landing page disclaimer.
-	statesServed: '[states served]'
+	hours: 'Mon–Fri 6am–6pm PT'
 };
 
 // How the site refers to the companies clients are matched with. We're a broker, so the copy
@@ -47,7 +45,7 @@ export const footerNav = [
 ];
 
 // Main call to action label, used in the header, mobile bar and buttons
-export const ctaLabel = 'Explore My Options';
+export const ctaLabel = 'Discover My Options';
 
 // Legal pages. Each slug is served by src/routes/legal/[slug] (except Disclosures, which has its own page).
 // TODO: final text for each page to be provided by counsel.

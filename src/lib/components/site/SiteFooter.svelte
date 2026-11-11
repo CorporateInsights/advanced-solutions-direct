@@ -43,15 +43,15 @@
 			</a>
 		</div>
 
-		<!-- Owner's approved disclaimer, verbatim. Shown on every page. -->
+		<!-- Owner's disclaimer from her Page 1 rewrite, verbatim. Shown on every page. -->
 		<p
 			class="pt-5 mt-6 text-[0.75rem] leading-relaxed text-center border-t lg:text-left border-slate-200/70 text-slate-700"
 		>
-			{site.name} is a marketing and enrollment company, not a law firm, and does not offer debt settlement
-			services. Debt validation and legal services are provided by independent law firms under separate
-			client agreements. ASD receives compensation for qualifying client referrals. Eligibility, fees,
-			and results vary. No specific outcome is guaranteed. Available in
-			{site.statesServed}
+			{site.name} is an independent marketing and enrollment company; not a law firm or debt settlement
+			provider. Debt validation and legal services are provided by independent law firms under separate
+			client agreements. ASD may receive compensation for client referrals. Eligibility, fees, availability,
+			and results vary. Lower payments or other outcomes are not guaranteed. Available services and eligible
+			debt types vary by provider and state.
 		</p>
 
 		<div
