@@ -68,3 +68,15 @@ export const consultationHref = link('/free-consultation');
 // Shared style for primary (gradient) buttons
 export const ctaClass =
 	'bg-brand-gradient-ui font-bold text-white shadow-md shadow-pink-500/20 transition hover:brightness-110 hover:shadow-lg hover:shadow-pink-500/30';
+
+// Shared look, taken from the home page, so every page matches
+export const inkText = 'text-[#1e1452]';
+export const accentText = 'text-[#D9480F]';
+export const sectionTitleClass = `text-3xl font-extrabold tracking-tight leading-tight text-balance sm:text-[2.25rem] lg:text-[2.6rem] ${inkText}`;
+export const leadClass = 'text-lg font-medium leading-relaxed sm:text-xl text-slate-800';
+export const cardClass =
+	'bg-white rounded-2xl border shadow-md border-slate-200 shadow-purple-900/5';
+export const iconBadgeClass =
+	'flex justify-center items-center w-14 h-14 bg-purple-50 rounded-2xl shrink-0';
+// Soft tinted band that sets a section apart from the white ones around it
+export const bandClass = 'bg-gradient-to-b from-purple-50 to-pink-50/60';
