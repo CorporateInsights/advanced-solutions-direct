@@ -169,11 +169,11 @@
 				></div>
 				<!-- Large light circle -->
 				<div
-					class="absolute -top-[96%] left-[13%] w-[144%] aspect-square rounded-full bg-[linear-gradient(115deg,rgba(255,196,160,0.85)_0%,rgba(244,160,214,0.85)_35%,rgba(206,150,255,0.9)_70%)]"
+					class="absolute -top-[96%] left-[13%] w-[144%] aspect-square rounded-full opacity-55 bg-[linear-gradient(115deg,rgba(255,196,160,0.85)_0%,rgba(244,160,214,0.85)_35%,rgba(206,150,255,0.9)_70%)]"
 				></div>
 				<!-- Magenta-to-purple circle in front of it -->
 				<div
-					class="absolute -top-[57%] left-[35%] w-[100%] aspect-square rounded-full bg-[linear-gradient(115deg,#E23BC6_0%,#C21BD6_35%,#8A0BF5_75%,#7A00FF_100%)] shadow-[0_0_60px_rgba(209,0,187,0.35)]"
+					class="absolute -top-[57%] left-[35%] w-[100%] aspect-square rounded-full opacity-60 bg-[linear-gradient(115deg,#E23BC6_0%,#C21BD6_35%,#8A0BF5_75%,#7A00FF_100%)] shadow-[0_0_50px_rgba(209,0,187,0.2)]"
 				></div>
 			</div>
 			<img
