@@ -92,20 +92,20 @@
 	/>
 </svelte:head>
 
-<!-- Hero: copy on the left, photo on the right. Behind them, like the mockup: a faint lavender
+<!-- Hero: copy on the left, photo on the right. Behind them, like the mockup: a lavender
      wash, a soft pink glow around the photo, and a sweeping orange-to-purple arc across the top
      right. Large screens only, so the text on phones stays on plain white. -->
 <section class="overflow-hidden relative bg-white">
 	<div class="hidden absolute inset-0 pointer-events-none lg:block" aria-hidden="true">
 		<!-- Lavender wash that fades back to white at the bottom, into the tagline row -->
-		<div class="absolute inset-0 bg-gradient-to-b from-purple-50/80 via-pink-50/40 to-white"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-purple-100/80 via-pink-50/70 to-white"></div>
 		<!-- Glow and arc stay near the content on very wide screens -->
 		<div
 			class="absolute inset-y-0 left-1/2 w-full max-w-[110rem] -translate-x-1/2 min-[1900px]:[mask-image:linear-gradient(to_left,transparent,#000_18%)]"
 		>
 			<!-- Pink glow behind the photo -->
 			<div
-				class="absolute top-[8%] right-[2%] w-[46%] h-[80%] rounded-full bg-[radial-gradient(closest-side,rgba(209,0,187,0.16),rgba(255,138,0,0.06)_60%,transparent)] blur-2xl"
+				class="absolute top-[8%] right-[2%] w-[46%] h-[80%] rounded-full bg-[radial-gradient(closest-side,rgba(209,0,187,0.4),rgba(255,45,85,0.18)_55%,transparent)] blur-2xl"
 			></div>
 			<!-- The arc: thin and warm on the left, wide and purple at the right edge -->
 			<svg
@@ -115,18 +115,18 @@
 			>
 				<defs>
 					<linearGradient id="wwh-arc" x1="0" y1="0" x2="1" y2="0.25">
-						<stop offset="0" stop-color="#FF8A00" stop-opacity="0" />
-						<stop offset="0.3" stop-color="#FF2D55" stop-opacity="0.35" />
-						<stop offset="0.6" stop-color="#D100BB" stop-opacity="0.6" />
-						<stop offset="1" stop-color="#7A00FF" stop-opacity="0.85" />
+						<stop offset="0" stop-color="#FF8A00" stop-opacity="0.15" />
+						<stop offset="0.25" stop-color="#FF2D55" stop-opacity="0.75" />
+						<stop offset="0.55" stop-color="#D100BB" stop-opacity="0.95" />
+						<stop offset="1" stop-color="#7A00FF" stop-opacity="1" />
 					</linearGradient>
 					<linearGradient id="wwh-haze" x1="0" y1="0" x2="1" y2="0.4">
-						<stop offset="0" stop-color="#FF8A00" stop-opacity="0" />
-						<stop offset="0.5" stop-color="#D100BB" stop-opacity="0.12" />
-						<stop offset="1" stop-color="#7A00FF" stop-opacity="0.22" />
+						<stop offset="0" stop-color="#FF8A00" stop-opacity="0.15" />
+						<stop offset="0.5" stop-color="#D100BB" stop-opacity="0.4" />
+						<stop offset="1" stop-color="#7A00FF" stop-opacity="0.6" />
 					</linearGradient>
 					<filter id="wwh-soft" x="-10%" y="-20%" width="120%" height="140%">
-						<feGaussianBlur stdDeviation="14" />
+						<feGaussianBlur stdDeviation="9" />
 					</filter>
 					<filter id="wwh-softer" x="-10%" y="-20%" width="120%" height="140%">
 						<feGaussianBlur stdDeviation="40" />
@@ -140,7 +140,7 @@
 				/>
 				<!-- The arc band itself -->
 				<path
-					d="M 60 -10 C 420 0, 800 30, 1010 110 L 1010 300 C 820 150, 470 40, 60 -10 Z"
+					d="M 60 -10 C 420 0, 800 30, 1010 110 L 1010 360 C 820 180, 470 50, 60 -10 Z"
 					fill="url(#wwh-arc)"
 					filter="url(#wwh-soft)"
 				/>
