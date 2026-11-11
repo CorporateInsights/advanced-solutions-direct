@@ -13,8 +13,8 @@
 	import Building2 from '@lucide/svelte/icons/building-2';
 	import CircleCheck from '@lucide/svelte/icons/circle-check';
 
-	// TODO: placeholder office photo, cropped from the owner's mockup (low resolution). Swap in a
-	// real photo of the Tempe office.
+	// Office photo: an AI-generated likeness of the Tempe headquarters (Hayden Ferry Lakeside II),
+	// made to match the owner's mockup. Swap in a real photo if one becomes available.
 	const officePhoto = link('/images/who-we-are-office.webp');
 	const officePhotoAlt =
 		'The Advanced Solutions Direct headquarters building on Rio Salado Parkway in Tempe, Arizona';
@@ -124,8 +124,8 @@
 			<img
 				src={officePhoto}
 				alt={officePhotoAlt}
-				width="932"
-				height="700"
+				width="1200"
+				height="900"
 				fetchpriority="high"
 				class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] shadow-purple-900/15 lg:[mask-image:linear-gradient(to_right,transparent,#000_14%)]"
 			/>
