@@ -177,7 +177,11 @@
 			>
 				Client Solutions Specialists
 				<span class="block mt-1"
-					><span class="pr-[0.08em] italic {warmText}">DIRECTly</span> Focused on You.</span
+					><span class="italic"
+						><span class="pr-[0.08em] -mr-[0.08em] {warmText}">DIRECT</span><span
+							class="pr-[0.08em] text-brand-purple">ly</span
+						></span
+					> Focused on You.</span
 				>
 			</h2>
 			{@render swoosh('wwa-swoosh-team', 'mt-3')}
