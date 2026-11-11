@@ -32,7 +32,7 @@
 				<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
 					<span class="text-brand-gradient">{title}</span>
 				</h2>
-				<p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate-700">{description}</p>
+				<p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate-800">{description}</p>
 				<div class="flex flex-col gap-4 justify-center items-center mt-8 sm:flex-row">
 					<Button size="lg" {href} class="h-12 px-8 text-base {ctaClass}">
 						Get My Free Consultation
@@ -40,13 +40,13 @@
 					</Button>
 					<a
 						href={site.phoneHref}
-						class="flex gap-2 items-center font-semibold transition-colors text-slate-700 hover:text-brand-pink"
+						class="flex gap-2 items-center font-semibold transition-colors text-slate-800 hover:text-brand-pink"
 					>
 						<Phone class="w-5 h-5 text-brand-pink" />
 						Or call {site.phoneDisplay}
 					</a>
 				</div>
-				<p class="mt-4 text-sm text-slate-700">{site.hours}</p>
+				<p class="mt-4 text-sm text-slate-800">{site.hours}</p>
 			</div>
 		</div>
 	</div>

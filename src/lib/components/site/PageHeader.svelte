@@ -35,7 +35,7 @@
 			{#if highlight}<span class="text-brand-gradient">{highlight}</span>{/if}
 		</h1>
 		{#if description}
-			<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-700">{description}</p>
+			<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-800">{description}</p>
 		{/if}
 	</div>
 </section>

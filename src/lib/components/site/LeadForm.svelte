@@ -122,10 +122,10 @@
 			<CheckCircle2 class="w-8 h-8 text-white" />
 		</div>
 		<h3 class="mb-2 text-xl font-bold text-slate-900">Thanks. You’re all set.</h3>
-		<p class="text-sm text-slate-700">
+		<p class="text-sm text-slate-800">
 			A real person from our team will call you during business hours ({site.hours}).
 		</p>
-		<p class="mt-3 text-sm text-slate-700">
+		<p class="mt-3 text-sm text-slate-800">
 			Want to talk sooner?
 			<a href={site.phoneHref} class="font-bold underline text-slate-900"
 				>Call {site.phoneDisplay}</a
@@ -292,7 +292,7 @@
 		</Button>
 
 		<!-- Consent wording from the owner's mockup. TODO: counsel to approve before launch. -->
-		<p class="pt-1 text-[0.75rem] leading-relaxed text-slate-700">
+		<p class="pt-1 text-[0.75rem] leading-relaxed text-slate-800">
 			By submitting an inquiry, you authorize {site.name} to contact you regarding your request by phone,
 			text, or email. Marketing consent is not required as a condition of purchasing services. Message
 			and data rates may apply. Reply STOP to opt out of text messages.

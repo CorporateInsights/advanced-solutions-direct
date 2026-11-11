@@ -50,7 +50,7 @@
 	<div class="grid gap-10 items-center px-4 mx-auto max-w-6xl sm:px-6 lg:grid-cols-2 lg:px-8">
 		<div>
 			<h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Who We Are</h2>
-			<div class="mt-4 space-y-4 text-lg leading-relaxed text-slate-700">
+			<div class="mt-4 space-y-4 text-lg leading-relaxed text-slate-800">
 				<p>
 					{site.name} is where people start when debt feels like too much. We listen to what you’re facing,
 					explain how the process works, and, if it’s a fit, connect you with
@@ -87,7 +87,7 @@
 							<value.icon class="w-6 h-6 text-brand-pink" />
 						</div>
 						<h3 class="mb-2 text-lg font-bold text-slate-900">{value.title}</h3>
-						<p class="text-sm leading-relaxed text-slate-700">{value.description}</p>
+						<p class="text-sm leading-relaxed text-slate-800">{value.description}</p>
 					</CardContent>
 				</Card>
 			{/each}
@@ -107,15 +107,15 @@
 				<h2 class="flex gap-2 items-center text-xl font-bold text-slate-900">
 					How Our Partnerships Work
 				</h2>
-				<p class="mt-2 leading-relaxed text-slate-700">
+				<p class="mt-2 leading-relaxed text-slate-800">
 					{site.name} is not a law firm and doesn’t provide legal advice. When you’re a fit, we connect
 					you with {partners.legal}. Our partners operate independently. You’ll sign an agreement
 					directly with the firm, which sets out the services it will provide and any fees, so you
 					know exactly what you’re getting before you commit.
 				</p>
-				<p class="flex gap-1.5 items-center mt-3 text-sm text-slate-700">
+				<p class="flex gap-1.5 items-center mt-3 text-sm text-slate-800">
 					<Info class="w-4 h-4" />
-					<a href={link('/disclosures')} class="underline hover:text-slate-700"
+					<a href={link('/disclosures')} class="underline hover:text-slate-900"
 						>Read our full disclosures</a
 					>
 				</p>

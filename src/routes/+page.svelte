@@ -43,8 +43,7 @@
 
 	const ink = 'text-[#1e1452]';
 	const orange = 'text-[#D9480F]';
-	const eyebrow = 'text-xs font-bold tracking-[0.2em] uppercase text-brand-pink';
-	const sectionTitle = `text-3xl font-extrabold tracking-tight leading-tight text-balance sm:text-4xl lg:text-[2.5rem] ${ink}`;
+	const sectionTitle = `text-3xl font-extrabold tracking-tight leading-tight text-balance sm:text-[2.6rem] lg:text-[3rem] ${ink}`;
 </script>
 
 <svelte:head>
@@ -152,7 +151,7 @@
 					We may have an alternative worth exploring.
 				</p>
 
-				<p class="mt-4 text-[0.95rem] leading-relaxed sm:text-base text-slate-700">
+				<p class="mt-4 text-[0.95rem] leading-relaxed sm:text-base text-slate-800">
 					<strong class="font-extrabold {ink}"
 						>We’re <span class="italic {orange}">NOT</span> another debt settlement company.</strong
 					>
@@ -185,7 +184,9 @@
 </section>
 
 <!-- Already enrolled, situations, and the phone line. Same width as the hero. -->
-<section class="pb-12 bg-white sm:pb-14">
+<!-- Sections below the hero share one rhythm: no top padding, the same bottom padding, so the
+     gap between every block is even. -->
+<section class="pb-14 bg-white lg:pb-16">
 	<div class="px-4 mx-auto space-y-5 max-w-7xl sm:px-6 lg:px-8">
 		<div
 			class="flex flex-col gap-4 items-center py-5 px-5 text-center bg-gradient-to-r rounded-2xl border shadow-sm sm:flex-row sm:gap-5 sm:px-7 sm:text-left border-brand-purple/25 from-pink-50 via-purple-50 to-pink-50/40 shadow-purple-900/5"
@@ -199,7 +200,7 @@
 				<h2 class="text-xl font-extrabold leading-snug sm:text-2xl {ink}">
 					Already Enrolled in Debt Settlement? No Problem!
 				</h2>
-				<p class="mt-1 text-base sm:text-lg text-slate-700">
+				<p class="mt-1 text-base font-medium sm:text-lg text-slate-800">
 					You may still qualify for an alternative with lower monthly payments.
 				</p>
 			</div>
@@ -240,27 +241,39 @@
 	</div>
 </section>
 
+{#snippet sectionEyebrow(label: string)}
+	<p
+		class="inline-flex gap-3 items-center text-sm font-extrabold uppercase sm:text-base tracking-[0.18em] text-brand-pink"
+	>
+		<span class="w-8 h-0.5 rounded-full bg-brand-gradient-ui" aria-hidden="true"></span>
+		{label}
+		<span class="w-8 h-0.5 rounded-full bg-brand-gradient-ui" aria-hidden="true"></span>
+	</p>
+{/snippet}
+
 <!-- Who we help -->
-<section class="py-12 bg-white sm:py-14">
+<section class="pb-14 bg-white lg:pb-16">
 	<div class="px-4 mx-auto max-w-5xl text-center sm:px-6">
-		<p class={eyebrow}>Who We Help</p>
-		<h2 class="mt-3 {sectionTitle}">
+		{@render sectionEyebrow('Who We Help')}
+		<h2 class="mt-4 {sectionTitle}">
 			Struggling With <span class="sm:whitespace-nowrap {orange}">$10,000 or More</span> in Debt?
 		</h2>
-		<p class="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-slate-800">
+		<p
+			class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed sm:text-xl text-balance text-slate-800"
+		>
 			Credit cards, personal loans, <strong class="font-extrabold {ink}"
 				>private student loans</strong
 			>, medical bills, collection accounts, and other debts may be eligible for review.
 		</p>
-		<p class="mt-2 text-base text-slate-700">
+		<p class="mt-3 text-base font-semibold sm:text-lg {ink}">
 			You do not have to be behind on your payments to explore your options.
 		</p>
 
 		<div
-			class="flex gap-3 justify-center items-center py-4 px-6 mx-auto mt-8 max-w-3xl bg-gradient-to-r rounded-2xl sm:rounded-full from-purple-50/40 via-purple-100/80 to-pink-50/40"
+			class="flex gap-3 justify-center items-center py-5 px-6 mx-auto mt-8 max-w-4xl bg-gradient-to-r rounded-2xl sm:gap-4 sm:px-8 sm:rounded-full from-purple-50/40 via-purple-100/80 to-pink-50/40"
 		>
-			<PhoneCall class="w-6 h-6 text-brand-purple shrink-0" strokeWidth={2} />
-			<p class="text-base font-extrabold sm:text-lg text-balance {ink}">
+			<PhoneCall class="w-7 h-7 text-brand-purple shrink-0" strokeWidth={2} />
+			<p class="text-lg font-extrabold sm:text-xl text-balance {ink}">
 				Are creditors calling? Are you receiving threatening letters?
 			</p>
 		</div>
@@ -268,16 +281,18 @@
 </section>
 
 <!-- A different approach -->
-<section class="pt-6 pb-14 bg-white sm:pb-16">
-	<div class="px-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-4xl text-center">
-			<p class={eyebrow}>A Different Approach</p>
-			<h2 class="mt-3 {sectionTitle}">
+<section class="pb-14 bg-white lg:pb-16">
+	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-5xl text-center">
+			{@render sectionEyebrow('A Different Approach')}
+			<h2 class="mt-4 {sectionTitle}">
 				Discover a Different Approach to Debt Relief <span class={orange}
 					>You May Not Have Been Offered.</span
 				>
 			</h2>
-			<p class="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-slate-800">
+			<p
+				class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed sm:text-xl text-balance text-slate-800"
+			>
 				You have rights as a consumer that may open the door to alternatives beyond traditional debt
 				programs, with the potential for <span class="font-bold {orange}"
 					>lower monthly payments</span
@@ -285,17 +300,20 @@
 			</p>
 		</div>
 
-		<ul class="grid gap-4 mt-10 lg:grid-cols-3 lg:gap-6">
+		<!-- Same width as the situation cards above, so the edges line up -->
+		<ul class="grid gap-4 mt-10 lg:grid-cols-3 lg:gap-5">
 			{#each approaches as a}
 				<li
-					class="flex gap-4 p-5 bg-white rounded-2xl border shadow-md sm:p-6 border-slate-200 shadow-purple-900/5"
+					class="flex flex-col gap-4 p-6 bg-white rounded-2xl border shadow-md sm:flex-row sm:gap-5 border-slate-200 shadow-purple-900/5"
 				>
-					<span class="flex justify-center items-center w-11 h-11 bg-purple-50 rounded-xl shrink-0">
-						<a.icon class="w-6 h-6 text-brand-purple" strokeWidth={2} />
+					<span
+						class="flex justify-center items-center w-14 h-14 bg-purple-50 rounded-2xl shrink-0"
+					>
+						<a.icon class="w-7 h-7 text-brand-purple" strokeWidth={2} />
 					</span>
 					<div class="min-w-0">
-						<h3 class="text-lg font-extrabold leading-snug {ink}">{a.title}</h3>
-						<p class="mt-1 text-[0.95rem] leading-relaxed text-slate-700">{a.text}</p>
+						<h3 class="text-xl font-extrabold leading-snug {ink}">{a.title}</h3>
+						<p class="mt-1.5 text-base leading-relaxed text-slate-800">{a.text}</p>
 					</div>
 				</li>
 			{/each}
@@ -304,7 +322,7 @@
 </section>
 
 <!-- Closing line and button -->
-<section class="py-14 text-center bg-gradient-to-b from-white to-purple-50/70 sm:py-20">
+<section class="pt-2 pb-16 text-center bg-gradient-to-b from-white to-purple-50/70 lg:pb-20">
 	<div class="px-4 mx-auto max-w-6xl sm:px-6">
 		<h2
 			class="text-4xl font-black tracking-tight leading-tight sm:text-5xl lg:text-[3.25rem] {ink}"
