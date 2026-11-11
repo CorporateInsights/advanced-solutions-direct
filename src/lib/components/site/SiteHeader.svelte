@@ -79,7 +79,7 @@
 					onclick={() => (menuOpen = false)}
 					class="block py-3 text-base font-medium border-b border-slate-100 {isActive(item.href)
 						? 'text-brand-pink'
-						: 'text-slate-700'}"
+						: 'text-slate-800'}"
 				>
 					{item.label}
 				</a>

@@ -39,23 +39,23 @@
 					<Phone class="w-4 h-4 text-white" />
 				</span>
 				{site.phoneDisplay}
-				<span class="hidden font-normal xl:inline text-slate-700">· {site.hours}</span>
+				<span class="hidden font-normal xl:inline text-slate-800">· {site.hours}</span>
 			</a>
 		</div>
 
-		<!-- Owner's approved disclaimer, verbatim. Shown on every page. -->
+		<!-- Owner's disclaimer from her Page 1 rewrite, verbatim. Shown on every page. -->
 		<p
-			class="pt-5 mt-6 text-[0.75rem] leading-relaxed text-center border-t lg:text-left border-slate-200/70 text-slate-700"
+			class="pt-5 mt-6 text-[0.75rem] leading-relaxed text-center border-t lg:text-left border-slate-200/70 text-slate-800"
 		>
-			{site.name} is a marketing and enrollment company, not a law firm, and does not offer debt settlement
-			services. Debt validation and legal services are provided by independent law firms under separate
-			client agreements. ASD receives compensation for qualifying client referrals. Eligibility, fees,
-			and results vary. No specific outcome is guaranteed. Available in
-			{site.statesServed}
+			{site.name} is an independent marketing and enrollment company; not a law firm or debt settlement
+			provider. Debt validation and legal services are provided by independent law firms under separate
+			client agreements. ASD may receive compensation for client referrals. Eligibility, fees, availability,
+			and results vary. Lower payments or other outcomes are not guaranteed. Available services and eligible
+			debt types vary by provider and state.
 		</p>
 
 		<div
-			class="flex flex-col gap-3 items-center mt-4 text-[0.75rem] lg:flex-row lg:justify-between text-slate-700"
+			class="flex flex-col gap-3 items-center mt-4 text-[0.75rem] lg:flex-row lg:justify-between text-slate-800"
 		>
 			<p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
 			<ul class="flex flex-wrap gap-y-1 gap-x-4 justify-center">

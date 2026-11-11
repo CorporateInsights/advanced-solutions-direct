@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { site, ctaClass, link } from '$lib/site';
+	import { site, ctaClass, ctaLabel, link } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import CheckCircle2 from '@lucide/svelte/icons/check-circle-2';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
-	let { id, submitLabel = 'Get Started' }: { id: string; submitLabel?: string } = $props();
+	let { id, submitLabel = ctaLabel }: { id: string; submitLabel?: string } = $props();
 
 	// Fields follow the owner's Page 1 mockup. Ranges are for routing only.
 	const states = [
@@ -77,6 +77,7 @@
 	const debtTypeOptions = [
 		'Credit cards',
 		'Personal loans',
+		'Private student loans',
 		'Collections',
 		'Medical bills',
 		'Multiple types',
@@ -121,10 +122,10 @@
 			<CheckCircle2 class="w-8 h-8 text-white" />
 		</div>
 		<h3 class="mb-2 text-xl font-bold text-slate-900">Thanks. You’re all set.</h3>
-		<p class="text-sm text-slate-700">
+		<p class="text-sm text-slate-800">
 			A real person from our team will call you during business hours ({site.hours}).
 		</p>
-		<p class="mt-3 text-sm text-slate-700">
+		<p class="mt-3 text-sm text-slate-800">
 			Want to talk sooner?
 			<a href={site.phoneHref} class="font-bold underline text-slate-900"
 				>Call {site.phoneDisplay}</a
@@ -213,14 +214,14 @@
 		</div>
 
 		<div>
-			<label for="{id}-monthly-payments" class="sr-only">Current Monthly Payments</label>
+			<label for="{id}-monthly-payments" class="sr-only">Current Monthly Debt Payments</label>
 			<select
 				id="{id}-monthly-payments"
 				required
 				bind:value={formData.monthlyPayments}
 				class={selectClass}
 			>
-				<option value="" disabled>Current Monthly Payments</option>
+				<option value="" disabled>Current Monthly Debt Payments</option>
 				{#each monthlyPaymentOptions as o}
 					<option value={o}>{o}</option>
 				{/each}
@@ -239,7 +240,7 @@
 
 		<fieldset class="pt-1.5">
 			<legend class="mb-2 text-[0.95rem] font-extrabold text-slate-900">
-				Currently enrolled in a debt relief program?
+				Currently in a debt settlement program?
 			</legend>
 			<div class="flex flex-wrap gap-x-6 gap-y-2">
 				{#each programOptions as option}
@@ -263,7 +264,7 @@
 		<Button
 			type="submit"
 			disabled={submitting}
-			class="mt-2 w-full h-12 text-base rounded-full disabled:opacity-70 {ctaClass}"
+			class="py-2.5 mt-2 w-full h-auto min-h-12 text-base tracking-wide leading-tight text-center uppercase whitespace-normal rounded-full disabled:opacity-70 {ctaClass}"
 		>
 			{#if submitting}
 				<span class="flex gap-2 items-center">
@@ -291,18 +292,18 @@
 		</Button>
 
 		<!-- Consent wording from the owner's mockup. TODO: counsel to approve before launch. -->
-		<p class="pt-1 text-[0.75rem] leading-relaxed text-slate-700">
-			By clicking “{submitLabel},” I agree that {site.name} may contact me regarding my inquiry by phone,
-			text, or email. Marketing contact consent is not required as a condition of purchase. Message and
-			data rates may apply. Reply STOP to opt out of texts. See our
+		<p class="pt-1 text-[0.75rem] leading-relaxed text-slate-800">
+			By submitting an inquiry, you authorize {site.name} to contact you regarding your request by phone,
+			text, or email. Marketing consent is not required as a condition of purchasing services. Message
+			and data rates may apply. Reply STOP to opt out of text messages.
 			<a href={link('/legal/privacy-policy')} class="font-semibold underline text-brand-purple"
 				>Privacy Policy</a
 			>
-			and
+			·
 			<a
 				href={link('/legal/terms-and-conditions')}
 				class="font-semibold underline text-brand-purple">Terms &amp; Conditions</a
-			>.
+			>
 		</p>
 	</form>
 {/if}

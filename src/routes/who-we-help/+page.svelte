@@ -33,7 +33,7 @@
 							<s.icon class="w-6 h-6 text-brand-orange" />
 						</div>
 						<h2 class="mb-2 text-lg font-bold text-slate-900">{s.title}</h2>
-						<p class="text-sm leading-relaxed text-slate-700">{s.description}</p>
+						<p class="text-sm leading-relaxed text-slate-800">{s.description}</p>
 					</CardContent>
 				</Card>
 			{/each}
@@ -57,13 +57,13 @@
 		<div class="flex flex-wrap gap-3 justify-center mt-8">
 			{#each debtTypes as type}
 				<span
-					class="py-2 px-4 text-sm font-medium bg-white rounded-full border border-pink-100 text-slate-700"
+					class="py-2 px-4 text-sm font-medium bg-white rounded-full border border-pink-100 text-slate-800"
 				>
 					{type}
 				</span>
 			{/each}
 		</div>
-		<p class="mt-6 text-sm text-slate-700">
+		<p class="mt-6 text-sm text-slate-800">
 			{debtExclusions} Not sure about yours? That’s exactly what the free call is for.
 		</p>
 	</div>

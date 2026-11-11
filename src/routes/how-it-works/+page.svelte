@@ -80,10 +80,10 @@
 					</div>
 					<div>
 						<h2 class="text-xl font-bold sm:text-2xl text-slate-900">{step.title}</h2>
-						<p class="mt-2 leading-relaxed text-slate-700">{step.description}</p>
+						<p class="mt-2 leading-relaxed text-slate-800">{step.description}</p>
 						<ul class="flex flex-wrap gap-x-5 gap-y-2 mt-4">
 							{#each step.points as point}
-								<li class="flex gap-1.5 items-center text-sm font-medium text-slate-700">
+								<li class="flex gap-1.5 items-center text-sm font-medium text-slate-800">
 									<Check class="w-4 h-4 text-brand-pink" />
 									{point}
 								</li>
@@ -102,7 +102,7 @@
 			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
 				What to Have <span class="text-brand-gradient">Handy</span>
 			</h2>
-			<p class="mt-4 text-lg text-slate-700">
+			<p class="mt-4 text-lg text-slate-800">
 				Don’t have everything? Call anyway. We’ll work through it together.
 			</p>
 		</div>
@@ -114,7 +114,7 @@
 					<div class="flex justify-center items-center w-12 h-12 bg-pink-50 rounded-xl">
 						<item.icon class="w-6 h-6 text-brand-pink" />
 					</div>
-					<p class="text-sm font-medium text-slate-700">{item.text}</p>
+					<p class="text-sm font-medium text-slate-800">{item.text}</p>
 				</div>
 			{/each}
 		</div>

@@ -50,7 +50,7 @@
 					Talk to a
 					<span class="text-brand-gradient">Real Person.</span>
 				</h1>
-				<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed lg:mx-0 text-slate-700">
+				<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed lg:mx-0 text-slate-800">
 					Fill out the short form and we’ll call you during business hours, or call us now. It’s
 					free, and there’s no obligation.
 				</p>
@@ -63,12 +63,12 @@
 						<Phone class="w-5 h-5 text-white" />
 					</span>
 					<span class="text-left">
-						<span class="block text-xs font-medium text-slate-700">Prefer to talk now?</span>
+						<span class="block text-xs font-medium text-slate-800">Prefer to talk now?</span>
 						<span class="block text-lg font-bold text-slate-900">{site.phoneDisplay}</span>
 					</span>
 				</a>
 				<p
-					class="flex gap-1.5 justify-center items-center mt-3 text-sm lg:justify-start text-slate-700"
+					class="flex gap-1.5 justify-center items-center mt-3 text-sm lg:justify-start text-slate-800"
 				>
 					<Clock class="w-4 h-4" />
 					{site.hours}
@@ -95,14 +95,14 @@
 								</span>
 								<div>
 									<p class="font-semibold text-slate-900">{item.title}</p>
-									<p class="text-sm text-slate-700">{item.description}</p>
+									<p class="text-sm text-slate-800">{item.description}</p>
 								</div>
 							</li>
 						{/each}
 					</ol>
 					<div class="flex flex-wrap gap-x-5 gap-y-2 mt-6">
 						{#each ['No cost', 'No obligation', 'No pressure'] as point}
-							<span class="flex gap-1.5 items-center text-sm font-medium text-slate-700">
+							<span class="flex gap-1.5 items-center text-sm font-medium text-slate-800">
 								<Check class="w-4 h-4 text-brand-pink" />
 								{point}
 							</span>
@@ -110,7 +110,7 @@
 					</div>
 
 					<div
-						class="p-4 mt-8 text-sm leading-relaxed rounded-xl border border-pink-100 bg-pink-50/40 text-slate-700"
+						class="p-4 mt-8 text-sm leading-relaxed rounded-xl border border-pink-100 bg-pink-50/40 text-slate-800"
 					>
 						<p class="font-semibold text-slate-900">Who you’ll talk to</p>
 						<p class="mt-1">
