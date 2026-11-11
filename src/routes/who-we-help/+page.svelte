@@ -167,12 +167,12 @@
 			<div class="hidden absolute inset-0 pointer-events-none -z-10 lg:block" aria-hidden="true">
 				<!-- Peach-pink haze the photo's left edge melts into -->
 				<div
-					class="absolute top-0 -left-[14%] w-[50%] h-full rounded-full bg-[radial-gradient(closest-side,rgba(249,214,184,0.6),rgba(245,205,211,0.3)_55%,rgba(245,205,211,0))]"
+					class="absolute top-0 -left-[14%] w-[50%] h-full rounded-full bg-[radial-gradient(closest-side,rgba(255,184,130,0.7),rgba(255,196,170,0.35)_55%,rgba(255,196,170,0))]"
 				></div>
 				<!-- The band: peach on the left through pink and magenta to lilac, rising slightly to
 				     the right, and fading out on its left end -->
 				<div
-					class="absolute -top-[40%] -left-[14%] w-[126%] h-[78%] rounded-full opacity-60 -rotate-[5deg] bg-[linear-gradient(90deg,#FCE7D2_0%,#FAD0BA_18%,#F2B0B6_32%,#E891BC_45%,#DA71C7_58%,#CD60D1_72%,#D38DE2_88%,#D6A0E8_100%)] [mask-image:linear-gradient(to_right,transparent,#000_32%)]"
+					class="absolute -top-[40%] -left-[14%] w-[126%] h-[78%] rounded-full opacity-70 -rotate-[5deg] bg-[linear-gradient(90deg,#FFC48F_0%,#FFAE78_20%,#F99A8C_34%,#EC86B4_47%,#DA71C7_60%,#CD60D1_74%,#D38DE2_88%,#D6A0E8_100%)] [mask-image:linear-gradient(to_right,transparent,#000_20%)]"
 				></div>
 				<!-- The circle -->
 				<div
