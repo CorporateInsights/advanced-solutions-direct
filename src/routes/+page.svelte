@@ -55,16 +55,37 @@
 	/>
 </svelte:head>
 
-<!-- Hero: copy, photo, form (three columns on large screens) -->
-<section class="bg-white">
-	<div class="px-4 pt-6 pb-10 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:px-8 lg:pt-12 lg:pb-12">
+<!-- Hero: copy and form, with the photo behind them on large screens -->
+<section class="overflow-hidden relative bg-white">
+	<div
+		class="relative px-4 pt-6 pb-10 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:px-8 lg:pt-12 lg:pb-12"
+	>
+		<!-- Large screens: the photo as the hero background. It bleeds to the top edge, fades into
+		     white at the bottom and right, and is sized so both faces sit in the open space between
+		     the copy and the form. A white glow keeps the copy readable. -->
 		<div
-			class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_26rem] lg:items-center xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)_25rem] xl:gap-7 xl:items-stretch"
+			class="hidden absolute top-0 left-0 xl:block h-[35rem] aspect-[1672/941] pointer-events-none"
+		>
+			<img
+				src={heroPhoto}
+				alt={heroPhotoAlt}
+				width="1672"
+				height="941"
+				fetchpriority="high"
+				class="object-cover w-full h-full [mask-image:linear-gradient(to_right,#000_84%,transparent),linear-gradient(to_bottom,#000_70%,transparent)] [mask-composite:intersect]"
+			/>
+		</div>
+		<div
+			class="hidden absolute inset-y-0 left-0 xl:block w-[34rem] bg-gradient-to-r from-white from-65% to-transparent pointer-events-none"
+		></div>
+
+		<div
+			class="grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
 		>
 			<div
-				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left xl:max-w-none xl:self-center"
+				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left"
 			>
-				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm xl:text-xs {ink}">
+				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm {ink}">
 					Real Solutions. A Brighter Financial Future.
 				</p>
 
@@ -96,8 +117,7 @@
 					<path d="M4 12 C 80 2, 200 0, 296 8 C 210 5, 110 7, 30 14 Z" fill="url(#swoosh)" />
 				</svg>
 
-				<!-- Phones, tablets and laptops: the photo sits here; the banner overlaps its bottom edge.
-				     Wide screens show it in its own middle column instead. -->
+				<!-- Phones, tablets and small laptops: photo as a rounded card; the banner overlaps its bottom edge -->
 				<img
 					src={heroPhoto}
 					alt={heroPhotoAlt}
@@ -142,7 +162,7 @@
 				<div class="flex flex-wrap gap-3 justify-center mt-7 lg:justify-start">
 					<Button
 						href="#lead-form"
-						class="grow h-auto min-h-12 py-2.5 px-5 max-w-full text-[0.9rem] leading-tight text-center whitespace-normal rounded-full sm:grow-0 sm:px-7 sm:text-base xl:min-h-11 xl:px-4 xl:text-[0.8rem] {ctaClass}"
+						class="grow h-auto min-h-12 py-2.5 px-5 max-w-full text-[0.9rem] leading-tight text-center whitespace-normal rounded-full sm:grow-0 sm:px-7 sm:text-base {ctaClass}"
 					>
 						{ctaLabel}
 						<ArrowRight class="ml-2 w-4 h-4" />
@@ -150,25 +170,11 @@
 					<Button
 						href={link('/how-it-works')}
 						variant="outline"
-						class="grow h-auto min-h-12 py-2.5 px-5 max-w-full text-[0.9rem] font-bold leading-tight text-center whitespace-normal bg-white rounded-full border-2 sm:grow-0 sm:px-7 sm:text-base xl:min-h-11 xl:px-4 xl:text-[0.8rem] border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+						class="grow h-auto min-h-12 py-2.5 px-5 max-w-full text-[0.9rem] font-bold leading-tight text-center whitespace-normal bg-white rounded-full border-2 sm:grow-0 sm:px-7 sm:text-base border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
 					>
 						See How It Works
 					</Button>
 				</div>
-			</div>
-
-			<!-- Wide screens: the photo as the middle column, as tall as the copy and form -->
-			<div
-				class="hidden overflow-hidden relative rounded-3xl shadow-xl xl:block min-h-[28rem] shadow-purple-900/15"
-			>
-				<img
-					src={heroPhoto}
-					alt={heroPhotoAlt}
-					width="1672"
-					height="941"
-					fetchpriority="high"
-					class="object-cover absolute inset-0 w-full h-full object-[72%_50%]"
-				/>
 			</div>
 
 			<div class="mx-auto w-full max-w-md lg:max-w-none">
