@@ -27,12 +27,16 @@ export const partners = {
 	legal: 'an independent consumer rights law firm'
 };
 
-// Header menu, per the owner's Page 1 mockup plus Home
-export const nav = [
+// TODO: placeholder. Replace with the company's Workable careers page once it's provided.
+export const careersHref = 'https://apply.workable.com/';
+
+// Header menu, per the owner's Page 1 mockup plus Home. External links open in a new tab.
+export const nav: { href: string; label: string; external?: boolean }[] = [
 	{ href: link('/'), label: 'Home' },
 	{ href: link('/how-it-works'), label: 'How It Works' },
 	{ href: link('/who-we-help'), label: 'Who We Help' },
-	{ href: link('/faq'), label: 'FAQ' }
+	{ href: link('/faq'), label: 'FAQ' },
+	{ href: careersHref, label: 'Careers', external: true }
 ];
 
 // Footer keeps the full list of pages

@@ -37,6 +37,8 @@
 							></span>{/if}
 						<a
 							href={item.href}
+							target={item.external ? '_blank' : undefined}
+							rel={item.external ? 'noopener noreferrer' : undefined}
 							aria-current={isActive(item.href) ? 'page' : undefined}
 							class="text-[0.95rem] font-semibold whitespace-nowrap transition-colors hover:text-brand-pink {isActive(
 								item.href
@@ -86,6 +88,8 @@
 			{#each nav as item}
 				<a
 					href={item.href}
+					target={item.external ? '_blank' : undefined}
+					rel={item.external ? 'noopener noreferrer' : undefined}
 					onclick={() => (menuOpen = false)}
 					class="block py-3 text-base font-medium border-b border-slate-100 {isActive(item.href)
 						? 'text-brand-pink'
