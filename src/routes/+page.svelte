@@ -43,7 +43,7 @@
 
 	const ink = 'text-[#1e1452]';
 	const orange = 'text-[#D9480F]';
-	const sectionTitle = `text-3xl font-extrabold tracking-tight leading-tight text-balance sm:text-[2.6rem] lg:text-[3rem] ${ink}`;
+	const sectionTitle = `text-3xl font-extrabold tracking-tight leading-tight text-balance sm:text-[2.25rem] lg:text-[2.6rem] ${ink}`;
 </script>
 
 <svelte:head>
@@ -251,16 +251,14 @@
 	</p>
 {/snippet}
 
-<!-- Who we help -->
-<section class="pb-14 bg-white lg:pb-16">
-	<div class="px-4 mx-auto max-w-5xl text-center sm:px-6">
+<!-- Who we help: a soft tinted band, so it reads as its own section between two white ones -->
+<section class="py-14 bg-gradient-to-b lg:py-16 from-purple-50 to-pink-50/60">
+	<div class="px-4 mx-auto max-w-6xl text-center sm:px-6 lg:px-8">
 		{@render sectionEyebrow('Who We Help')}
 		<h2 class="mt-4 {sectionTitle}">
 			Struggling With <span class="sm:whitespace-nowrap {orange}">$10,000 or More</span> in Debt?
 		</h2>
-		<p
-			class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed sm:text-xl text-balance text-slate-800"
-		>
+		<p class="mx-auto mt-4 max-w-4xl text-lg font-medium leading-relaxed sm:text-xl text-slate-800">
 			Credit cards, personal loans, <strong class="font-extrabold {ink}"
 				>private student loans</strong
 			>, medical bills, collection accounts, and other debts may be eligible for review.
@@ -270,7 +268,7 @@
 		</p>
 
 		<div
-			class="flex gap-3 justify-center items-center py-5 px-6 mx-auto mt-8 max-w-4xl bg-gradient-to-r rounded-2xl sm:gap-4 sm:px-8 sm:rounded-full from-purple-50/40 via-purple-100/80 to-pink-50/40"
+			class="flex gap-3 justify-center items-center py-5 px-6 mx-auto mt-8 max-w-4xl bg-white rounded-2xl ring-1 shadow-lg sm:gap-4 sm:px-8 sm:rounded-full ring-brand-purple/15 shadow-purple-900/5"
 		>
 			<PhoneCall class="w-7 h-7 text-brand-purple shrink-0" strokeWidth={2} />
 			<p class="text-lg font-extrabold sm:text-xl text-balance {ink}">
@@ -281,17 +279,17 @@
 </section>
 
 <!-- A different approach -->
-<section class="pb-14 bg-white lg:pb-16">
+<section class="py-14 bg-white lg:py-16">
 	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-5xl text-center">
+		<div class="mx-auto max-w-6xl text-center">
 			{@render sectionEyebrow('A Different Approach')}
 			<h2 class="mt-4 {sectionTitle}">
-				Discover a Different Approach to Debt Relief <span class={orange}
-					>You May Not Have Been Offered.</span
+				Discover a Different Approach to Debt Relief <br class="hidden lg:block" /><span
+					class={orange}>You May Not Have Been Offered.</span
 				>
 			</h2>
 			<p
-				class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed sm:text-xl text-balance text-slate-800"
+				class="mx-auto mt-4 max-w-4xl text-lg font-medium leading-relaxed sm:text-xl text-slate-800"
 			>
 				You have rights as a consumer that may open the door to alternatives beyond traditional debt
 				programs, with the potential for <span class="font-bold {orange}"
