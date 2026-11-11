@@ -194,11 +194,17 @@
 			     Phones have the Call Now bar at the bottom, and every screen has Call Now in the header. -->
 			<a
 				href={site.phoneHref}
-				class="hidden absolute top-[64%] left-[calc(50%+2rem)] flex-col justify-center items-center w-36 h-36 text-center text-white rounded-full ring-[6px] ring-white shadow-2xl transition -translate-x-1/2 -translate-y-1/2 xl:@min-[72rem]/hero:flex hover:scale-105 bg-brand-gradient-ui shadow-pink-500/40"
+				class="hidden absolute top-[64%] left-[calc(50%+2rem)] flex-col justify-center items-center w-40 h-40 text-center text-white rounded-full ring-[6px] ring-white shadow-2xl transition -translate-x-1/2 -translate-y-1/2 xl:@min-[74rem]/hero:flex hover:scale-105 bg-brand-gradient-ui shadow-pink-500/40"
 			>
-				<PhoneCall class="w-8 h-8" strokeWidth={2.25} />
-				<span class="mt-1.5 text-lg font-black tracking-wide leading-none uppercase">Call Now</span>
-				<span class="mt-1 text-[0.72rem] font-bold leading-none">{site.phoneDisplay}</span>
+				<!-- Wording from Jeannette: "U.S.-based is important" -->
+				<PhoneCall class="w-7 h-7" strokeWidth={2.25} />
+				<span class="mt-1.5 text-[0.7rem] font-extrabold tracking-wider leading-none uppercase"
+					>Call a Live</span
+				>
+				<span class="mt-1 text-[1.05rem] font-black tracking-wide leading-[1.05] uppercase"
+					>U.S.-Based<br />Agent</span
+				>
+				<span class="mt-1.5 text-[0.7rem] font-bold leading-none">{site.phoneDisplay}</span>
 			</a>
 		</div>
 	</div>
