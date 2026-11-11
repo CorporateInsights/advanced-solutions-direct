@@ -56,13 +56,15 @@
 		<div
 			class="grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
 		>
-			<div class="mx-auto max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left">
+			<div
+				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left"
+			>
 				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm italic {ink}">
 					Real Solutions. A Brighter Financial Future.
 				</p>
 
 				<h1
-					class="mt-2 text-[3.25rem] font-black tracking-tight italic leading-[0.95] sm:mt-3 sm:text-7xl lg:text-[clamp(3rem,6.2vw,5.25rem)] {ink}"
+					class="mt-2 text-[3.25rem] font-black tracking-tight italic leading-[0.95] sm:mt-3 sm:text-7xl lg:text-[clamp(2.25rem,16.8cqi,5.25rem)] {ink}"
 				>
 					Drowning<br />in Debt?
 				</h1>
@@ -103,12 +105,12 @@
 					class="inline-block relative py-3 px-7 -mt-9 text-white rounded-full ring-4 ring-white shadow-lg sm:px-9 xl:mt-6 xl:ring-0 bg-brand-gradient-ui shadow-pink-500/25"
 				>
 					<p
-						class="text-[1.35rem] font-extrabold italic leading-tight whitespace-nowrap sm:text-3xl lg:text-[clamp(1.25rem,2.25vw,1.875rem)]"
+						class="text-[1.35rem] font-extrabold italic leading-tight whitespace-nowrap sm:text-3xl lg:text-[clamp(0.7rem,6cqi,1.875rem)]"
 					>
 						We Have Another Way
 					</p>
 					<p
-						class="text-[0.95rem] font-bold italic whitespace-nowrap sm:text-xl lg:text-[clamp(0.875rem,1.45vw,1.25rem)]"
+						class="text-[0.95rem] font-bold italic whitespace-nowrap sm:text-xl lg:text-[clamp(0.5rem,4cqi,1.25rem)]"
 					>
 						You May Not Have Been Offered!
 					</p>

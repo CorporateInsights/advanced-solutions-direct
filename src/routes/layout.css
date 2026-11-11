@@ -17,7 +17,7 @@
 	--secondary: oklch(0.97 0 0);
 	--secondary-foreground: oklch(0.205 0 0);
 	--muted: oklch(0.97 0 0);
-	--muted-foreground: oklch(0.556 0 0);
+	--muted-foreground: oklch(0.42 0 0);
 	--accent: oklch(0.97 0 0);
 	--accent-foreground: oklch(0.205 0 0);
 	--destructive: oklch(0.577 0.245 27.325);
@@ -179,11 +179,13 @@
 }
 
 /* Very wide screens (1600px+, e.g. a 32" monitor): let the page grow to 1440px and scale text and
-   spacing up ~6% so it doesn't look small and lost. 1440px is also the hard cap, so lines of text
-   never get too long on ultra-wide monitors. Laptops and smaller screens are unchanged. */
+   spacing up ~6% so it doesn't look small and lost. That width is also the hard cap, so lines of
+   text never get too long on ultra-wide monitors. Laptops and smaller screens are unchanged.
+   The cap is in rem (84.75rem = 1440px at normal text size) so it grows with a visitor's browser
+   text-size setting; a fixed px cap squeezed the layout for people with large text. */
 @media (min-width: 1600px) {
 	:root {
 		font-size: 106.25%;
-		--container-7xl: 1440px;
+		--container-7xl: 84.75rem;
 	}
 }

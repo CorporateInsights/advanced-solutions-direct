@@ -39,13 +39,13 @@
 					<Phone class="w-4 h-4 text-white" />
 				</span>
 				{site.phoneDisplay}
-				<span class="hidden font-normal xl:inline text-slate-500">· {site.hours}</span>
+				<span class="hidden font-normal xl:inline text-slate-700">· {site.hours}</span>
 			</a>
 		</div>
 
 		<!-- Owner's approved disclaimer, verbatim. Shown on every page. -->
 		<p
-			class="pt-5 mt-6 text-[0.7rem] leading-relaxed text-center border-t lg:text-left border-slate-200/70 text-slate-500"
+			class="pt-5 mt-6 text-[0.75rem] leading-relaxed text-center border-t lg:text-left border-slate-200/70 text-slate-700"
 		>
 			{site.name} is a marketing and enrollment company, not a law firm, and does not offer debt settlement
 			services. Debt validation and legal services are provided by independent law firms under separate
@@ -55,7 +55,7 @@
 		</p>
 
 		<div
-			class="flex flex-col gap-3 items-center mt-4 text-[0.7rem] lg:flex-row lg:justify-between text-slate-500"
+			class="flex flex-col gap-3 items-center mt-4 text-[0.75rem] lg:flex-row lg:justify-between text-slate-700"
 		>
 			<p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
 			<ul class="flex flex-wrap gap-y-1 gap-x-4 justify-center">

@@ -21,7 +21,7 @@
 			{title}
 		</h2>
 		{#if description}
-			<p class="mt-1 text-sm italic text-slate-600">{description}</p>
+			<p class="mt-1 text-sm italic text-slate-700">{description}</p>
 		{/if}
 	</div>
 	<LeadForm {id} {submitLabel} />

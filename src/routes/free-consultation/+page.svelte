@@ -40,7 +40,9 @@
 	</div>
 
 	<div class="relative py-14 px-4 mx-auto max-w-7xl sm:py-20 sm:px-6 lg:px-8">
-		<div class="grid gap-10 items-start lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-10">
+		<div
+			class="grid gap-10 items-start lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-10"
+		>
 			<div class="text-center lg:text-left">
 				<h1
 					class="text-4xl font-extrabold tracking-tight leading-tight text-balance sm:text-5xl text-slate-900"
@@ -48,9 +50,9 @@
 					Talk to a
 					<span class="text-brand-gradient">Real Person.</span>
 				</h1>
-				<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed lg:mx-0 text-slate-600">
-					Fill out the short form and we’ll call you during business hours, or call us now. It’s free,
-					and there’s no obligation.
+				<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed lg:mx-0 text-slate-700">
+					Fill out the short form and we’ll call you during business hours, or call us now. It’s
+					free, and there’s no obligation.
 				</p>
 
 				<a
@@ -61,18 +63,22 @@
 						<Phone class="w-5 h-5 text-white" />
 					</span>
 					<span class="text-left">
-						<span class="block text-xs font-medium text-slate-500">Prefer to talk now?</span>
+						<span class="block text-xs font-medium text-slate-700">Prefer to talk now?</span>
 						<span class="block text-lg font-bold text-slate-900">{site.phoneDisplay}</span>
 					</span>
 				</a>
-				<p class="flex gap-1.5 justify-center items-center mt-3 text-sm lg:justify-start text-slate-500">
+				<p
+					class="flex gap-1.5 justify-center items-center mt-3 text-sm lg:justify-start text-slate-700"
+				>
 					<Clock class="w-4 h-4" />
 					{site.hours}
 				</p>
 			</div>
 
 			<!-- Form comes right after the intro on mobile; sits in the right column on desktop -->
-			<div class="mx-auto w-full max-w-md lg:row-span-2 lg:mx-0 lg:ml-auto lg:col-start-2 lg:row-start-1">
+			<div
+				class="mx-auto w-full max-w-md lg:row-span-2 lg:mx-0 lg:ml-auto lg:col-start-2 lg:row-start-1"
+			>
 				<LeadFormCard id="consultation-form" title="Request Your Free Call" />
 			</div>
 
@@ -89,7 +95,7 @@
 								</span>
 								<div>
 									<p class="font-semibold text-slate-900">{item.title}</p>
-									<p class="text-sm text-slate-600">{item.description}</p>
+									<p class="text-sm text-slate-700">{item.description}</p>
 								</div>
 							</li>
 						{/each}
@@ -103,11 +109,13 @@
 						{/each}
 					</div>
 
-					<div class="p-4 mt-8 text-sm leading-relaxed rounded-xl border border-pink-100 bg-pink-50/40 text-slate-600">
+					<div
+						class="p-4 mt-8 text-sm leading-relaxed rounded-xl border border-pink-100 bg-pink-50/40 text-slate-700"
+					>
 						<p class="font-semibold text-slate-900">Who you’ll talk to</p>
 						<p class="mt-1">
-							A member of the {site.name} team. We’re not lawyers and we’re not debt collectors. Our
-							job is to understand your situation and help you find your next step.
+							A member of the {site.name} team. We’re not lawyers and we’re not debt collectors. Our job
+							is to understand your situation and help you find your next step.
 						</p>
 					</div>
 				</div>

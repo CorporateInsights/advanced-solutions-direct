@@ -33,7 +33,7 @@
 							<s.icon class="w-6 h-6 text-brand-orange" />
 						</div>
 						<h2 class="mb-2 text-lg font-bold text-slate-900">{s.title}</h2>
-						<p class="text-sm leading-relaxed text-slate-600">{s.description}</p>
+						<p class="text-sm leading-relaxed text-slate-700">{s.description}</p>
 					</CardContent>
 				</Card>
 			{/each}
@@ -63,7 +63,7 @@
 				</span>
 			{/each}
 		</div>
-		<p class="mt-6 text-sm text-slate-500">
+		<p class="mt-6 text-sm text-slate-700">
 			{debtExclusions} Not sure about yours? That’s exactly what the free call is for.
 		</p>
 	</div>
