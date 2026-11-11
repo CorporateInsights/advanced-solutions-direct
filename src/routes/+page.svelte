@@ -10,8 +10,8 @@
 	import CreditCard from '@lucide/svelte/icons/credit-card';
 	import PhoneCall from '@lucide/svelte/icons/phone-call';
 
-	const heroPhoto = link('/images/hero-senior-couple.webp');
-	const heroPhotoAlt = 'A worried older couple at their kitchen table going over their bills';
+	const heroPhoto = link('/images/hero-couple-letter.webp');
+	const heroPhotoAlt = 'A concerned couple at their kitchen table reading a letter together';
 
 	const situations = [
 		{ icon: CalendarDays, label: 'Behind on Bills' },
@@ -34,20 +34,24 @@
 	<div
 		class="relative px-4 pt-6 pb-12 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:pt-14 lg:pb-16 lg:px-8"
 	>
-		<!-- Large screens: the photo framed in an arch (the shape of the logo's arch) with a gradient
-		     outline, sitting between the copy and the form. The form card overlaps its right edge. -->
+		<!-- Large screens: the photo as the hero background, like the owner's mockup. It bleeds to the
+		     top edge, fades into white at the bottom and right, and is sized so both faces sit in the
+		     open space between the copy and the form. A white glow keeps the copy readable. -->
 		<div
-			class="hidden absolute top-1/2 p-[3px] rounded-t-full rounded-b-3xl shadow-2xl -translate-y-1/2 xl:block left-[44%] w-[20rem] bg-brand-gradient-ui shadow-purple-900/20"
+			class="hidden absolute top-0 left-0 xl:block h-[35rem] aspect-[1672/941] pointer-events-none"
 		>
 			<img
 				src={heroPhoto}
 				alt={heroPhotoAlt}
-				width="1300"
-				height="1950"
+				width="1672"
+				height="941"
 				fetchpriority="high"
-				class="object-cover w-full rounded-t-full rounded-b-[calc(1.5rem-3px)] aspect-[5/7] object-[50%_30%]"
+				class="object-cover w-full h-full [mask-image:linear-gradient(to_right,#000_84%,transparent),linear-gradient(to_bottom,#000_70%,transparent)] [mask-composite:intersect]"
 			/>
 		</div>
+		<div
+			class="hidden absolute inset-y-0 left-0 xl:block w-[34rem] bg-gradient-to-r from-white from-65% to-transparent pointer-events-none"
+		></div>
 
 		<div
 			class="grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
@@ -89,10 +93,10 @@
 				<img
 					src={heroPhoto}
 					alt={heroPhotoAlt}
-					width="1300"
-					height="1866"
+					width="1672"
+					height="941"
 					fetchpriority="high"
-					class="object-cover mt-5 w-full rounded-3xl ring-[3px] ring-brand-purple/70 shadow-xl xl:hidden aspect-[4/3] object-[50%_32%] shadow-purple-900/15"
+					class="object-cover mt-5 w-full rounded-3xl ring-[3px] ring-brand-purple/70 shadow-xl xl:hidden aspect-[4/3] object-[64%_40%] shadow-purple-900/15"
 				/>
 
 				<div

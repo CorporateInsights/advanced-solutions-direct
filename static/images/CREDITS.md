@@ -5,7 +5,7 @@ All photos are free for commercial use with no attribution required, under the U
 
 | File | Used on | Photographer | Source |
 | --- | --- | --- | --- |
-| hero-senior-couple.webp | Home hero | T Leish (Pexels) | https://www.pexels.com/photo/6975208/ |
+| hero-couple-letter.webp | Home hero | Created by the owner (AI-generated, ChatGPT) | n/a |
 | how-it-works-couple-laptop.webp | How It Works | Vitaly Gariev | https://unsplash.com/photos/XIdcEnBVHfI |
 | about-first-call.webp | About | Vitaly Gariev | https://unsplash.com/photos/3KgSopqBgYI |
 
