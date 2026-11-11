@@ -33,11 +33,12 @@
 			<ul class="flex items-center">
 				{#each nav as item, i}
 					<li class="flex items-center">
-						{#if i > 0}<span class="mx-5 w-px h-5 bg-slate-300" aria-hidden="true"></span>{/if}
+						{#if i > 0}<span class="mx-4 w-px h-5 xl:mx-5 bg-slate-300" aria-hidden="true"
+							></span>{/if}
 						<a
 							href={item.href}
 							aria-current={isActive(item.href) ? 'page' : undefined}
-							class="text-[0.95rem] font-semibold transition-colors hover:text-brand-pink {isActive(
+							class="text-[0.95rem] font-semibold whitespace-nowrap transition-colors hover:text-brand-pink {isActive(
 								item.href
 							)
 								? 'text-brand-pink'
@@ -48,7 +49,16 @@
 					</li>
 				{/each}
 			</ul>
-			<Button href={ctaHref} class="ml-8 h-11 px-6 rounded-full text-[0.95rem] {ctaClass}">
+			<Button
+				href={site.phoneHref}
+				variant="outline"
+				aria-label="Call Now: {site.phoneDisplay}"
+				class="ml-6 w-11 h-11 px-0 rounded-full text-[0.95rem] font-bold bg-white border-2 xl:ml-8 xl:w-auto xl:px-5 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+			>
+				<Phone class="w-4 h-4 xl:mr-1.5" />
+				<span class="hidden xl:inline">Call Now</span>
+			</Button>
+			<Button href={ctaHref} class="ml-3 h-11 px-6 rounded-full text-[0.95rem] {ctaClass}">
 				{ctaLabel}
 				<ArrowRight class="ml-1.5 w-4 h-4" />
 			</Button>
@@ -90,6 +100,15 @@
 				class="mt-4 w-full h-11 rounded-full {ctaClass}"
 			>
 				{ctaLabel}
+			</Button>
+			<Button
+				href={site.phoneHref}
+				variant="outline"
+				onclick={() => (menuOpen = false)}
+				class="mt-3 w-full h-11 font-bold bg-white rounded-full border-2 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+			>
+				<Phone class="mr-1.5 w-4 h-4" />
+				Call Now
 			</Button>
 		</div>
 	{/if}
