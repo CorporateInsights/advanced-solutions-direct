@@ -58,7 +58,7 @@
 				</p>
 
 				<h1
-					class="mt-2 text-[3.25rem] font-black tracking-tight italic leading-[0.95] sm:mt-3 sm:text-7xl xl:text-[5.25rem] {ink}"
+					class="mt-2 text-[3.25rem] font-black tracking-tight italic leading-[0.95] sm:mt-3 sm:text-7xl lg:text-[clamp(3rem,6.2vw,5.25rem)] {ink}"
 				>
 					Drowning<br />in Debt?
 				</h1>
@@ -99,11 +99,13 @@
 					class="inline-block relative py-3 px-7 -mt-9 text-white rounded-full ring-4 ring-white shadow-lg sm:px-9 xl:mt-6 xl:ring-0 bg-brand-gradient-ui shadow-pink-500/25"
 				>
 					<p
-						class="text-[1.35rem] font-extrabold italic leading-tight whitespace-nowrap sm:text-3xl"
+						class="text-[1.35rem] font-extrabold italic leading-tight whitespace-nowrap sm:text-3xl lg:text-[clamp(1.25rem,2.25vw,1.875rem)]"
 					>
 						We Have Another Way
 					</p>
-					<p class="text-[0.95rem] font-bold italic whitespace-nowrap sm:text-xl">
+					<p
+						class="text-[0.95rem] font-bold italic whitespace-nowrap sm:text-xl lg:text-[clamp(0.875rem,1.45vw,1.25rem)]"
+					>
 						You May Not Have Been Offered!
 					</p>
 				</div>
@@ -159,7 +161,7 @@
 <!-- Same width and side padding as the hero, so the cards line up with the copy and the form -->
 <section class="relative pb-14 bg-white">
 	<ul
-		class="grid gap-4 px-4 mx-auto max-w-7xl sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:gap-5 lg:px-8"
+		class="grid gap-4 px-4 mx-auto max-w-7xl sm:grid-cols-2 sm:px-6 xl:grid-cols-4 lg:gap-5 lg:px-8"
 	>
 		{#each situations as s}
 			<li
@@ -201,7 +203,7 @@
 	<div
 		class="flex flex-col gap-5 justify-between items-center mx-auto max-w-6xl text-center md:flex-row md:text-left"
 	>
-		<p class="text-2xl font-extrabold italic text-white text-balance sm:text-3xl">
+		<p class="min-w-0 text-2xl font-extrabold italic text-white text-balance sm:text-3xl md:flex-1">
 			You may have more options than you realize.
 		</p>
 		<Button
