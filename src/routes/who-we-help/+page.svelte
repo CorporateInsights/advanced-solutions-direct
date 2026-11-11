@@ -15,12 +15,11 @@
 	import ClipboardList from '@lucide/svelte/icons/clipboard-list';
 	import FileText from '@lucide/svelte/icons/file-text';
 
-	// TODO: placeholder photos from the other pages. Swap in the owner's photos (a family at the
-	// kitchen table for the hero, an older couple reading a letter for The Reality) once they're ready.
-	const heroPhoto = link('/images/how-it-works-couple-laptop.webp');
-	const heroPhotoAlt = 'An older couple smiling while looking at a laptop together at home';
-	const realityPhoto = link('/images/hero-couple-letter.webp');
-	const realityPhotoAlt = 'A concerned couple at their kitchen table reading a letter together';
+	const heroPhoto = link('/images/who-we-help-family.webp');
+	const heroPhotoAlt =
+		'A smiling family of four at their kitchen table, looking over a letter and a laptop together';
+	const realityPhoto = link('/images/who-we-help-older-couple.webp');
+	const realityPhotoAlt = 'A worried older couple at their kitchen table reading a bill together';
 
 	// Three icon colors, alternated across the cards like the mockup
 	const tones = {
@@ -160,10 +159,10 @@
 			<img
 				src={heroPhoto}
 				alt={heroPhotoAlt}
-				width="1400"
-				height="788"
+				width="1448"
+				height="1086"
 				fetchpriority="high"
-				class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] object-[55%_40%] shadow-purple-900/15"
+				class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] shadow-purple-900/15"
 			/>
 			<div
 				class="flex absolute right-4 -bottom-6 gap-3 items-center py-3 px-4 bg-white rounded-2xl ring-1 shadow-lg sm:right-auto sm:left-6 ring-slate-200 shadow-purple-900/10"
@@ -241,10 +240,10 @@
 		<img
 			src={realityPhoto}
 			alt={realityPhotoAlt}
-			width="1672"
-			height="941"
+			width="1448"
+			height="1086"
 			loading="lazy"
-			class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] object-[60%_40%] shadow-purple-900/15"
+			class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] shadow-purple-900/15"
 		/>
 		<div>
 			<p class="text-sm font-extrabold tracking-[0.15em] uppercase {orange}">The Reality</p>
