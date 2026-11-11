@@ -10,8 +10,8 @@
 	import CreditCard from '@lucide/svelte/icons/credit-card';
 	import PhoneCall from '@lucide/svelte/icons/phone-call';
 
-	const heroPhoto = link('/images/hero-couple-worried.webp');
-	const heroPhotoAlt = 'A worried couple at their kitchen table going over their bills';
+	const heroPhoto = link('/images/hero-senior-couple.webp');
+	const heroPhotoAlt = 'A worried older couple at their kitchen table going over their bills';
 
 	const situations = [
 		{ icon: CalendarDays, label: 'Behind on Bills' },
@@ -34,22 +34,20 @@
 	<div
 		class="relative px-4 pt-6 pb-12 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:pt-14 lg:pb-16 lg:px-8"
 	>
-		<!-- Desktop: an upright photo anchored to the same content width as the copy and the form, so
-		     it sits in the gap between them at every screen size. All four edges fade into the page. -->
-		<div class="hidden absolute inset-y-6 lg:block left-[33%] aspect-[2/3] pointer-events-none">
+		<!-- Large screens: the photo framed in an arch (the shape of the logo's arch) with a gradient
+		     outline, sitting between the copy and the form. The form card overlaps its right edge. -->
+		<div
+			class="hidden absolute top-1/2 p-[3px] rounded-t-full rounded-b-3xl shadow-2xl -translate-y-1/2 xl:block left-[44%] w-[20rem] bg-brand-gradient-ui shadow-purple-900/20"
+		>
 			<img
 				src={heroPhoto}
 				alt={heroPhotoAlt}
 				width="1300"
-				height="1866"
+				height="1950"
 				fetchpriority="high"
-				class="object-cover w-full h-full object-[50%_35%] [mask-image:linear-gradient(to_right,transparent,#000_28%,#000_86%,transparent),linear-gradient(to_bottom,transparent,#000_10%,#000_82%,transparent)] [mask-composite:intersect]"
+				class="object-cover w-full rounded-t-full rounded-b-[calc(1.5rem-3px)] aspect-[5/7] object-[50%_30%]"
 			/>
 		</div>
-		<!-- Soft white glow behind the copy so text never sits on a busy part of the photo -->
-		<div
-			class="hidden absolute inset-y-0 left-0 lg:block w-[44%] bg-gradient-to-r from-white from-80% to-transparent pointer-events-none"
-		></div>
 
 		<div
 			class="grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
@@ -87,18 +85,18 @@
 					<path d="M4 12 C 80 2, 200 0, 296 8 C 210 5, 110 7, 30 14 Z" fill="url(#swoosh)" />
 				</svg>
 
-				<!-- Phones and tablets: photo as a clean rounded card; the banner overlaps its bottom edge -->
+				<!-- Phones, tablets and small laptops: photo as a rounded card; the banner overlaps its bottom edge -->
 				<img
 					src={heroPhoto}
 					alt={heroPhotoAlt}
 					width="1300"
 					height="1866"
 					fetchpriority="high"
-					class="object-cover mt-5 w-full rounded-3xl shadow-xl lg:hidden aspect-[4/3] object-[50%_26%] shadow-purple-900/15"
+					class="object-cover mt-5 w-full rounded-3xl ring-[3px] ring-brand-purple/70 shadow-xl xl:hidden aspect-[4/3] object-[50%_32%] shadow-purple-900/15"
 				/>
 
 				<div
-					class="inline-block relative py-3 px-7 -mt-9 text-white rounded-full ring-4 ring-white shadow-lg sm:px-9 lg:mt-6 lg:ring-0 bg-brand-gradient-ui shadow-pink-500/25"
+					class="inline-block relative py-3 px-7 -mt-9 text-white rounded-full ring-4 ring-white shadow-lg sm:px-9 xl:mt-6 xl:ring-0 bg-brand-gradient-ui shadow-pink-500/25"
 				>
 					<p
 						class="text-[1.35rem] font-extrabold italic leading-tight whitespace-nowrap sm:text-3xl"
