@@ -160,20 +160,23 @@
 
 		<!-- Photo with the "on your side" badge over its corner -->
 		<div class="isolate relative mx-auto w-full max-w-xl lg:max-w-none">
-			<!-- Brand circles, sized and placed relative to the photo so they always sit behind
-			     its top right corner. Smooth CSS gradients, no blur, so the edges stay crisp. -->
+			<!-- Brand shapes from the mockup, sized and placed relative to the photo so they always
+			     sit behind it and never reach the text: one wide soft band (a "cylinder") sweeping
+			     across the top, and one purple circle in the top right corner. Colors are sampled
+			     from her mockup. Smooth CSS gradients, no blur, so nothing looks grainy. -->
 			<div class="hidden absolute inset-0 pointer-events-none -z-10 lg:block" aria-hidden="true">
-				<!-- Warm glow on the photo's left side -->
+				<!-- Peach-pink haze the photo's left edge melts into -->
 				<div
-					class="absolute top-[5%] -left-[8%] w-[45%] h-[70%] rounded-full bg-[radial-gradient(closest-side,rgba(255,170,120,0.45),rgba(255,170,120,0))]"
+					class="absolute top-0 -left-[14%] w-[50%] h-full rounded-full bg-[radial-gradient(closest-side,rgba(249,214,184,0.6),rgba(245,205,211,0.3)_55%,rgba(245,205,211,0))]"
 				></div>
-				<!-- Large light circle -->
+				<!-- The band: peach on the left through pink and magenta to lilac, rising slightly to
+				     the right, and fading out on its left end -->
 				<div
-					class="absolute -top-[96%] left-[13%] w-[144%] aspect-square rounded-full opacity-55 bg-[linear-gradient(115deg,rgba(255,196,160,0.85)_0%,rgba(244,160,214,0.85)_35%,rgba(206,150,255,0.9)_70%)]"
+					class="absolute -top-[40%] -left-[14%] w-[126%] h-[78%] rounded-full opacity-60 -rotate-[5deg] bg-[linear-gradient(90deg,#FCE7D2_0%,#FAD0BA_18%,#F2B0B6_32%,#E891BC_45%,#DA71C7_58%,#CD60D1_72%,#D38DE2_88%,#D6A0E8_100%)] [mask-image:linear-gradient(to_right,transparent,#000_32%)]"
 				></div>
-				<!-- Magenta-to-purple circle in front of it -->
+				<!-- The circle -->
 				<div
-					class="absolute -top-[57%] left-[35%] w-[100%] aspect-square rounded-full opacity-60 bg-[linear-gradient(115deg,#E23BC6_0%,#C21BD6_35%,#8A0BF5_75%,#7A00FF_100%)] shadow-[0_0_50px_rgba(209,0,187,0.2)]"
+					class="absolute -top-[57%] left-[38%] w-full rounded-full opacity-70 aspect-square bg-[linear-gradient(160deg,#A92CBF_0%,#B04CCB_50%,#BB66D3_100%)]"
 				></div>
 			</div>
 			<img
@@ -182,7 +185,7 @@
 				width="1448"
 				height="1086"
 				fetchpriority="high"
-				class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] shadow-purple-900/15"
+				class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] shadow-purple-900/15 lg:[mask-image:linear-gradient(to_right,transparent,#000_14%)]"
 			/>
 			<div
 				class="flex absolute right-4 -bottom-6 gap-3 items-center py-3 px-4 bg-white rounded-2xl ring-1 shadow-lg sm:right-auto sm:left-6 ring-slate-200 shadow-purple-900/10"
