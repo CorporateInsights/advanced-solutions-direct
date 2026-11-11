@@ -1,6 +1,5 @@
 <script lang="ts">
-	import BrandArc from './BrandArc.svelte';
-	import { site, consultationHref, ctaClass } from '$lib/site';
+	import { site, consultationHref, ctaClass, inkText, leadClass } from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import Phone from '@lucide/svelte/icons/phone';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
@@ -12,42 +11,32 @@
 	}: { title?: string; description?: string; href?: string } = $props();
 </script>
 
-<section class="py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-	<div class="p-[2px] mx-auto max-w-5xl rounded-3xl bg-brand-gradient shadow-xl shadow-pink-500/10">
-		<div
-			class="overflow-hidden relative py-12 px-6 text-center bg-white sm:py-16 sm:px-12 rounded-[calc(1.5rem-2px)]"
-		>
-			<div class="absolute inset-0 pointer-events-none">
-				<div
-					class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-orange-200/30 blur-3xl"
-				></div>
-				<div
-					class="absolute -right-24 -bottom-24 w-72 h-72 rounded-full bg-purple-200/30 blur-3xl"
-				></div>
-				<BrandArc
-					class="absolute -bottom-2 left-1/2 w-[48rem] max-w-none -translate-x-1/2 opacity-[0.10]"
-				/>
-			</div>
-			<div class="relative">
-				<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
-					<span class="text-brand-gradient">{title}</span>
-				</h2>
-				<p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate-800">{description}</p>
-				<div class="flex flex-col gap-4 justify-center items-center mt-8 sm:flex-row">
-					<Button size="lg" {href} class="h-12 px-8 text-base {ctaClass}">
-						Get My Free Consultation
-						<ArrowRight class="ml-2 w-4 h-4" />
-					</Button>
-					<a
-						href={site.phoneHref}
-						class="flex gap-2 items-center font-semibold transition-colors text-slate-800 hover:text-brand-pink"
-					>
-						<Phone class="w-5 h-5 text-brand-pink" />
-						Or call {site.phoneDisplay}
-					</a>
-				</div>
-				<p class="mt-4 text-sm text-slate-800">{site.hours}</p>
-			</div>
+<!-- Closing call to action at the bottom of inner pages. Same look as the home page's closing. -->
+<section
+	class="px-4 pt-14 pb-16 text-center bg-gradient-to-b from-white to-purple-50/70 sm:px-6 lg:pt-16 lg:pb-20"
+>
+	<div class="mx-auto max-w-4xl">
+		<h2 class="text-4xl font-black tracking-tight leading-tight text-balance sm:text-5xl {inkText}">
+			{title}
+		</h2>
+		<p class="mx-auto mt-4 max-w-2xl {leadClass}">{description}</p>
+		<div class="flex flex-wrap gap-3 justify-center mt-8">
+			<Button
+				{href}
+				class="py-3 px-8 max-w-full h-auto text-base tracking-wide leading-tight text-center uppercase whitespace-normal rounded-full min-h-14 {ctaClass}"
+			>
+				Get My Free Consultation
+				<ArrowRight class="ml-2 w-5 h-5" />
+			</Button>
+			<Button
+				href={site.phoneHref}
+				variant="outline"
+				class="py-3 px-8 max-w-full h-auto text-base font-bold leading-tight text-center whitespace-normal bg-white rounded-full border-2 min-h-14 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+			>
+				<Phone class="mr-2 w-5 h-5" />
+				Or call {site.phoneDisplay}
+			</Button>
 		</div>
+		<p class="mt-4 text-sm font-medium text-slate-800">{site.hours}</p>
 	</div>
 </section>

@@ -1,6 +1,16 @@
 <script lang="ts">
-	import { site, partners, link } from '$lib/site';
-	import { Card, CardContent } from '$lib/components/ui/card';
+	import {
+		site,
+		partners,
+		link,
+		inkText,
+		accentText,
+		sectionTitleClass,
+		leadClass,
+		cardClass,
+		iconBadgeClass,
+		bandClass
+	} from '$lib/site';
 	import PageHeader from '$lib/components/site/PageHeader.svelte';
 	import CtaSection from '$lib/components/site/CtaSection.svelte';
 	import MessageSquare from '@lucide/svelte/icons/message-square';
@@ -56,68 +66,68 @@
 	description="Here’s exactly what happens, step by step, and where our part ends."
 />
 
-<section class="pb-16 sm:pb-20">
-	<div class="px-4 mx-auto space-y-6 max-w-4xl sm:px-6 lg:px-8">
+<!-- Steps. Same cards and type as the home page. -->
+<section class="pb-14 lg:pb-16">
+	<div class="px-4 mx-auto space-y-5 max-w-5xl sm:px-6 lg:px-8">
 		<img
 			src={link('/images/how-it-works-couple-laptop.webp')}
 			alt="An older couple smiling while looking at a laptop together at home"
 			width="1400"
 			height="788"
-			class="object-cover w-full rounded-2xl shadow-xl aspect-[16/9] sm:aspect-[21/9] object-[50%_35%] shadow-slate-900/10"
+			class="object-cover w-full rounded-3xl shadow-xl aspect-[16/9] sm:aspect-[21/9] object-[50%_35%] shadow-purple-900/15"
 		/>
 		{#each steps as step, i}
-			<Card class="bg-white border-slate-100">
-				<CardContent class="flex flex-col gap-5 pt-6 sm:flex-row sm:gap-8">
-					<div class="flex gap-4 items-center sm:flex-col sm:items-center sm:w-24 shrink-0">
-						<div
-							class="flex justify-center items-center w-16 h-16 rounded-2xl shadow-lg bg-brand-gradient shadow-pink-200"
-						>
-							<step.icon class="w-8 h-8 text-white" />
-						</div>
-						<span class="text-xs font-bold tracking-widest uppercase text-brand-pink">
-							Step {i + 1}
-						</span>
-					</div>
-					<div>
-						<h2 class="text-xl font-bold sm:text-2xl text-slate-900">{step.title}</h2>
-						<p class="mt-2 leading-relaxed text-slate-800">{step.description}</p>
-						<ul class="flex flex-wrap gap-x-5 gap-y-2 mt-4">
-							{#each step.points as point}
-								<li class="flex gap-1.5 items-center text-sm font-medium text-slate-800">
-									<Check class="w-4 h-4 text-brand-pink" />
-									{point}
-								</li>
-							{/each}
-						</ul>
-					</div>
-				</CardContent>
-			</Card>
+			<div class="flex flex-col gap-5 p-6 sm:flex-row sm:gap-7 sm:p-8 {cardClass}">
+				<div class="flex gap-4 items-center sm:flex-col sm:gap-3 sm:w-20 shrink-0">
+					<span class={iconBadgeClass}>
+						<step.icon class="w-7 h-7 text-brand-purple" strokeWidth={2} />
+					</span>
+					<span class="text-sm font-extrabold tracking-[0.15em] uppercase text-brand-pink">
+						Step {i + 1}
+					</span>
+				</div>
+				<div class="min-w-0">
+					<h2 class="text-2xl font-extrabold leading-snug sm:text-[1.75rem] {inkText}">
+						{step.title}
+					</h2>
+					<p class="mt-2 text-base font-medium leading-relaxed sm:text-lg text-slate-800">
+						{step.description}
+					</p>
+					<ul class="flex flex-wrap gap-x-6 gap-y-2 mt-4">
+						{#each step.points as point}
+							<li class="flex gap-2 items-center text-base font-bold {inkText}">
+								<Check class="w-5 h-5 text-brand-purple shrink-0" strokeWidth={3} />
+								{point}
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</div>
 		{/each}
 	</div>
 </section>
 
-<section class="py-16 sm:py-20 bg-slate-50">
-	<div class="px-4 mx-auto max-w-4xl sm:px-6 lg:px-8">
-		<div class="text-center">
-			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
-				What to Have <span class="text-brand-gradient">Handy</span>
+<!-- What to have handy: on a tinted band, like Who We Help on the home page -->
+<section class="py-14 lg:py-16 {bandClass}">
+	<div class="px-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-4xl text-center">
+			<h2 class={sectionTitleClass}>
+				What to Have <span class={accentText}>Handy</span>
 			</h2>
-			<p class="mt-4 text-lg text-slate-800">
+			<p class="mt-4 {leadClass}">
 				Don’t have everything? Call anyway. We’ll work through it together.
 			</p>
 		</div>
-		<div class="grid gap-4 mt-10 sm:grid-cols-3">
+		<ul class="grid gap-4 mt-10 sm:grid-cols-3 lg:gap-5">
 			{#each bringToCall as item}
-				<div
-					class="flex flex-col gap-3 items-center p-6 text-center bg-white rounded-xl border border-slate-100"
-				>
-					<div class="flex justify-center items-center w-12 h-12 bg-pink-50 rounded-xl">
-						<item.icon class="w-6 h-6 text-brand-pink" />
-					</div>
-					<p class="text-sm font-medium text-slate-800">{item.text}</p>
-				</div>
+				<li class="flex flex-col gap-4 items-center p-6 text-center {cardClass}">
+					<span class={iconBadgeClass}>
+						<item.icon class="w-7 h-7 text-brand-purple" strokeWidth={2} />
+					</span>
+					<p class="text-lg font-bold leading-snug {inkText}">{item.text}</p>
+				</li>
 			{/each}
-		</div>
+		</ul>
 	</div>
 </section>
 

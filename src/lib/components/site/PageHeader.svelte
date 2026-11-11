@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BrandArc from './BrandArc.svelte';
-	import { Badge } from '$lib/components/ui/badge';
+	import SectionEyebrow from './SectionEyebrow.svelte';
+	import { inkText, accentText, leadClass } from '$lib/site';
 
 	let {
 		eyebrow,
@@ -10,7 +11,8 @@
 	}: { eyebrow?: string; title: string; highlight?: string; description?: string } = $props();
 </script>
 
-<section class="overflow-hidden relative bg-gradient-to-b from-orange-50/60 via-white to-white">
+<!-- Top of each inner page. Same type and colors as the home page sections. -->
+<section class="overflow-hidden relative bg-gradient-to-b from-purple-50/70 via-white to-white">
 	<div class="absolute inset-0 pointer-events-none">
 		<div
 			class="absolute -top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-purple-300/20 blur-3xl"
@@ -22,20 +24,17 @@
 			class="absolute -bottom-6 left-1/2 w-[40rem] max-w-none -translate-x-1/2 opacity-[0.09]"
 		/>
 	</div>
-	<div class="relative py-14 px-4 mx-auto max-w-3xl text-center sm:py-20 sm:px-6 lg:px-8">
+	<div class="relative py-14 px-4 mx-auto max-w-4xl text-center sm:py-16 sm:px-6 lg:px-8">
 		{#if eyebrow}
-			<Badge variant="outline" class="mb-5 bg-white border-pink-200 text-brand-pink"
-				>{eyebrow}</Badge
-			>
+			<SectionEyebrow label={eyebrow} />
 		{/if}
 		<h1
-			class="text-4xl font-extrabold tracking-tight leading-tight text-balance sm:text-5xl text-slate-900"
+			class="mt-4 text-4xl font-black tracking-tight leading-[1.1] text-balance sm:text-5xl lg:text-[3.25rem] {inkText}"
 		>
-			{title}
-			{#if highlight}<span class="text-brand-gradient">{highlight}</span>{/if}
+			{title}{#if highlight}<span class={accentText}>{highlight}</span>{/if}
 		</h1>
 		{#if description}
-			<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-800">{description}</p>
+			<p class="mx-auto mt-5 max-w-3xl {leadClass}">{description}</p>
 		{/if}
 	</div>
 </section>

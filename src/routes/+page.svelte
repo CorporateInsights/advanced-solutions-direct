@@ -1,9 +1,18 @@
 <script lang="ts">
 	// Page 1 follows the owner's approved mockup (her rewrite: copy and layout). Don't change the
 	// wording without the owner's sign-off.
-	import { site, ctaClass, ctaLabel, link } from '$lib/site';
+	import {
+		site,
+		ctaClass,
+		ctaLabel,
+		link,
+		inkText,
+		accentText,
+		sectionTitleClass
+	} from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
+	import SectionEyebrow from '$lib/components/site/SectionEyebrow.svelte';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 	import Check from '@lucide/svelte/icons/check';
 	import CalendarDays from '@lucide/svelte/icons/calendar-days';
@@ -41,9 +50,9 @@
 		}
 	];
 
-	const ink = 'text-[#1e1452]';
-	const orange = 'text-[#D9480F]';
-	const sectionTitle = `text-3xl font-extrabold tracking-tight leading-tight text-balance sm:text-[2.25rem] lg:text-[2.6rem] ${ink}`;
+	const ink = inkText;
+	const orange = accentText;
+	const sectionTitle = sectionTitleClass;
 </script>
 
 <svelte:head>
@@ -253,20 +262,10 @@
 	</div>
 </section>
 
-{#snippet sectionEyebrow(label: string)}
-	<p
-		class="inline-flex gap-3 items-center text-sm font-extrabold uppercase sm:text-base tracking-[0.18em] text-brand-pink"
-	>
-		<span class="w-8 h-0.5 rounded-full bg-brand-gradient-ui" aria-hidden="true"></span>
-		{label}
-		<span class="w-8 h-0.5 rounded-full bg-brand-gradient-ui" aria-hidden="true"></span>
-	</p>
-{/snippet}
-
 <!-- Who we help: a soft tinted band, so it reads as its own section between two white ones -->
 <section class="py-14 bg-gradient-to-b lg:py-16 from-purple-50 to-pink-50/60">
 	<div class="px-4 mx-auto max-w-6xl text-center sm:px-6 lg:px-8">
-		{@render sectionEyebrow('Who We Help')}
+		<SectionEyebrow label="Who We Help" />
 		<h2 class="mt-4 {sectionTitle}">
 			Struggling With <span class="sm:whitespace-nowrap {orange}">$10,000 or More</span> in Debt?
 		</h2>
@@ -294,7 +293,7 @@
 <section class="py-14 bg-white lg:py-16">
 	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-6xl text-center">
-			{@render sectionEyebrow('A Different Approach')}
+			<SectionEyebrow label="A Different Approach" />
 			<h2 class="mt-4 {sectionTitle}">
 				Discover a Different Approach to Debt Relief <br class="hidden lg:block" /><span
 					class={orange}>You May Not Have Been Offered.</span
