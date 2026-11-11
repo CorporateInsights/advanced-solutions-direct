@@ -13,15 +13,13 @@
 	import Building2 from '@lucide/svelte/icons/building-2';
 	import CircleCheck from '@lucide/svelte/icons/circle-check';
 
-	// TODO: placeholder photos. The office photo is cropped from the owner's mockup (low
-	// resolution); swap in the original photo of the Tempe office. The specialist photo is
-	// reused from the old About page until the headset photo is ready.
+	// TODO: placeholder office photo, cropped from the owner's mockup (low resolution). Swap in a
+	// real photo of the Tempe office.
 	const officePhoto = link('/images/who-we-are-office.webp');
 	const officePhotoAlt =
 		'The Advanced Solutions Direct headquarters building on Rio Salado Parkway in Tempe, Arizona';
-	const specialistPhoto = link('/images/about-first-call.webp');
-	const specialistPhotoAlt =
-		'A smiling Client Solutions Specialist talking with a client on the phone';
+	const specialistPhoto = link('/images/who-we-are-specialist.webp');
+	const specialistPhotoAlt = 'A smiling Client Solutions Specialist wearing a headset at her desk';
 
 	const tones = {
 		purple: 'bg-purple-50 text-brand-purple',
@@ -168,10 +166,10 @@
 		<img
 			src={specialistPhoto}
 			alt={specialistPhotoAlt}
-			width="1200"
-			height="675"
+			width="1448"
+			height="1086"
 			loading="lazy"
-			class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] object-[55%_30%] shadow-purple-900/15"
+			class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] object-[50%_30%] shadow-purple-900/15"
 		/>
 		<div class="@container">
 			<h2
