@@ -79,7 +79,7 @@
 		></div>
 
 		<div
-			class="grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
+			class="@container/hero grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
 		>
 			<div
 				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left"
@@ -179,6 +179,18 @@
 			<div class="mx-auto w-full max-w-md lg:max-w-none">
 				<LeadFormCard id="lead-form" />
 			</div>
+
+			<!-- Wide screens: round Call Now button in the open space under the photo, between the copy
+			     and the form. It only shows when there's room for it (so not with very large text).
+			     Phones have the Call Now bar at the bottom, and every screen has Call Now in the header. -->
+			<a
+				href={site.phoneHref}
+				class="hidden absolute top-[64%] left-[calc(50%+2rem)] flex-col justify-center items-center w-36 h-36 text-center text-white rounded-full ring-[6px] ring-white shadow-2xl transition -translate-x-1/2 -translate-y-1/2 xl:@min-[72rem]/hero:flex hover:scale-105 bg-brand-gradient-ui shadow-pink-500/40"
+			>
+				<PhoneCall class="w-8 h-8" strokeWidth={2.25} />
+				<span class="mt-1.5 text-lg font-black tracking-wide leading-none uppercase">Call Now</span>
+				<span class="mt-1 text-[0.72rem] font-bold leading-none">{site.phoneDisplay}</span>
+			</a>
 		</div>
 	</div>
 </section>
