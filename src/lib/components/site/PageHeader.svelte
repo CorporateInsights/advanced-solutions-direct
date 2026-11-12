@@ -24,7 +24,7 @@
 			class="absolute -bottom-6 left-1/2 w-[40rem] max-w-none -translate-x-1/2 opacity-[0.09]"
 		/>
 	</div>
-	<div class="relative py-14 px-4 mx-auto max-w-4xl text-center sm:py-16 sm:px-6 lg:px-8">
+	<div class="relative py-14 px-4 mx-auto max-w-4xl text-center sm:px-6 lg:py-20 lg:px-8">
 		{#if eyebrow}
 			<SectionEyebrow label={eyebrow} />
 		{/if}

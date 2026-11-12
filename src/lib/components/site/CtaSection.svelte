@@ -20,7 +20,7 @@
 
 <!-- Closing call to action at the bottom of inner pages. Same look as the home page's closing. -->
 <section
-	class="px-4 pt-14 pb-16 text-center bg-gradient-to-b from-white to-purple-50/70 sm:px-6 lg:pt-16 lg:pb-20"
+	class="px-4 pt-14 pb-16 text-center bg-gradient-to-b from-white to-purple-50/70 sm:px-6 lg:pt-20 lg:pb-20"
 >
 	<div class="mx-auto max-w-4xl">
 		<h2 class="{closingTitleClass} {inkText}">

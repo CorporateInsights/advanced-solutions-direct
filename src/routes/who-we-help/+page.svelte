@@ -200,7 +200,7 @@
 </section>
 
 <!-- Tagline row -->
-<section class="px-4 pt-6 pb-14 bg-white sm:px-6 lg:pb-16">
+<section class="px-4 pb-14 bg-white sm:px-6 lg:pb-16">
 	<p
 		class="flex flex-col gap-2 justify-center items-center text-2xl font-extrabold tracking-tight text-center sm:flex-row sm:gap-0 lg:text-[1.75rem]"
 	>
@@ -251,7 +251,7 @@
 </section>
 
 <!-- The reality: photo and the list of what people want -->
-<section class="py-14 bg-white lg:py-20">
+<section class="pb-14 bg-white lg:pb-20">
 	<div
 		class="grid gap-10 items-center px-4 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8"
 	>

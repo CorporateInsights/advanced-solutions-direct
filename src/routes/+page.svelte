@@ -67,7 +67,7 @@
 <!-- Hero: copy and form, with the photo behind them on large screens -->
 <section class="overflow-hidden relative bg-white">
 	<div
-		class="relative px-4 pt-6 pb-10 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:px-8 lg:pt-12 lg:pb-12"
+		class="relative px-4 pt-6 pb-14 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:px-8 lg:pt-12 lg:pb-16"
 	>
 		<!-- Large screens: the photo as the hero background. It bleeds to the top edge, fades into
 		     white at the bottom and right, and is sized so both faces sit in the open space between
@@ -92,7 +92,7 @@
 			class="@container/hero grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
 		>
 			<div
-				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left"
+				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[40rem] xl:max-w-[31rem] lg:text-left"
 			>
 				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm {ink}">
 					Real Solutions. A Brighter Financial Future.
@@ -133,7 +133,7 @@
 					width="1672"
 					height="941"
 					fetchpriority="high"
-					class="object-cover mt-5 w-full rounded-3xl shadow-xl xl:hidden aspect-[4/3] object-[64%_40%] shadow-purple-900/15"
+					class="object-cover mt-5 w-full rounded-3xl shadow-xl xl:hidden aspect-[4/3] object-[64%_40%] lg:aspect-[16/9] shadow-purple-900/15"
 				/>
 
 				<div
@@ -214,7 +214,7 @@
 <!-- Already enrolled, situations, and the phone line. Same width as the hero. -->
 <!-- Sections below the hero share one rhythm: no top padding, the same bottom padding, so the
      gap between every block is even. -->
-<section class="pb-14 bg-white lg:pb-16">
+<section class="pb-14 bg-white lg:pb-20">
 	<div class="px-4 mx-auto space-y-5 max-w-7xl sm:px-6 lg:px-8">
 		<div
 			class="flex flex-col gap-4 items-center py-5 px-5 text-center bg-gradient-to-r rounded-2xl border shadow-sm sm:flex-row sm:gap-5 sm:px-7 sm:text-left border-brand-purple/25 from-pink-50 via-purple-50 to-pink-50/40 shadow-purple-900/5"
@@ -273,7 +273,7 @@
 </section>
 
 <!-- Who we help: a soft tinted band, so it reads as its own section between two white ones -->
-<section class="py-14 bg-gradient-to-b lg:py-16 from-purple-50 to-pink-50/60">
+<section class="py-14 bg-gradient-to-b lg:py-20 from-purple-50 to-pink-50/60">
 	<div class="px-4 mx-auto max-w-6xl text-center sm:px-6 lg:px-8">
 		<SectionEyebrow label="Who We Help" />
 		<h2 class="mt-4 {sectionTitle}">
@@ -300,7 +300,7 @@
 </section>
 
 <!-- A different approach -->
-<section class="py-14 bg-white lg:py-16">
+<section class="py-14 bg-white lg:py-20">
 	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-6xl text-center">
 			<SectionEyebrow label="A Different Approach" />

@@ -102,7 +102,7 @@
 	></div>
 
 	<div
-		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:pt-14 lg:pb-16"
+		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:pt-14 lg:pb-20"
 	>
 		<div class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:text-left">
 			<p
@@ -246,7 +246,7 @@
 </section>
 
 <!-- Our location -->
-<section class="py-14 bg-white lg:py-20">
+<section class="pb-14 bg-white lg:pb-20">
 	<div
 		class="grid gap-10 items-center px-4 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8"
 	>
