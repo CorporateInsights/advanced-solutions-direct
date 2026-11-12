@@ -8,7 +8,8 @@
 		link,
 		inkText,
 		accentText,
-		sectionTitleClass
+		sectionTitleClass,
+		cardTitleClass
 	} from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
@@ -66,7 +67,7 @@
 <!-- Hero: copy and form, with the photo behind them on large screens -->
 <section class="overflow-hidden relative bg-white">
 	<div
-		class="relative px-4 pt-6 pb-10 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:px-8 lg:pt-12 lg:pb-12"
+		class="relative px-4 pt-6 pb-14 mx-auto max-w-7xl sm:px-6 sm:pt-10 lg:px-8 lg:pt-12 lg:pb-16"
 	>
 		<!-- Large screens: the photo as the hero background. It bleeds to the top edge, fades into
 		     white at the bottom and right, and is sized so both faces sit in the open space between
@@ -91,7 +92,7 @@
 			class="@container/hero grid relative gap-10 items-center lg:grid-cols-[minmax(0,1fr)_26rem] xl:grid-cols-[minmax(0,1fr)_27rem]"
 		>
 			<div
-				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[31rem] lg:text-left"
+				class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:max-w-[40rem] xl:max-w-[31rem] lg:text-left"
 			>
 				<p class="text-xs font-bold tracking-wide uppercase sm:text-sm {ink}">
 					Real Solutions. A Brighter Financial Future.
@@ -104,7 +105,7 @@
 				</h1>
 				<!-- Brush swoosh under the headline -->
 				<svg
-					class="mx-auto mt-2 w-56 max-w-full h-4 sm:w-72 lg:mx-0"
+					class="mx-auto mt-3 w-56 max-w-full h-4 sm:w-72 lg:mx-0"
 					viewBox="0 0 300 16"
 					fill="none"
 					aria-hidden="true"
@@ -132,7 +133,7 @@
 					width="1672"
 					height="941"
 					fetchpriority="high"
-					class="object-cover mt-5 w-full rounded-3xl shadow-xl xl:hidden aspect-[4/3] object-[64%_40%] shadow-purple-900/15"
+					class="object-cover mt-5 w-full rounded-3xl shadow-xl xl:hidden aspect-[4/3] object-[64%_40%] lg:aspect-[16/9] shadow-purple-900/15"
 				/>
 
 				<div
@@ -147,7 +148,7 @@
 				</div>
 
 				<p
-					class="mt-6 text-xl font-extrabold leading-tight uppercase sm:text-2xl lg:text-[1.6rem] {ink}"
+					class="mt-6 text-xl font-extrabold leading-tight uppercase text-balance sm:text-2xl lg:text-[1.6rem] {ink}"
 				>
 					Are Your Bills or Debt Settlement Payments Too High?
 				</p>
@@ -213,10 +214,10 @@
 <!-- Already enrolled, situations, and the phone line. Same width as the hero. -->
 <!-- Sections below the hero share one rhythm: no top padding, the same bottom padding, so the
      gap between every block is even. -->
-<section class="pb-14 bg-white lg:pb-16">
+<section class="pb-14 bg-white lg:pb-20">
 	<div class="px-4 mx-auto space-y-5 max-w-7xl sm:px-6 lg:px-8">
 		<div
-			class="flex flex-col gap-4 items-center py-5 px-5 text-center bg-gradient-to-r rounded-2xl border shadow-sm sm:flex-row sm:gap-5 sm:px-7 sm:text-left border-brand-purple/25 from-pink-50 via-purple-50 to-pink-50/40 shadow-purple-900/5"
+			class="flex flex-col gap-4 items-center py-5 px-5 text-center bg-gradient-to-r rounded-2xl border shadow-sm sm:flex-row sm:gap-4 sm:text-left border-brand-purple/25 from-pink-50 via-purple-50 to-pink-50/40 shadow-purple-900/5"
 		>
 			<span
 				class="flex justify-center items-center w-12 h-12 bg-white rounded-full border-2 border-brand-purple shrink-0"
@@ -224,7 +225,7 @@
 				<Check class="w-6 h-6 text-brand-purple" strokeWidth={3} />
 			</span>
 			<div>
-				<h2 class="text-xl font-extrabold leading-snug sm:text-2xl {ink}">
+				<h2 class="text-xl font-extrabold leading-snug text-balance sm:text-2xl {ink}">
 					Already Enrolled in Debt Settlement? No Problem!
 				</h2>
 				<p class="mt-1 text-base font-medium sm:text-lg text-slate-800">
@@ -233,7 +234,7 @@
 			</div>
 		</div>
 
-		<ul class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 lg:gap-5">
+		<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 lg:gap-5">
 			{#each situations as s}
 				<li
 					class="flex gap-4 items-center py-4 px-5 bg-white rounded-2xl border shadow-md border-slate-200 shadow-purple-900/5"
@@ -241,13 +242,16 @@
 					<span class="flex justify-center items-center w-12 h-12 bg-purple-50 rounded-xl shrink-0">
 						<s.icon class="w-6 h-6 text-brand-purple" strokeWidth={2} />
 					</span>
-					<span class="text-[1.05rem] font-extrabold leading-snug {ink}">{s.label}</span>
+					<span
+						class="min-w-0 text-[1.05rem] font-extrabold leading-snug break-words hyphens-auto {ink}"
+						>{s.label}</span
+					>
 				</li>
 			{/each}
 			<li>
 				<a
 					href={site.phoneHref}
-					class="flex gap-4 items-center py-4 px-5 h-full rounded-2xl border-2 shadow-md transition border-brand-purple/30 bg-purple-50/70 shadow-purple-900/5 hover:border-brand-purple/60 hover:shadow-lg"
+					class="flex gap-4 items-center py-4 px-5 h-full rounded-2xl border ring-1 ring-inset shadow-md transition border-brand-purple/30 ring-brand-purple/30 bg-purple-50/70 shadow-purple-900/5 hover:border-brand-purple/60 hover:ring-brand-purple/60 hover:shadow-lg"
 				>
 					<span
 						class="flex justify-center items-center w-12 h-12 rounded-xl shadow-md shrink-0 bg-brand-gradient-ui shadow-pink-500/25"
@@ -269,11 +273,11 @@
 </section>
 
 <!-- Who we help: a soft tinted band, so it reads as its own section between two white ones -->
-<section class="py-14 bg-gradient-to-b lg:py-16 from-purple-50 to-pink-50/60">
+<section class="py-14 bg-gradient-to-b lg:py-20 from-purple-50 to-pink-50/60">
 	<div class="px-4 mx-auto max-w-6xl text-center sm:px-6 lg:px-8">
 		<SectionEyebrow label="Who We Help" />
 		<h2 class="mt-4 {sectionTitle}">
-			Struggling With <span class="sm:whitespace-nowrap {orange}">$10,000 or More</span> in Debt?
+			Struggling With <span class="inline-block {orange}">$10,000 or More</span> in Debt?
 		</h2>
 		<p class="mx-auto mt-4 max-w-4xl text-lg font-medium leading-relaxed sm:text-xl text-slate-800">
 			Credit cards, personal loans, <strong class="font-extrabold {ink}"
@@ -296,7 +300,7 @@
 </section>
 
 <!-- A different approach -->
-<section class="py-14 bg-white lg:py-16">
+<section class="py-14 bg-white lg:py-20">
 	<div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-6xl text-center">
 			<SectionEyebrow label="A Different Approach" />
@@ -327,7 +331,7 @@
 						<a.icon class="w-7 h-7 text-brand-purple" strokeWidth={2} />
 					</span>
 					<div class="min-w-0">
-						<h3 class="text-xl font-extrabold leading-snug {ink}">{a.title}</h3>
+						<h3 class={cardTitleClass}>{a.title}</h3>
 						<p class="mt-1.5 text-base leading-relaxed text-slate-800">{a.text}</p>
 					</div>
 				</li>

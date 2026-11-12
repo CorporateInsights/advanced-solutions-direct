@@ -13,10 +13,12 @@
 <Accordion type="single">
 	{#each faqs as faq, i}
 		<AccordionItem value="{prefix}-{i}" class="border-slate-200">
-			<AccordionTrigger class="text-base font-semibold text-left hover:no-underline text-slate-900">
+			<AccordionTrigger
+				class="py-4 text-lg font-bold leading-snug text-left hover:no-underline text-[#1e1452] **:data-[slot=accordion-trigger-icon]:mt-0.5 **:data-[slot=accordion-trigger-icon]:size-5"
+			>
 				{faq.question}
 			</AccordionTrigger>
-			<AccordionContent class="text-base leading-relaxed sm:text-sm text-slate-800">
+			<AccordionContent class="text-base font-medium leading-relaxed text-slate-800">
 				{faq.answer}
 			</AccordionContent>
 		</AccordionItem>

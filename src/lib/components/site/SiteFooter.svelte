@@ -11,9 +11,9 @@
 
 	<div class="px-4 pt-8 pb-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
 		<div
-			class="flex flex-col gap-5 items-center text-center lg:flex-row lg:justify-between lg:text-left"
+			class="flex flex-col gap-5 items-center text-center lg:grid lg:grid-cols-[1fr_auto_1fr] lg:text-left"
 		>
-			<a href={link('/')} class="shrink-0">
+			<a href={link('/')} class="shrink-0 lg:justify-self-start">
 				<img src={site.logo} alt={site.name} width="357" height="182" class="w-auto h-12" />
 			</a>
 
@@ -35,7 +35,7 @@
 
 			<a
 				href={site.phoneHref}
-				class="inline-flex gap-2 items-center text-sm font-bold whitespace-nowrap transition-colors shrink-0 hover:text-brand-pink {ink}"
+				class="inline-flex gap-2 items-center text-sm font-bold whitespace-nowrap transition-colors shrink-0 lg:justify-self-end hover:text-brand-pink {ink}"
 			>
 				<span class="flex justify-center items-center w-8 h-8 rounded-full bg-brand-gradient-ui">
 					<Phone class="w-4 h-4 text-white" />
@@ -57,7 +57,7 @@
 		</p>
 
 		<div
-			class="flex flex-col gap-3 items-center mt-4 text-[0.75rem] lg:flex-row lg:justify-between text-slate-800"
+			class="flex flex-col gap-3 items-center mt-4 text-[0.75rem] xl:flex-row xl:justify-between text-slate-800"
 		>
 			<p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
 			<ul class="flex flex-wrap gap-y-1 gap-x-4 justify-center">

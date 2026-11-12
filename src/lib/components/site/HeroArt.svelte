@@ -2,7 +2,7 @@
      Put it inside the photo's wrapper, which needs "relative isolate"; it sizes itself to the
      photo, so it always sits behind it and never reaches the text. Large screens only. -->
 <div
-	class="hidden absolute pointer-events-none -z-10 lg:block -left-[53%] -top-[21%] w-[160%] h-[142%] [mask-image:linear-gradient(to_bottom,#000_55%,transparent_96%),linear-gradient(to_right,transparent_12%,#000_42%)] min-[1600px]:[mask-image:linear-gradient(to_bottom,#000_55%,transparent_96%),linear-gradient(to_right,transparent_12%,#000_42%,#000_88%,transparent)] [mask-composite:intersect]"
+	class="hidden absolute pointer-events-none -z-10 lg:block -left-[53%] -top-[21%] w-[160%] h-[142%] [mask-image:linear-gradient(to_bottom,transparent,#000_14%,#000_55%,transparent_96%),linear-gradient(to_right,transparent_12%,#000_42%)] min-[1600px]:[mask-image:linear-gradient(to_bottom,transparent,#000_14%,#000_55%,transparent_96%),linear-gradient(to_right,transparent_12%,#000_42%,#000_88%,transparent)] [mask-composite:intersect]"
 	aria-hidden="true"
 >
 	<div

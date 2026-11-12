@@ -71,7 +71,24 @@ export const ctaClass =
 // Shared look, taken from the home page, so every page matches
 export const inkText = 'text-[#1e1452]';
 export const accentText = 'text-[#D9480F]';
-export const sectionTitleClass = `text-3xl font-extrabold tracking-tight leading-tight text-balance sm:text-[2.25rem] lg:text-[2.6rem] ${inkText}`;
+// Heading scale, shared by every page so titles match across the site. The min(..., cqi) part
+// only kicks in on very narrow screens with large text, so long words never overflow.
+// Page title (the h1 at the top of each inner page)
+export const pageTitleClass = `text-[min(2.25rem,11cqi)] font-black tracking-tight leading-[1.05] text-balance sm:text-[min(3rem,11cqi)] lg:text-[min(3.5rem,11cqi)] ${inkText}`;
+// Section heading (the big h2 that opens each section)
+export const sectionTitleClass = `text-[min(1.875rem,10cqi)] font-black tracking-tight leading-tight text-balance sm:text-[2.25rem] lg:text-[2.75rem] ${inkText}`;
+// Heading inside a panel or banner (one step down from a section heading)
+export const panelTitleClass = `text-[min(1.75rem,10cqi)] font-black tracking-tight leading-tight text-balance sm:text-[2rem] lg:text-[2.25rem] ${inkText}`;
+// Closing call-to-action heading (no color, so it works on white and on the purple band)
+export const closingTitleClass =
+	'text-[min(1.875rem,10cqi)] font-black tracking-tight leading-tight text-balance sm:text-[min(2.5rem,10cqi)] lg:text-5xl';
+// Card title
+export const cardTitleClass = `text-[min(1.25rem,10cqi)] font-extrabold leading-snug text-balance sm:text-[1.375rem] ${inkText}`;
+// Checkmark list item (pair with <CheckDot />), same on every page
+export const checkItemClass = `flex gap-3 items-start text-lg font-bold leading-snug break-words hyphens-auto ${inkText}`;
+// Small uppercase label above a heading (add a color)
+export const eyebrowClass =
+	'text-sm font-extrabold tracking-wider uppercase sm:text-base sm:tracking-[0.15em]';
 export const leadClass = 'text-lg font-medium leading-relaxed sm:text-xl text-slate-800';
 export const cardClass =
 	'bg-white rounded-2xl border shadow-md border-slate-200 shadow-purple-900/5';
