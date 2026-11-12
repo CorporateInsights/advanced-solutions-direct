@@ -14,7 +14,7 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 			adapter: adapter({ fallback: '404.html' }),
-			// Set by the GitHub Pages workflow to /<repo-name>; empty for local dev
+			// Empty: the site is served from the domain root on Cloudflare Pages (and in local dev)
 			paths: { base: (process.env.BASE_PATH ?? '') as '' | `/${string}` },
 			typescript: {
 				config: (config) => ({
