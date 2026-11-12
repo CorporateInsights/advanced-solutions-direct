@@ -18,7 +18,7 @@
 	<div
 		class="flex justify-between items-center px-4 mx-auto max-w-7xl h-20 sm:px-6 lg:h-24 lg:px-8"
 	>
-		<a href={link('/')} class="flex gap-2 items-center" onclick={() => (menuOpen = false)}>
+		<a href={link('/')} class="flex gap-2 items-center shrink-0" onclick={() => (menuOpen = false)}>
 			<img
 				src={site.logo}
 				alt={site.name}
@@ -33,7 +33,7 @@
 			<ul class="flex items-center">
 				{#each nav as item, i}
 					<li class="flex items-center">
-						{#if i > 0}<span class="mx-4 w-px h-5 xl:mx-5 bg-slate-300" aria-hidden="true"
+						{#if i > 0}<span class="mx-3 w-px h-5 xl:mx-5 bg-slate-300" aria-hidden="true"
 							></span>{/if}
 						<a
 							href={item.href}
@@ -55,7 +55,7 @@
 				href={site.phoneHref}
 				variant="outline"
 				aria-label="Call Now: {site.phoneDisplay}"
-				class="ml-6 w-11 h-11 px-0 rounded-full text-[0.95rem] font-bold bg-white border-2 xl:ml-8 xl:w-auto xl:px-5 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+				class="ml-4 w-11 h-11 px-0 rounded-full text-[0.95rem] font-bold bg-white border-2 xl:ml-8 xl:w-auto xl:px-5 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
 			>
 				<Phone class="w-4 h-4 xl:mr-1.5" />
 				<span class="hidden xl:inline">Call Now</span>

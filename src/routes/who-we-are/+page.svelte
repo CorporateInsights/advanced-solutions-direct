@@ -14,7 +14,8 @@
 		closingTitleClass,
 		cardTitleClass,
 		eyebrowClass,
-		checkItemClass
+		checkItemClass,
+		cardClass
 	} from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
@@ -82,7 +83,7 @@
 	// Orange-to-pink gradient text, like her mockup's "Count On." and "to You."
 	const warmText =
 		'bg-gradient-to-r from-[#D9480F] to-[#E0115F] bg-clip-text text-transparent box-decoration-clone';
-	const card = 'bg-white rounded-2xl border shadow-sm border-slate-200 shadow-purple-900/5';
+	const card = cardClass;
 	const eyebrow = `${eyebrowClass} ${orange}`;
 </script>
 
@@ -102,7 +103,7 @@
 	></div>
 
 	<div
-		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:pt-14 lg:pb-20"
+		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-14 lg:pb-20"
 	>
 		<div class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:text-left">
 			<p
@@ -169,7 +170,7 @@
 <section class="pb-14 bg-white lg:pb-20">
 	<div class="px-4 mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
 		<div
-			class="@container grid grid-cols-1 gap-6 items-center p-7 bg-gradient-to-r rounded-2xl border sm:p-9 lg:grid-cols-2 lg:gap-12 border-brand-purple/15 from-purple-50 via-purple-50/60 to-pink-50/50"
+			class="@container grid grid-cols-1 gap-6 items-center p-5 bg-gradient-to-r rounded-2xl border sm:p-7 lg:grid-cols-2 lg:gap-12 border-brand-purple/15 from-purple-50 via-purple-50/60 to-pink-50/50"
 		>
 			<h2 class={panelTitleClass}>
 				Founded in 2020.<br />
@@ -236,7 +237,7 @@
 			<ul class="mt-7 space-y-3.5">
 				{#each promises as promise}
 					<li class={checkItemClass}>
-						<CheckDot class="mt-0.5" />
+						<CheckDot />
 						<span class="min-w-0">{promise}</span>
 					</li>
 				{/each}
@@ -301,7 +302,9 @@
 				href={site.phoneHref}
 				class="py-3 px-8 mt-8 max-w-full h-auto text-base font-bold leading-tight text-center text-white whitespace-normal bg-gradient-to-r rounded-full shadow-lg transition sm:text-lg min-h-14 from-[#E8590C] to-[#E0115F] hover:brightness-110"
 			>
-				Speak with a U.S.-Based Client Solutions Specialist
+				<span class="text-balance"
+					>Speak with a <span class="inline-block">U.S.-Based</span> Client Solutions Specialist</span
+				>
 				<ArrowRight class="ml-2 w-5 h-5 shrink-0" />
 			</Button>
 			<p class="mt-5">

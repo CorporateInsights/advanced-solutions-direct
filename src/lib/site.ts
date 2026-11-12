@@ -84,7 +84,7 @@ export const closingTitleClass =
 	'text-[min(1.875rem,10cqi)] font-black tracking-tight leading-tight text-balance sm:text-[min(2.5rem,10cqi)] lg:text-5xl';
 // Card title
 export const cardTitleClass = `text-[min(1.25rem,10cqi)] font-extrabold leading-snug text-balance sm:text-[1.375rem] ${inkText}`;
-// Checkmark list item (pair with <CheckDot class="mt-0.5" />), same on every page
+// Checkmark list item (pair with <CheckDot />), same on every page
 export const checkItemClass = `flex gap-3 items-start text-lg font-bold leading-snug break-words hyphens-auto ${inkText}`;
 // Small uppercase label above a heading (add a color)
 export const eyebrowClass =

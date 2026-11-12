@@ -13,7 +13,9 @@
 
 <!-- Top of each inner page. Same type and colors as the home page sections. -->
 <section class="overflow-hidden relative bg-gradient-to-b from-purple-50/70 via-white to-white">
-	<div class="absolute inset-0 pointer-events-none">
+	<div
+		class="absolute inset-0 pointer-events-none [mask-image:linear-gradient(to_bottom,#000_55%,transparent)]"
+	>
 		<div
 			class="absolute -top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-purple-300/20 blur-3xl"
 		></div>

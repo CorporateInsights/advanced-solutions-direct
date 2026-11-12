@@ -21,7 +21,7 @@
 	description="Here are the questions we hear most. For anything specific to your situation, the free call is the best place to start."
 />
 
-<section>
+<section class="pt-2">
 	<div class="px-4 mx-auto max-w-3xl sm:px-6 lg:px-8">
 		<FaqList faqs={[...coreFaqs, ...moreFaqs]} />
 	</div>

@@ -30,7 +30,7 @@
 		<div class="flex flex-wrap gap-3 justify-center mt-8">
 			<Button
 				{href}
-				class="py-3 px-8 max-w-full h-auto text-base tracking-wide leading-tight text-center uppercase whitespace-normal rounded-full min-h-14 {ctaClass}"
+				class="py-3 px-8 w-full max-w-full h-auto text-base tracking-wide sm:w-auto leading-tight text-center uppercase whitespace-normal rounded-full min-h-14 {ctaClass}"
 			>
 				Get My Free Consultation
 				<ArrowRight class="ml-2 w-5 h-5" />
@@ -38,7 +38,7 @@
 			<Button
 				href={site.phoneHref}
 				variant="outline"
-				class="py-3 px-8 max-w-full h-auto text-base font-bold leading-tight text-center whitespace-normal bg-white rounded-full border-2 min-h-14 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+				class="py-3 px-8 w-full max-w-full h-auto text-base font-bold leading-tight text-center whitespace-normal bg-white sm:w-auto rounded-full border-2 min-h-14 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
 			>
 				<Phone class="mr-2 w-5 h-5" />
 				Or call {site.phoneDisplay}

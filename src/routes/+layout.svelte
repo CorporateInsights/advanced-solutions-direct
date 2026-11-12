@@ -58,7 +58,7 @@
 	{#if showStickyCta}
 		<!-- Mobile Sticky CTA -->
 		<div
-			class="fixed right-0 bottom-0 left-0 z-40 p-3 border-t md:hidden border-slate-200 bg-white/95 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] backdrop-blur-md"
+			class="fixed right-0 bottom-0 left-0 z-40 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] border-t md:hidden border-slate-200 bg-white/95 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] backdrop-blur-md"
 		>
 			<div class="grid grid-cols-2 gap-3">
 				<!-- Tap-to-call: equal billing with the form, since most mobile visitors would rather call -->
@@ -79,6 +79,6 @@
 			</div>
 		</div>
 		<!-- Bottom padding for mobile sticky CTA -->
-		<div class="h-[4.5rem] md:hidden"></div>
+		<div class="h-[calc(4.5rem+env(safe-area-inset-bottom))] md:hidden"></div>
 	{/if}
 </div>

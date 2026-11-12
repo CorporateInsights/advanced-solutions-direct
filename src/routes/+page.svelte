@@ -105,7 +105,7 @@
 				</h1>
 				<!-- Brush swoosh under the headline -->
 				<svg
-					class="mx-auto mt-2 w-56 max-w-full h-4 sm:w-72 lg:mx-0"
+					class="mx-auto mt-3 w-56 max-w-full h-4 sm:w-72 lg:mx-0"
 					viewBox="0 0 300 16"
 					fill="none"
 					aria-hidden="true"
@@ -148,7 +148,7 @@
 				</div>
 
 				<p
-					class="mt-6 text-xl font-extrabold leading-tight uppercase sm:text-2xl lg:text-[1.6rem] {ink}"
+					class="mt-6 text-xl font-extrabold leading-tight uppercase text-balance sm:text-2xl lg:text-[1.6rem] {ink}"
 				>
 					Are Your Bills or Debt Settlement Payments Too High?
 				</p>
@@ -217,7 +217,7 @@
 <section class="pb-14 bg-white lg:pb-20">
 	<div class="px-4 mx-auto space-y-5 max-w-7xl sm:px-6 lg:px-8">
 		<div
-			class="flex flex-col gap-4 items-center py-5 px-5 text-center bg-gradient-to-r rounded-2xl border shadow-sm sm:flex-row sm:gap-5 sm:px-7 sm:text-left border-brand-purple/25 from-pink-50 via-purple-50 to-pink-50/40 shadow-purple-900/5"
+			class="flex flex-col gap-4 items-center py-5 px-5 text-center bg-gradient-to-r rounded-2xl border shadow-sm sm:flex-row sm:gap-4 sm:text-left border-brand-purple/25 from-pink-50 via-purple-50 to-pink-50/40 shadow-purple-900/5"
 		>
 			<span
 				class="flex justify-center items-center w-12 h-12 bg-white rounded-full border-2 border-brand-purple shrink-0"
@@ -225,7 +225,7 @@
 				<Check class="w-6 h-6 text-brand-purple" strokeWidth={3} />
 			</span>
 			<div>
-				<h2 class="text-xl font-extrabold leading-snug sm:text-2xl {ink}">
+				<h2 class="text-xl font-extrabold leading-snug text-balance sm:text-2xl {ink}">
 					Already Enrolled in Debt Settlement? No Problem!
 				</h2>
 				<p class="mt-1 text-base font-medium sm:text-lg text-slate-800">
@@ -251,7 +251,7 @@
 			<li>
 				<a
 					href={site.phoneHref}
-					class="flex gap-4 items-center py-4 px-5 h-full rounded-2xl border-2 shadow-md transition border-brand-purple/30 bg-purple-50/70 shadow-purple-900/5 hover:border-brand-purple/60 hover:shadow-lg"
+					class="flex gap-4 items-center py-4 px-5 h-full rounded-2xl border ring-1 ring-inset shadow-md transition border-brand-purple/30 ring-brand-purple/30 bg-purple-50/70 shadow-purple-900/5 hover:border-brand-purple/60 hover:ring-brand-purple/60 hover:shadow-lg"
 				>
 					<span
 						class="flex justify-center items-center w-12 h-12 rounded-xl shadow-md shrink-0 bg-brand-gradient-ui shadow-pink-500/25"
@@ -277,7 +277,7 @@
 	<div class="px-4 mx-auto max-w-6xl text-center sm:px-6 lg:px-8">
 		<SectionEyebrow label="Who We Help" />
 		<h2 class="mt-4 {sectionTitle}">
-			Struggling With <span class="sm:whitespace-nowrap {orange}">$10,000 or More</span> in Debt?
+			Struggling With <span class="inline-block {orange}">$10,000 or More</span> in Debt?
 		</h2>
 		<p class="mx-auto mt-4 max-w-4xl text-lg font-medium leading-relaxed sm:text-xl text-slate-800">
 			Credit cards, personal loans, <strong class="font-extrabold {ink}"

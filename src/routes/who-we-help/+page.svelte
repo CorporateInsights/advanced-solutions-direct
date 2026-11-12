@@ -14,7 +14,8 @@
 		closingTitleClass,
 		cardTitleClass,
 		eyebrowClass,
-		checkItemClass
+		checkItemClass,
+		cardClass
 	} from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import HeroArt from '$lib/components/site/HeroArt.svelte';
@@ -95,9 +96,15 @@
 	// Orange-to-red gradient text, dark enough to read on white
 	const warmText =
 		'bg-gradient-to-r from-[#D9480F] to-[#E0115F] bg-clip-text text-transparent box-decoration-clone';
-	const card = 'bg-white rounded-2xl border shadow-sm border-slate-200 shadow-purple-900/5';
+	const card = cardClass;
 	const agentLabel = 'Speak with a live U.S.-based agent now';
 </script>
+
+{#snippet agentText()}
+	<span class="text-balance"
+		>Speak with a live <span class="inline-block">U.S.-based</span> agent now</span
+	>
+{/snippet}
 
 <svelte:head>
 	<title>Who We Help | {site.name}</title>
@@ -119,7 +126,7 @@
 	></div>
 
 	<div
-		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:pt-14 lg:pb-16"
+		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-14 lg:pb-16"
 	>
 		<div class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:text-left">
 			<p
@@ -129,7 +136,7 @@
 			</p>
 			<h1 class="mt-5 {pageTitleClass}">
 				If Any of This Sounds Like You, It’s Time to Explore a
-				<span class="pr-[0.12em] italic uppercase {warmText}">New Solution.</span>
+				<span class="inline-block pr-[0.12em] italic uppercase {warmText}">New Solution.</span>
 			</h1>
 			<!-- Brush swoosh under the headline, same as the home page -->
 			<svg
@@ -163,7 +170,7 @@
 				href={site.phoneHref}
 				class="py-3 px-7 mt-8 max-w-full h-auto text-base leading-tight text-center whitespace-normal rounded-full min-h-14 {ctaClass}"
 			>
-				{agentLabel}
+				{@render agentText()}
 				<ArrowRight class="ml-2 w-5 h-5" />
 			</Button>
 			<p class="mt-3 text-sm italic font-medium text-slate-800">
@@ -208,10 +215,10 @@
 		<span class="hidden mx-6 w-px h-7 sm:block bg-slate-300" aria-hidden="true"></span>
 		<span class={ink}>You have options.</span>
 		<span class="hidden mx-6 w-px h-7 sm:block bg-slate-300" aria-hidden="true"></span>
-		<span class="relative pb-1.5 {orange}">
+		<span class="relative {orange}">
 			You have us.
 			<span
-				class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#FF8A00] to-[#FF2D55] rounded-full"
+				class="absolute inset-x-0 -bottom-1.5 h-1 bg-gradient-to-r from-[#FF8A00] to-[#FF2D55] rounded-full"
 				aria-hidden="true"
 			></span>
 		</span>
@@ -274,7 +281,7 @@
 			<ul class="mt-7 space-y-3.5">
 				{#each wants as want}
 					<li class={checkItemClass}>
-						<CheckDot class="mt-0.5" />
+						<CheckDot />
 						<span class="min-w-0">{want}</span>
 					</li>
 				{/each}
@@ -305,7 +312,7 @@
 			</div>
 
 			<div
-				class="@container flex flex-col justify-center p-6 text-white bg-gradient-to-br rounded-2xl shadow-lg sm:p-9 from-[#2a0a6b] to-[#5b00c9] shadow-purple-900/20"
+				class="@container flex flex-col justify-center p-7 text-white bg-gradient-to-br rounded-2xl shadow-lg sm:p-9 from-[#2a0a6b] to-[#5b00c9] shadow-purple-900/20"
 			>
 				<p class="{eyebrowClass} text-purple-100">A Smarter Alternative</p>
 				<p class="mt-2 text-[min(2.1rem,12.5cqi)] font-black tracking-tight leading-tight">
@@ -315,14 +322,14 @@
 					href={site.phoneHref}
 					class="py-3 px-6 mt-7 max-w-full h-auto text-base font-bold leading-tight text-center text-white whitespace-normal bg-gradient-to-r rounded-full shadow-md transition min-h-12 from-[#E8590C] to-[#E0115F] hover:brightness-110"
 				>
-					Call now to explore your options
+					<span class="text-balance">Call now to explore your options</span>
 					<ArrowRight class="ml-2 w-5 h-5" />
 				</Button>
 			</div>
 		</div>
 
 		<div
-			class="flex flex-col gap-6 items-start p-7 rounded-2xl border sm:p-9 lg:flex-row lg:items-center border-brand-purple/15 bg-purple-50/70"
+			class="flex flex-col gap-6 items-start p-7 rounded-2xl border sm:p-9 lg:flex-row lg:items-start border-brand-purple/15 bg-purple-50/70"
 		>
 			<span
 				class="flex justify-center items-center w-16 h-16 bg-white rounded-2xl shadow-sm shrink-0 text-brand-purple"
@@ -342,7 +349,7 @@
 			<Button
 				href={consultationHref}
 				variant="outline"
-				class="py-3 px-7 max-w-full h-auto text-base font-bold leading-tight text-center whitespace-normal bg-white rounded-full border-2 min-h-12 shrink-0 border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
+				class="py-3 px-7 max-w-full h-auto text-base font-bold leading-tight text-center whitespace-normal bg-white rounded-full border-2 min-h-12 shrink-0 lg:self-center border-brand-purple text-brand-purple hover:bg-purple-50 hover:text-brand-purple"
 			>
 				Compare your options
 				<ArrowRight class="ml-2 w-5 h-5" />
@@ -368,7 +375,7 @@
 				href={site.phoneHref}
 				class="py-3 px-8 mt-8 max-w-full h-auto text-base font-bold leading-tight text-center text-white whitespace-normal bg-gradient-to-r rounded-full shadow-lg transition sm:text-lg min-h-14 from-[#E8590C] to-[#E0115F] hover:brightness-110"
 			>
-				{agentLabel}
+				{@render agentText()}
 				<ArrowRight class="ml-2 w-5 h-5" />
 			</Button>
 			<p class="mt-5">

@@ -30,7 +30,9 @@
 </svelte:head>
 
 <section class="overflow-hidden relative bg-gradient-to-b from-orange-50/60 via-white to-white">
-	<div class="absolute inset-0 pointer-events-none">
+	<div
+		class="absolute inset-0 pointer-events-none [mask-image:linear-gradient(to_bottom,#000_55%,transparent)]"
+	>
 		<div
 			class="absolute -top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-purple-300/20 blur-3xl"
 		></div>
@@ -87,7 +89,7 @@
 						{#each expect as item, i}
 							<li class="flex gap-3">
 								<span
-									class="flex justify-center items-center w-7 h-7 text-xs font-bold text-white rounded-full bg-brand-gradient-ui shrink-0"
+									class="flex justify-center items-center -mt-0.5 w-7 h-7 text-xs font-bold text-white rounded-full bg-brand-gradient-ui shrink-0"
 								>
 									{i + 1}
 								</span>
