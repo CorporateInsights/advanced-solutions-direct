@@ -8,7 +8,8 @@
 		link,
 		inkText,
 		accentText,
-		sectionTitleClass
+		sectionTitleClass,
+		cardTitleClass
 	} from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
@@ -233,7 +234,7 @@
 			</div>
 		</div>
 
-		<ul class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 lg:gap-5">
+		<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 lg:gap-5">
 			{#each situations as s}
 				<li
 					class="flex gap-4 items-center py-4 px-5 bg-white rounded-2xl border shadow-md border-slate-200 shadow-purple-900/5"
@@ -241,7 +242,10 @@
 					<span class="flex justify-center items-center w-12 h-12 bg-purple-50 rounded-xl shrink-0">
 						<s.icon class="w-6 h-6 text-brand-purple" strokeWidth={2} />
 					</span>
-					<span class="text-[1.05rem] font-extrabold leading-snug {ink}">{s.label}</span>
+					<span
+						class="min-w-0 text-[1.05rem] font-extrabold leading-snug break-words hyphens-auto {ink}"
+						>{s.label}</span
+					>
 				</li>
 			{/each}
 			<li>
@@ -327,7 +331,7 @@
 						<a.icon class="w-7 h-7 text-brand-purple" strokeWidth={2} />
 					</span>
 					<div class="min-w-0">
-						<h3 class="text-xl font-extrabold leading-snug {ink}">{a.title}</h3>
+						<h3 class={cardTitleClass}>{a.title}</h3>
 						<p class="mt-1.5 text-base leading-relaxed text-slate-800">{a.text}</p>
 					</div>
 				</li>

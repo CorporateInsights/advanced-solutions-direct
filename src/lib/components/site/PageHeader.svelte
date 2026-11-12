@@ -1,7 +1,7 @@
 <script lang="ts">
 	import BrandArc from './BrandArc.svelte';
 	import SectionEyebrow from './SectionEyebrow.svelte';
-	import { inkText, accentText, leadClass } from '$lib/site';
+	import { accentText, leadClass, pageTitleClass } from '$lib/site';
 
 	let {
 		eyebrow,
@@ -28,9 +28,7 @@
 		{#if eyebrow}
 			<SectionEyebrow label={eyebrow} />
 		{/if}
-		<h1
-			class="mt-4 text-4xl font-black tracking-tight leading-[1.1] text-balance sm:text-5xl lg:text-[3.25rem] {inkText}"
-		>
+		<h1 class="mt-4 {pageTitleClass}">
 			{title}{#if highlight}<span class={accentText}>{highlight}</span>{/if}
 		</h1>
 		{#if description}

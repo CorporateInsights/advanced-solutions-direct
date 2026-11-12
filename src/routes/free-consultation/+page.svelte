@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site, partners } from '$lib/site';
+	import { site, partners, inkText, pageTitleClass, cardTitleClass } from '$lib/site';
 	import LeadFormCard from '$lib/components/site/LeadFormCard.svelte';
 	import Phone from '@lucide/svelte/icons/phone';
 	import CheckDot from '$lib/components/site/CheckDot.svelte';
@@ -44,9 +44,7 @@
 			class="grid gap-10 items-start lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-10"
 		>
 			<div class="text-center lg:text-left">
-				<h1
-					class="text-4xl font-extrabold tracking-tight leading-tight text-balance sm:text-5xl text-slate-900"
-				>
+				<h1 class={pageTitleClass}>
 					Talk to a
 					<span class="text-brand-gradient">Real Person.</span>
 				</h1>
@@ -84,7 +82,7 @@
 
 			<div class="lg:col-start-1">
 				<div class="mx-auto max-w-md text-left lg:mx-0">
-					<h2 class="mb-4 text-lg font-bold text-slate-900">What to Expect on the Call</h2>
+					<h2 class="mb-4 {cardTitleClass}">What to Expect on the Call</h2>
 					<ol class="space-y-4">
 						{#each expect as item, i}
 							<li class="flex gap-3">
@@ -102,8 +100,8 @@
 					</ol>
 					<div class="flex flex-wrap gap-x-5 gap-y-2 mt-6">
 						{#each ['No cost', 'No obligation', 'No pressure'] as point}
-							<span class="flex gap-1.5 items-center text-sm font-medium text-slate-800">
-								<CheckDot size="sm" />
+							<span class="flex gap-2 items-center text-lg font-bold {inkText}">
+								<CheckDot />
 								{point}
 							</span>
 						{/each}

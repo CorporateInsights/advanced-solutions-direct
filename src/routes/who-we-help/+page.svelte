@@ -1,7 +1,21 @@
 <script lang="ts">
 	// Who We Help follows the owner's approved mockup (copy and layout), spaced out so it reads
 	// calmer. Don't change the wording without the owner's sign-off.
-	import { site, consultationHref, ctaClass, link, inkText, accentText } from '$lib/site';
+	import {
+		site,
+		consultationHref,
+		ctaClass,
+		link,
+		inkText,
+		accentText,
+		pageTitleClass,
+		sectionTitleClass,
+		panelTitleClass,
+		closingTitleClass,
+		cardTitleClass,
+		eyebrowClass,
+		checkItemClass
+	} from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import HeroArt from '$lib/components/site/HeroArt.svelte';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
@@ -109,13 +123,11 @@
 	>
 		<div class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:text-left">
 			<p
-				class="inline-block py-1.5 px-4 text-sm font-extrabold tracking-[0.15em] uppercase bg-purple-50 rounded-full text-brand-purple"
+				class="inline-block py-1.5 px-4 bg-purple-50 rounded-full {eyebrowClass} text-brand-purple"
 			>
 				Who We Help
 			</p>
-			<h1
-				class="mt-5 text-[min(2.25rem,11cqi)] font-black tracking-tight leading-[1.05] text-balance sm:text-[min(3rem,11cqi)] lg:text-[min(3.4rem,11cqi)] {ink}"
-			>
+			<h1 class="mt-5 {pageTitleClass}">
 				If Any of This Sounds Like You, It’s Time to Explore a
 				<span class="pr-[0.12em] italic uppercase {warmText}">New Solution.</span>
 			</h1>
@@ -214,7 +226,7 @@
 				class="block mx-auto w-12 h-1 bg-gradient-to-r from-[#FF8A00] to-[#FF2D55] rounded-full"
 				aria-hidden="true"
 			></span>
-			<h2 class="mt-5 text-4xl font-black tracking-tight sm:text-5xl {ink}">Who We Help</h2>
+			<h2 class="mt-5 {sectionTitleClass}">Who We Help</h2>
 			<p class="mt-4 text-lg font-medium sm:text-xl text-slate-800">
 				Real people in real situations. See if one of these sounds familiar.
 			</p>
@@ -227,7 +239,7 @@
 						<s.icon class="w-7 h-7" strokeWidth={2} />
 					</span>
 					<div>
-						<h3 class="text-[min(1.25rem,10cqi)] font-extrabold leading-snug text-balance {ink}">
+						<h3 class={cardTitleClass}>
 							{s.title}
 						</h3>
 						<p class="mt-2 text-base font-medium leading-relaxed text-slate-800">{s.text}</p>
@@ -252,12 +264,8 @@
 			class="object-cover w-full rounded-3xl shadow-xl aspect-[4/3] shadow-purple-900/15"
 		/>
 		<div>
-			<p class="text-sm font-extrabold tracking-[0.15em] uppercase {orange}">The Reality</p>
-			<h2
-				class="mt-3 text-3xl font-black tracking-tight leading-tight sm:text-4xl lg:text-[2.6rem] {ink}"
-			>
-				Why so many people feel stuck
-			</h2>
+			<p class="{eyebrowClass} {orange}">The Reality</p>
+			<h2 class="mt-3 {sectionTitleClass}">Why so many people feel stuck</h2>
 			<p class="mt-5 text-lg font-medium leading-relaxed text-slate-800">
 				People are trying to put food on the table, keep a roof over their heads, and manage rising
 				costs, yet their debt keeps growing. Others have made difficult decisions, like enrolling in
@@ -265,7 +273,7 @@
 			</p>
 			<ul class="mt-7 space-y-3.5">
 				{#each wants as want}
-					<li class="flex gap-3 items-start text-lg font-bold leading-snug {ink}">
+					<li class={checkItemClass}>
 						<CheckDot class="mt-0.5" />
 						<span class="min-w-0">{want}</span>
 					</li>
@@ -286,9 +294,7 @@
 					<ClipboardList class="w-8 h-8" strokeWidth={2} />
 				</span>
 				<div class="@container min-w-0 w-full">
-					<h2
-						class="text-[min(1.875rem,12cqi)] font-black tracking-tight leading-tight text-balance sm:text-[min(2.1rem,12cqi)] {ink}"
-					>
+					<h2 class={panelTitleClass}>
 						Looking for a <span class={orange}>Different Path</span> to Financial Relief?
 					</h2>
 					<p class="mt-4 text-lg font-medium leading-relaxed text-slate-800">
@@ -301,11 +307,7 @@
 			<div
 				class="@container flex flex-col justify-center p-6 text-white bg-gradient-to-br rounded-2xl shadow-lg sm:p-9 from-[#2a0a6b] to-[#5b00c9] shadow-purple-900/20"
 			>
-				<p
-					class="text-sm font-extrabold tracking-wider uppercase sm:tracking-[0.15em] text-purple-100"
-				>
-					A Smarter Alternative
-				</p>
+				<p class="{eyebrowClass} text-purple-100">A Smarter Alternative</p>
 				<p class="mt-2 text-[min(2.1rem,12.5cqi)] font-black tracking-tight leading-tight">
 					Without <span class="text-amber-300">bankruptcy.</span>
 				</p>
@@ -328,9 +330,7 @@
 				<FileText class="w-8 h-8" strokeWidth={2} />
 			</span>
 			<div class="flex-1 min-w-0">
-				<h2 class="text-2xl font-black tracking-tight sm:text-[1.75rem] {ink}">
-					Already in a debt settlement program?
-				</h2>
+				<h2 class={panelTitleClass}>Already in a debt settlement program?</h2>
 				<p class="mt-2 text-lg italic font-bold {orange}">
 					If it’s not working, or the payments are too high, you may have another option.
 				</p>
@@ -361,9 +361,7 @@
 			aria-hidden="true"
 		></div>
 		<div class="relative">
-			<h2
-				class="mx-auto max-w-4xl text-[min(1.875rem,10cqi)] font-black tracking-tight leading-tight text-balance sm:text-[min(2.25rem,10cqi)] lg:text-5xl"
-			>
+			<h2 class="mx-auto max-w-4xl {closingTitleClass}">
 				Find Out What Options May Be <span class="text-amber-300">Available for You.</span>
 			</h2>
 			<Button

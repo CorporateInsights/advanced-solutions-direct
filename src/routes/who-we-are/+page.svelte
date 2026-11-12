@@ -2,7 +2,20 @@
 	// Who We Are follows the owner's approved mockup (copy and layout, her second version), spaced
 	// out so it reads calmer, the same way as Who We Help. Don't change the wording without the
 	// owner's sign-off.
-	import { site, link, consultationHref, inkText, accentText } from '$lib/site';
+	import {
+		site,
+		link,
+		consultationHref,
+		inkText,
+		accentText,
+		pageTitleClass,
+		sectionTitleClass,
+		panelTitleClass,
+		closingTitleClass,
+		cardTitleClass,
+		eyebrowClass,
+		checkItemClass
+	} from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 	import Clock from '@lucide/svelte/icons/clock';
@@ -70,7 +83,7 @@
 	const warmText =
 		'bg-gradient-to-r from-[#D9480F] to-[#E0115F] bg-clip-text text-transparent box-decoration-clone';
 	const card = 'bg-white rounded-2xl border shadow-sm border-slate-200 shadow-purple-900/5';
-	const eyebrow = `text-sm font-extrabold tracking-[0.15em] uppercase ${orange}`;
+	const eyebrow = `${eyebrowClass} ${orange}`;
 </script>
 
 <svelte:head>
@@ -93,13 +106,11 @@
 	>
 		<div class="@container mx-auto w-full max-w-xl text-center lg:mx-0 lg:text-left">
 			<p
-				class="inline-block py-1.5 px-4 text-sm font-extrabold tracking-[0.15em] uppercase bg-purple-50 rounded-full text-brand-purple"
+				class="inline-block py-1.5 px-4 bg-purple-50 rounded-full {eyebrowClass} text-brand-purple"
 			>
 				About Us / Who We Are
 			</p>
-			<h1
-				class="mt-5 text-[min(2.25rem,11cqi)] font-black tracking-tight leading-[1.05] text-balance sm:text-[min(3rem,11cqi)] lg:text-[min(3.4rem,11cqi)] {ink}"
-			>
+			<h1 class="mt-5 {pageTitleClass}">
 				Experience You Can Trust.
 				<span class="block mt-1"
 					>Guidance You Can <span class="pr-[0.08em] {warmText}">Count On.</span></span
@@ -160,9 +171,7 @@
 		<div
 			class="@container grid grid-cols-1 gap-6 items-center p-7 bg-gradient-to-r rounded-2xl border sm:p-9 lg:grid-cols-2 lg:gap-12 border-brand-purple/15 from-purple-50 via-purple-50/60 to-pink-50/50"
 		>
-			<h2
-				class="text-[min(1.875rem,10cqi)] font-black tracking-tight leading-tight sm:text-[min(2.25rem,8cqi)] lg:text-[min(2.4rem,5cqi)] {ink}"
-			>
+			<h2 class={panelTitleClass}>
 				Founded in 2020.<br />
 				Backed by <span class="pr-[0.06em] {warmText}">20+ Years</span><br
 					class="hidden sm:block"
@@ -186,7 +195,7 @@
 						<h.icon class="w-6 h-6" strokeWidth={2} />
 					</span>
 					<div>
-						<h3 class="text-[min(1.3rem,10cqi)] font-extrabold leading-snug text-balance {ink}">
+						<h3 class={cardTitleClass}>
 							{h.title}
 						</h3>
 						<p
@@ -216,9 +225,7 @@
 		/>
 		<div class="@container">
 			<p class={eyebrow}>Our Promise</p>
-			<h2
-				class="mt-3 text-[min(1.875rem,11cqi)] font-black tracking-tight leading-tight sm:text-4xl lg:text-[2.6rem] {ink}"
-			>
+			<h2 class="mt-3 {sectionTitleClass}">
 				Our Commitment <span class="pr-[0.06em] {warmText}">to You.</span>
 			</h2>
 			<p class="mt-5 text-lg font-medium leading-relaxed text-slate-800">
@@ -228,9 +235,7 @@
 			</p>
 			<ul class="mt-7 space-y-3.5">
 				{#each promises as promise}
-					<li
-						class="flex gap-3 items-start text-lg font-bold leading-snug break-words hyphens-auto {ink}"
-					>
+					<li class={checkItemClass}>
 						<CheckDot class="mt-0.5" />
 						<span class="min-w-0">{promise}</span>
 					</li>
@@ -255,11 +260,7 @@
 		/>
 		<div class="@container">
 			<p class={eyebrow}>Here for You, Nationwide</p>
-			<h2
-				class="mt-3 text-[min(1.875rem,11cqi)] font-black tracking-tight leading-tight sm:text-4xl lg:text-[2.6rem] {ink}"
-			>
-				Our Locations
-			</h2>
+			<h2 class="mt-3 {sectionTitleClass}">Our Locations</h2>
 			<p class="mt-5 text-lg font-medium leading-relaxed text-slate-800">
 				We’re headquartered in Tempe, Arizona. Our U.S.-based team assists consumers across the
 				country.
@@ -272,7 +273,7 @@
 						<Building2 class="w-6 h-6" strokeWidth={2} />
 					</span>
 					<div class="min-w-0 break-words">
-						<h3 class="text-xl font-extrabold {ink}">Headquarters</h3>
+						<h3 class={cardTitleClass}>Headquarters</h3>
 						<address class="mt-1 text-lg not-italic font-medium leading-snug text-slate-800">
 							60 E Rio Salado Pkwy, Suite 900<br />Tempe, Arizona 85281
 						</address>
@@ -293,9 +294,7 @@
 			aria-hidden="true"
 		></div>
 		<div class="relative">
-			<h2
-				class="mx-auto max-w-4xl text-[min(1.875rem,10cqi)] font-black tracking-tight leading-tight text-balance sm:text-[min(2.25rem,10cqi)] lg:text-5xl"
-			>
+			<h2 class="mx-auto max-w-4xl {closingTitleClass}">
 				Looking for a More <span class="text-amber-300">Direct Path</span> to Better Options?
 			</h2>
 			<Button

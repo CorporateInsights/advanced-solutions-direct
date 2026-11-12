@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { site, consultationHref, ctaClass, inkText, leadClass } from '$lib/site';
+	import {
+		site,
+		consultationHref,
+		ctaClass,
+		inkText,
+		leadClass,
+		closingTitleClass
+	} from '$lib/site';
 	import { Button } from '$lib/components/ui/button';
 	import Phone from '@lucide/svelte/icons/phone';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
@@ -16,7 +23,7 @@
 	class="px-4 pt-14 pb-16 text-center bg-gradient-to-b from-white to-purple-50/70 sm:px-6 lg:pt-16 lg:pb-20"
 >
 	<div class="mx-auto max-w-4xl">
-		<h2 class="text-4xl font-black tracking-tight leading-tight text-balance sm:text-5xl {inkText}">
+		<h2 class="{closingTitleClass} {inkText}">
 			{title}
 		</h2>
 		<p class="mx-auto mt-4 max-w-2xl {leadClass}">{description}</p>
