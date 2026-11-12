@@ -245,7 +245,7 @@
 	</div>
 </section>
 
-<!-- Our locations -->
+<!-- Our location -->
 <section class="py-14 bg-white lg:py-20">
 	<div
 		class="grid gap-10 items-center px-4 mx-auto max-w-7xl sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8"
@@ -260,7 +260,7 @@
 		/>
 		<div class="@container">
 			<p class={eyebrow}>Here for You, Nationwide</p>
-			<h2 class="mt-3 {sectionTitleClass}">Our Locations</h2>
+			<h2 class="mt-3 {sectionTitleClass}">Our Location</h2>
 			<p class="mt-5 text-lg font-medium leading-relaxed text-slate-800">
 				We’re headquartered in Tempe, Arizona. Our U.S.-based team assists consumers across the
 				country.
