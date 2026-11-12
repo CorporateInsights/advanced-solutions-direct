@@ -67,7 +67,7 @@ export const faqGettingStarted: Faq[] = [
 	{
 		question: 'Are you based in the United States?',
 		answer:
-			'Yes! Advanced Solutions Direct is based in the United States. Our headquarters are located in Tempe, Arizona, and our team is here to help consumers across the states we serve.'
+			'Yes! Advanced Solutions Direct is based in the United States. We’re headquartered in Tempe, Arizona, and our team is here to help consumers across the states we serve.'
 	},
 	{
 		question: 'Which states do you serve?',
