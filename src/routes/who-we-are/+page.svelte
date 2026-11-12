@@ -10,7 +10,6 @@
 	import ShieldCheck from '@lucide/svelte/icons/shield-check';
 	import Globe from '@lucide/svelte/icons/globe';
 	import Building2 from '@lucide/svelte/icons/building-2';
-	import MapPin from '@lucide/svelte/icons/map-pin';
 	import CheckDot from '$lib/components/site/CheckDot.svelte';
 
 	const specialistPhoto = link('/images/who-we-are-specialist.webp');
@@ -53,7 +52,7 @@
 			icon: Globe,
 			tone: tones.orange,
 			title: 'Nationwide Support',
-			text: 'Headquartered in Arizona, with a California office, and helping consumers across all 50 states.'
+			text: 'Headquartered in Arizona and helping consumers across all 50 states.'
 		}
 	];
 
@@ -262,8 +261,8 @@
 				Our Locations
 			</h2>
 			<p class="mt-5 text-lg font-medium leading-relaxed text-slate-800">
-				We’re headquartered in Tempe, Arizona, with a second office in Irvine, California. Our
-				U.S.-based team assists consumers across the country.
+				We’re headquartered in Tempe, Arizona. Our U.S.-based team assists consumers across the
+				country.
 			</p>
 			<div class="mt-8 space-y-6">
 				<div class="flex gap-4 items-start">
@@ -277,17 +276,6 @@
 						<address class="mt-1 text-lg not-italic font-medium leading-snug text-slate-800">
 							60 E Rio Salado Pkwy, Suite 900<br />Tempe, Arizona 85281
 						</address>
-					</div>
-				</div>
-				<div class="flex gap-4 items-start">
-					<span
-						class="flex justify-center items-center w-12 h-12 bg-orange-50 rounded-xl shrink-0 {orange}"
-					>
-						<MapPin class="w-6 h-6" strokeWidth={2} />
-					</span>
-					<div class="min-w-0 break-words">
-						<h3 class="text-xl font-extrabold {ink}">Branch Office</h3>
-						<p class="mt-1 text-lg font-medium leading-snug text-slate-800">Irvine, California</p>
 					</div>
 				</div>
 			</div>
