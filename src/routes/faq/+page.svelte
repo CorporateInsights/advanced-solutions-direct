@@ -136,7 +136,9 @@
 										class="flex justify-center items-center w-11 h-11 text-sm font-extrabold text-white rounded-xl shadow-md bg-brand-gradient-ui shrink-0 shadow-pink-500/20"
 										aria-hidden="true">{topic.n}</span
 									>
-									<span class="min-w-0 break-words hyphens-auto">
+									<!-- No automatic hyphens here: they split words like "involv-ing" at desktop
+									     widths. break-words still stops overflow on tiny screens. -->
+									<span class="min-w-0 break-words">
 										<span
 											class="block text-lg font-extrabold leading-snug transition-colors group-hover:text-brand-pink {inkText}"
 											>{topic.title}</span
