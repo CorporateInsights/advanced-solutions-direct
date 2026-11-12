@@ -65,16 +65,17 @@
 	></div>
 
 	<div
-		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-16 lg:px-8 lg:pt-14 lg:pb-16"
+		class="grid relative gap-10 items-center px-4 pt-10 pb-14 mx-auto max-w-7xl sm:px-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-10 lg:px-8 lg:pt-14 lg:pb-16 xl:gap-16"
 	>
-		<div class="@container mx-auto w-full max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
+		<div class="@container mx-auto w-full max-w-3xl text-center lg:mx-0 lg:max-w-none lg:text-left">
 			<p
-				class="inline-block py-1.5 px-4 bg-purple-50 rounded-full {eyebrowClass} text-brand-purple"
+				class="inline-block py-1.5 px-4 bg-purple-50 rounded-full text-balance max-sm:rounded-2xl {eyebrowClass} text-brand-purple"
 			>
 				Helpful Answers, All in One Place
 			</p>
+			<!-- "Questions" on its own line, as in the owner's mockup -->
 			<h1 class="mt-5 uppercase {pageTitleClass}">
-				Frequently Asked <span class="inline-block pr-[0.06em] {warmText}">Questions</span>
+				Frequently Asked<br /><span class="inline-block pr-[0.06em] {warmText}">Questions</span>
 			</h1>
 			<!-- Brush swoosh under the headline, same as the other pages -->
 			<svg
@@ -99,7 +100,7 @@
 				<path d="M4 12 C 80 2, 200 0, 296 8 C 210 5, 110 7, 30 14 Z" fill="url(#faq-swoosh)" />
 			</svg>
 
-			<p class="mt-5 {leadClass}">{intro}</p>
+			<p class="mx-auto mt-5 max-w-2xl text-pretty lg:mx-0 {leadClass}">{intro}</p>
 
 			<ul class="flex flex-wrap gap-2 justify-center mt-7 lg:justify-start">
 				{#each pills as pill (pill)}
@@ -125,11 +126,11 @@
 					<h2 id="faq-topics-title" class="{eyebrowClass} text-brand-purple">Popular Topics</h2>
 					<ul class="mt-2 divide-y divide-slate-200">
 						{#each topics as topic (topic.n)}
-							<li>
+							<li class="group/topic">
 								<a
 									href="#{topic.target}"
 									onclick={() => openTarget(topic.target)}
-									class="flex gap-4 items-start py-4 rounded-xl group last:pb-0 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+									class="flex gap-4 items-start py-4 rounded-xl group group-last/topic:pb-0 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
 								>
 									<span
 										class="flex justify-center items-center w-11 h-11 text-sm font-extrabold text-white rounded-xl shadow-md bg-brand-gradient-ui shrink-0 shadow-pink-500/20"
@@ -168,7 +169,7 @@
 					class="self-stretch w-1.5 bg-gradient-to-b from-[#F97316] to-brand-pink rounded-full shrink-0"
 					aria-hidden="true"
 				></span>
-				<span class="min-w-0 break-words hyphens-auto">
+				<span class="min-w-0 break-words hyphens-auto text-balance">
 					Existing Debt Settlement &amp; Financial Situations
 				</span>
 			</h2>

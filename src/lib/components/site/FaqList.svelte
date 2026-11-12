@@ -23,19 +23,19 @@
 			class="group scroll-mt-24 lg:scroll-mt-28 {cardClass} transition-shadow open:shadow-lg open:border-brand-purple/25"
 		>
 			<summary
-				class="flex gap-4 items-center p-4 list-none rounded-2xl cursor-pointer sm:gap-5 sm:py-5 sm:px-6 focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-brand-purple [&::-webkit-details-marker]:hidden"
+				class="flex gap-3 items-center py-4 px-3 list-none rounded-2xl cursor-pointer sm:gap-5 sm:py-5 sm:px-6 focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-brand-purple [&::-webkit-details-marker]:hidden"
 			>
 				<span
-					class="flex justify-center items-center w-11 h-11 text-sm font-extrabold text-white rounded-full shadow-md bg-brand-gradient-ui shrink-0 shadow-pink-500/20"
+					class="flex justify-center items-center w-9 h-9 text-xs font-extrabold text-white rounded-full sm:w-11 sm:h-11 sm:text-sm shadow-md bg-brand-gradient-ui shrink-0 shadow-pink-500/20"
 					aria-hidden="true">{pad(n)}</span
 				>
 				<span
-					class="flex-1 min-w-0 text-lg font-bold leading-snug break-words hyphens-auto {inkText}"
+					class="flex-1 min-w-0 text-base font-bold leading-snug break-words hyphens-auto sm:text-lg {inkText}"
 					>{faq.question}</span
 				>
 				<!-- Plus, which turns into a minus when the answer is open -->
 				<span
-					class="relative w-7 h-7 rounded-full border-2 transition-colors border-slate-300 shrink-0 group-open:border-brand-purple/50"
+					class="relative w-6 h-6 rounded-full border-2 sm:w-7 sm:h-7 transition-colors border-slate-300 shrink-0 group-open:border-brand-purple/50"
 					aria-hidden="true"
 				>
 					<span
@@ -46,7 +46,7 @@
 					></span>
 				</span>
 			</summary>
-			<div class="px-4 pb-5 sm:pr-[4.25rem] sm:pb-6 sm:pl-[5.5rem]">
+			<div class="px-3 pb-5 sm:pr-[4.25rem] sm:pb-6 sm:pl-[5.5rem]">
 				<p
 					class="pt-4 text-base font-medium leading-relaxed border-t sm:text-lg border-slate-200 text-slate-800"
 				>
