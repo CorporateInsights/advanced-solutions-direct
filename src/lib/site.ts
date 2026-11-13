@@ -27,8 +27,8 @@ export const partners = {
 	legal: 'an independent consumer rights law firm'
 };
 
-// TODO: placeholder. Replace with the company's Workable careers page once it's provided.
-export const careersHref = 'https://apply.workable.com/';
+// The company's Workable careers page.
+export const careersHref = 'https://apply.workable.com/corporate-insights/';
 
 // Menu, per the owner's latest mockups: Home | Who We Help | FAQ | Who We Are | Careers.
 // External links open in a new tab.
